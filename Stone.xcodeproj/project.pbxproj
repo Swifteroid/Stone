@@ -6,20 +6,95 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		17FD00E0D08CFC3654ABB7EA /* Extension.Foundation.Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0061A16E5A1FBA8D2922 /* Extension.Foundation.Bundle.swift */; };
+		17FD01082A376E6B323BC362 /* Extension.Foundation.Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD09E2AF7B608BB9AB0247 /* Extension.Foundation.Size.swift */; };
+		17FD021EF9F9BE62F16E5F78 /* Extension.Foundation.FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD05484F0C576729BF0520 /* Extension.Foundation.FileManager.swift */; };
+		17FD0385D81335D2BBF0DACE /* Test.Extension.Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0567CEE7F48A58CC2FC0 /* Test.Extension.Swift.swift */; };
+		17FD0429D09CCD5CF9D3B2AC /* Extension.Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD013F36FFC9213899F2CF /* Extension.Foundation.swift */; };
+		17FD0540B4E121E5C5FF0BFB /* Extension.Foundation.EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0B3E026C7E7E35510522 /* Extension.Foundation.EdgeInsets.swift */; };
+		17FD054D651256ED7BE704D2 /* Extension.Foundation.Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0FC589F4E355C1BEF973 /* Extension.Foundation.Timer.swift */; };
+		17FD07A471366BC73886E1B8 /* Extension.Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD056AD41EC990F7A798B5 /* Extension.Swift.swift */; };
+		17FD08AF91F5F666B3821F74 /* Extension.Foundation.DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0C2F4679304870A0686A /* Extension.Foundation.DataFormatter.swift */; };
+		17FD0C7981881DC1B5AA1D9E /* Extension.Foundation.Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD04269BFEB73D127572E8 /* Extension.Foundation.Rect.swift */; };
+		17FD0CB340621BAE9CCA39AA /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD084B96C0D65E7AC4A5C6 /* Test.swift */; };
+		17FD0F2B1A78E21AE5F85A67 /* Extension.Foundation.Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0CF121F90CC54A4B4F74 /* Extension.Foundation.Point.swift */; };
+		E68DF3DA1E64975600502750 /* Stone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68DF3D01E64975600502750 /* Stone.framework */; };
+		E68DF3E91E64A8F000502750 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD0201C6FC93C009A7239F /* Nimble.framework */; };
+		E68DF3EB1E64A91400502750 /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD0201C6FC93C009A7239F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E68DF3DB1E64975600502750 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E642F8A51E64930B00F98403 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E68DF3CF1E64975600502750;
+			remoteInfo = Stone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E68DF3EA1E64A90600502750 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E68DF3EB1E64A91400502750 /* Nimble.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		17FD0061A16E5A1FBA8D2922 /* Extension.Foundation.Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.Bundle.swift; sourceTree = "<group>"; };
 		17FD010A5A123CB8B35548B1 /* Base - Profile.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Profile.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Profile.xcconfig"; sourceTree = SOURCE_ROOT; };
+		17FD013F36FFC9213899F2CF /* Extension.Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.swift; sourceTree = "<group>"; };
+		17FD0201C6FC93C009A7239F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		17FD034484BD723E746B14B4 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = test.plist; sourceTree = "<group>"; };
+		17FD04269BFEB73D127572E8 /* Extension.Foundation.Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.Rect.swift; sourceTree = "<group>"; };
+		17FD05484F0C576729BF0520 /* Extension.Foundation.FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.FileManager.swift; sourceTree = "<group>"; };
+		17FD0567CEE7F48A58CC2FC0 /* Test.Extension.Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.Swift.swift; sourceTree = "<group>"; };
+		17FD056AD41EC990F7A798B5 /* Extension.Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Swift.swift; sourceTree = "<group>"; };
 		17FD05C39AE0924973CA6FE7 /* Base - Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Debug.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		17FD070B80336F7848619472 /* Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Test.xcconfig; path = dependency/git/xenomorph/source/Target/Test.xcconfig; sourceTree = SOURCE_ROOT; };
+		17FD084B96C0D65E7AC4A5C6 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		17FD09E2AF7B608BB9AB0247 /* Extension.Foundation.Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.Size.swift; sourceTree = "<group>"; };
 		17FD09E45FADBD687CC0F295 /* Base - Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Release.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Release.xcconfig"; sourceTree = SOURCE_ROOT; };
+		17FD0AAB6A5033EFC8B692CF /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = file.resolved; path = Cartfile.resolved; sourceTree = "<group>"; };
 		17FD0B3481C64C3DB4FA7077 /* Base - Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Test.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Test.xcconfig"; sourceTree = SOURCE_ROOT; };
+		17FD0B3E026C7E7E35510522 /* Extension.Foundation.EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.EdgeInsets.swift; sourceTree = "<group>"; };
+		17FD0B82960814A03ACD2215 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		17FD0C2F4679304870A0686A /* Extension.Foundation.DataFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.DataFormatter.swift; sourceTree = "<group>"; };
+		17FD0C35781BFBD36BF87853 /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = framework.plist; sourceTree = "<group>"; };
+		17FD0C3A25C4011493E46C42 /* Nimble.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Nimble.framework.dSYM; path = Carthage/Build/Mac/Nimble.framework.dSYM; sourceTree = "<group>"; };
+		17FD0CF121F90CC54A4B4F74 /* Extension.Foundation.Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.Point.swift; sourceTree = "<group>"; };
 		17FD0FAFBDFCEC4B522DFD4A /* macOS - Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "macOS - Framework.xcconfig"; path = "dependency/git/xenomorph/source/Target/macOS/macOS - Framework.xcconfig"; sourceTree = SOURCE_ROOT; };
+		17FD0FC589F4E355C1BEF973 /* Extension.Foundation.Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.Timer.swift; sourceTree = "<group>"; };
+		E68DF3D01E64975600502750 /* Stone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E68DF3D91E64975600502750 /* Stone - Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stone - Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E68DF3D61E64975600502750 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E68DF3DA1E64975600502750 /* Stone.framework in Frameworks */,
+				E68DF3E91E64A8F000502750 /* Nimble.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		17FD007DF370AD936ED4135C /* accessory */ = {
 			isa = PBXGroup;
 			children = (
 				17FD0A68BE7005C345147C42 /* configuration */,
+				17FD0589BAD656CAA9F96C62 /* info */,
 			);
 			path = accessory;
 			sourceTree = "<group>";
@@ -27,8 +102,35 @@
 		17FD015FD214F0832286F36A /* source */ = {
 			isa = PBXGroup;
 			children = (
+				17FD0FA5013C39D298358678 /* Extension */,
+				17FD02220E9D21F2B8CCF1F6 /* Test */,
 			);
 			path = source;
+			sourceTree = "<group>";
+		};
+		17FD02220E9D21F2B8CCF1F6 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				17FD0E7295028AFA17A5C71F /* Extension */,
+				17FD084B96C0D65E7AC4A5C6 /* Test.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		17FD02287820CBE8EFC021DB /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				17FD056AD41EC990F7A798B5 /* Extension.Swift.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		17FD02DB0448AA27A902DF37 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				17FD0201C6FC93C009A7239F /* Nimble.framework */,
+			);
+			name = framework;
 			sourceTree = "<group>";
 		};
 		17FD02ED86E6AC2C1494954F /* Target */ = {
@@ -40,6 +142,23 @@
 			name = Target;
 			sourceTree = "<group>";
 		};
+		17FD057FE77AFD9DA3F2BA9F /* product */ = {
+			isa = PBXGroup;
+			children = (
+				E68DF3D11E64975600502750 /* build */,
+			);
+			path = product;
+			sourceTree = "<group>";
+		};
+		17FD0589BAD656CAA9F96C62 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				17FD0C35781BFBD36BF87853 /* framework.plist */,
+				17FD034484BD723E746B14B4 /* test.plist */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
 		17FD09D4985519D6B0066B3A /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -49,6 +168,22 @@
 				17FD0B3481C64C3DB4FA7077 /* Base - Test.xcconfig */,
 			);
 			name = Configuration;
+			sourceTree = "<group>";
+		};
+		17FD09EA128FEAD6103CB626 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				17FD0061A16E5A1FBA8D2922 /* Extension.Foundation.Bundle.swift */,
+				17FD0C2F4679304870A0686A /* Extension.Foundation.DataFormatter.swift */,
+				17FD0B3E026C7E7E35510522 /* Extension.Foundation.EdgeInsets.swift */,
+				17FD05484F0C576729BF0520 /* Extension.Foundation.FileManager.swift */,
+				17FD0CF121F90CC54A4B4F74 /* Extension.Foundation.Point.swift */,
+				17FD04269BFEB73D127572E8 /* Extension.Foundation.Rect.swift */,
+				17FD09E2AF7B608BB9AB0247 /* Extension.Foundation.Size.swift */,
+				17FD013F36FFC9213899F2CF /* Extension.Foundation.swift */,
+				17FD0FC589F4E355C1BEF973 /* Extension.Foundation.Timer.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		17FD0A68BE7005C345147C42 /* configuration */ = {
@@ -68,21 +203,116 @@
 			name = macOS;
 			sourceTree = "<group>";
 		};
+		17FD0E7295028AFA17A5C71F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				17FD0567CEE7F48A58CC2FC0 /* Test.Extension.Swift.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		17FD0FA5013C39D298358678 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				17FD09EA128FEAD6103CB626 /* Foundation */,
+				17FD02287820CBE8EFC021DB /* Swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		17FD0FCE76617832C4DBFA09 /* dependency */ = {
+			isa = PBXGroup;
+			children = (
+				17FD0FE7BAA54D23033C14B6 /* dsym */,
+				17FD02DB0448AA27A902DF37 /* framework */,
+				17FD0B82960814A03ACD2215 /* Cartfile */,
+				17FD0AAB6A5033EFC8B692CF /* Cartfile.resolved */,
+			);
+			path = dependency;
+			sourceTree = "<group>";
+		};
+		17FD0FE7BAA54D23033C14B6 /* dsym */ = {
+			isa = PBXGroup;
+			children = (
+				17FD0C3A25C4011493E46C42 /* Nimble.framework.dSYM */,
+			);
+			name = dsym;
+			sourceTree = "<group>";
+		};
 		E642F8A41E64930B00F98403 = {
 			isa = PBXGroup;
 			children = (
 				17FD007DF370AD936ED4135C /* accessory */,
+				17FD0FCE76617832C4DBFA09 /* dependency */,
+				17FD057FE77AFD9DA3F2BA9F /* product */,
 				17FD015FD214F0832286F36A /* source */,
 			);
 			sourceTree = "<group>";
 		};
+		E68DF3D11E64975600502750 /* build */ = {
+			isa = PBXGroup;
+			children = (
+				E68DF3D01E64975600502750 /* Stone.framework */,
+				E68DF3D91E64975600502750 /* Stone - Test.xctest */,
+			);
+			name = build;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E68DF3CF1E64975600502750 /* Stone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E68DF3E61E64975600502750 /* Build configuration list for PBXNativeTarget "Stone" */;
+			buildPhases = (
+				E68DF3CB1E64975600502750 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stone;
+			productName = Stone;
+			productReference = E68DF3D01E64975600502750 /* Stone.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E68DF3D81E64975600502750 /* Stone - Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E68DF3E71E64975600502750 /* Build configuration list for PBXNativeTarget "Stone - Test" */;
+			buildPhases = (
+				E68DF3D51E64975600502750 /* Sources */,
+				E68DF3D61E64975600502750 /* Frameworks */,
+				E68DF3EA1E64A90600502750 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E68DF3DC1E64975600502750 /* PBXTargetDependency */,
+			);
+			name = "Stone - Test";
+			productName = StoneTests;
+			productReference = E68DF3D91E64975600502750 /* Stone - Test.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		E642F8A51E64930B00F98403 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
+				TargetAttributes = {
+					E68DF3CF1E64975600502750 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					E68DF3D81E64975600502750 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = E642F8A81E64930B00F98403 /* Build configuration list for PBXProject "Stone" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -92,12 +322,52 @@
 				en,
 			);
 			mainGroup = E642F8A41E64930B00F98403;
+			productRefGroup = E68DF3D11E64975600502750 /* build */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				E68DF3CF1E64975600502750 /* Stone */,
+				E68DF3D81E64975600502750 /* Stone - Test */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E68DF3CB1E64975600502750 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17FD0429D09CCD5CF9D3B2AC /* Extension.Foundation.swift in Sources */,
+				17FD0540B4E121E5C5FF0BFB /* Extension.Foundation.EdgeInsets.swift in Sources */,
+				17FD0F2B1A78E21AE5F85A67 /* Extension.Foundation.Point.swift in Sources */,
+				17FD01082A376E6B323BC362 /* Extension.Foundation.Size.swift in Sources */,
+				17FD0C7981881DC1B5AA1D9E /* Extension.Foundation.Rect.swift in Sources */,
+				17FD021EF9F9BE62F16E5F78 /* Extension.Foundation.FileManager.swift in Sources */,
+				17FD08AF91F5F666B3821F74 /* Extension.Foundation.DataFormatter.swift in Sources */,
+				17FD054D651256ED7BE704D2 /* Extension.Foundation.Timer.swift in Sources */,
+				17FD07A471366BC73886E1B8 /* Extension.Swift.swift in Sources */,
+				17FD00E0D08CFC3654ABB7EA /* Extension.Foundation.Bundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E68DF3D51E64975600502750 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17FD0CB340621BAE9CCA39AA /* Test.swift in Sources */,
+				17FD0385D81335D2BBF0DACE /* Test.Extension.Swift.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E68DF3DC1E64975600502750 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E68DF3CF1E64975600502750 /* Stone */;
+			targetProxy = E68DF3DB1E64975600502750 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E642F8A91E64930B00F98403 /* Debug */ = {
@@ -114,6 +384,42 @@
 			};
 			name = Release;
 		};
+		E68DF3E21E64975600502750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17FD0FAFBDFCEC4B522DFD4A /* macOS - Framework.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		E68DF3E31E64975600502750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17FD0FAFBDFCEC4B522DFD4A /* macOS - Framework.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		E68DF3E41E64975600502750 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17FD070B80336F7848619472 /* Test.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dependency/Carthage/Build/Mac",
+				);
+			};
+			name = Debug;
+		};
+		E68DF3E51E64975600502750 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17FD070B80336F7848619472 /* Test.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dependency/Carthage/Build/Mac",
+				);
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -122,6 +428,24 @@
 			buildConfigurations = (
 				E642F8A91E64930B00F98403 /* Debug */,
 				E642F8AA1E64930B00F98403 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E68DF3E61E64975600502750 /* Build configuration list for PBXNativeTarget "Stone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E68DF3E21E64975600502750 /* Debug */,
+				E68DF3E31E64975600502750 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E68DF3E71E64975600502750 /* Build configuration list for PBXNativeTarget "Stone - Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E68DF3E41E64975600502750 /* Debug */,
+				E68DF3E51E64975600502750 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
