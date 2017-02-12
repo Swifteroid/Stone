@@ -1,16 +1,16 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9C056C4861975986D851F97891A0E1D5218217B7",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4649CA191A80885D47F085B8ABED9973850FE4F4",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "FB92343999F4DECE54225E041E190E57FF949DB8" : 9223372036854775807,
-    "9C056C4861975986D851F97891A0E1D5218217B7" : 9223372036854775807
+    "4649CA191A80885D47F085B8ABED9973850FE4F4" : 9223372036854775807,
+    "FB92343999F4DECE54225E041E190E57FF949DB8" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D0C9BFE7-CCE9-4B14-9F83-271D8D4D55BA",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "FB92343999F4DECE54225E041E190E57FF949DB8" : "stone\/dependency\/git\/xenomorph\/",
-    "9C056C4861975986D851F97891A0E1D5218217B7" : "stone\/"
+    "4649CA191A80885D47F085B8ABED9973850FE4F4" : "stone\/",
+    "FB92343999F4DECE54225E041E190E57FF949DB8" : "stone\/dependency\/git\/xenomorph\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Stone",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -19,7 +19,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/swifteroid\/stone.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9C056C4861975986D851F97891A0E1D5218217B7"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4649CA191A80885D47F085B8ABED9973850FE4F4"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/swifteroid\/xenomorph",

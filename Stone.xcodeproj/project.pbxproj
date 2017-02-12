@@ -72,7 +72,7 @@
 		17FD0AAB6A5033EFC8B692CF /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = file.resolved; path = Cartfile.resolved; sourceTree = "<group>"; };
 		17FD0B3481C64C3DB4FA7077 /* Base - Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Test.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Test.xcconfig"; sourceTree = SOURCE_ROOT; };
 		17FD0B3E026C7E7E35510522 /* Extension.Foundation.EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.EdgeInsets.swift; sourceTree = "<group>"; };
-		17FD0B82960814A03ACD2215 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		17FD0B82960814A03ACD2215 /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.private; path = Cartfile.private; sourceTree = "<group>"; };
 		17FD0C2F4679304870A0686A /* Extension.Foundation.DataFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.DataFormatter.swift; sourceTree = "<group>"; };
 		17FD0C35781BFBD36BF87853 /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = framework.plist; sourceTree = "<group>"; };
 		17FD0C3A25C4011493E46C42 /* Nimble.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Nimble.framework.dSYM; path = Carthage/Build/Mac/Nimble.framework.dSYM; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 			children = (
 				17FD0FE7BAA54D23033C14B6 /* dsym */,
 				17FD02DB0448AA27A902DF37 /* framework */,
-				17FD0B82960814A03ACD2215 /* Cartfile */,
+				17FD0B82960814A03ACD2215 /* Cartfile.private */,
 				17FD0AAB6A5033EFC8B692CF /* Cartfile.resolved */,
 			);
 			path = dependency;
