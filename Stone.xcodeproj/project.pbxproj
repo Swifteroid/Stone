@@ -426,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17FD05C39AE0924973CA6FE7 /* Base - Debug.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.swifteroid.stone;
 			};
 			name = Debug;
 		};
@@ -433,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17FD09E45FADBD687CC0F295 /* Base - Release.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.swifteroid.stone;
 			};
 			name = Release;
 		};
