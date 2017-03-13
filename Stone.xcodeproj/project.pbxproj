@@ -92,8 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E68DF3DA1E64975600502750 /* Stone.framework in Frameworks */,
 				E68DF3E91E64A8F000502750 /* Nimble.framework in Frameworks */,
+				E68DF3DA1E64975600502750 /* Stone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17FD05C39AE0924973CA6FE7 /* Base - Debug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = dependency/Carthage/Build/Mac;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swifteroid.stone;
 			};
 			name = Debug;
@@ -434,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17FD09E45FADBD687CC0F295 /* Base - Release.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = dependency/Carthage/Build/Mac;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swifteroid.stone;
 			};
 			name = Release;
@@ -442,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17FD0FAFBDFCEC4B522DFD4A /* macOS - Framework.xcconfig */;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 			};
 			name = Debug;
 		};
@@ -449,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17FD0FAFBDFCEC4B522DFD4A /* macOS - Framework.xcconfig */;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 			};
 			name = Release;
 		};
@@ -458,8 +462,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					dependency/Carthage/Build/Mac,
+					"$(PROJECT_DIR)/dependency/Carthage/Build/Mac",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).test";
 			};
 			name = Debug;
 		};
@@ -469,8 +474,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					dependency/Carthage/Build/Mac,
+					"$(PROJECT_DIR)/dependency/Carthage/Build/Mac",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).test";
 			};
 			name = Release;
 		};
