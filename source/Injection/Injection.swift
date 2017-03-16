@@ -2,35 +2,40 @@ import Foundation
 
 /*
 Must use `@objc` tag and inherit from NSObject to be usable from Objective C inside the bootstrap.
+Todo: add subscript support when swift 4 is out to support generics and throwing.
 */
 @objc open class Injection: NSObject
 {
-    private static var instances: [String: Injection] = [:]
+    fileprivate static var defaults: [String: Injection] = [:]
 
     private var dependencies: [String: Dependency] = [:]
 
-    open class var instance: Injection {
-        if let instance: Injection = self.instances[String(describing: self)] {
-            return instance
+    open class var `default`: Injection! {
+        get {
+            if self.defaults[String(describing: self)] == nil {
+                self.defaults[String(describing: self)] = self.init()
+            }
+            return self.defaults[String(describing: self)]
         }
-
-        let instance: Injection = self.init()
-
-        self.instances[String(describing: self)] = instance
-
-        return instance
+        set {
+            if let newValue: Injection = newValue {
+                self.defaults[String(describing: self)] = newValue
+            } else {
+                self.defaults.removeValue(forKey: String(describing: self))
+            }
+        }
     }
 
-    // MARK: init
+    // MARK: -
 
     override public required init() {
         super.init()
     }
 
-    // MARK: get
+    // MARK: -
 
     /*
-    Todo: there's a strong temptation to get rid of this, review the rest of the code and decide if it's worth it…
+    This is needed for objc compatibility.
     */
     @objc open func get(name: NSString) -> NSObject? {
         if let dependency: Dependency = self.dependencies[name as String] {
@@ -52,7 +57,7 @@ Must use `@objc` tag and inherit from NSObject to be usable from Objective C ins
         }
     }
 
-    open func get<Name:CustomStringConvertible, Type>(name: Name) throws -> Type {
+    open func get<Type>(name: CustomStringConvertible) throws -> Type {
         return try self.get(name: name.description)
     }
 

@@ -4,7 +4,7 @@ import Stone
 open class InjectionTestCase: TestCase
 {
     open func testDependency() {
-        let injection: Injection = Injection.instance
+        let injection: Injection = Injection.default
 
         injection.add(name: "foo", dependency: Injection.Dependency(definition: { "Foo" }))
         injection.define(name: Name.bar, definition: { NSString(string: "Bar") })
@@ -32,8 +32,8 @@ open class InjectionTestCase: TestCase
     }
 
     open func testInstance() {
-        let foo: Injection = FooInjection.instance
-        let bar: Injection = BarInjection.instance
+        let foo: Injection = FooInjection.default
+        let bar: Injection = BarInjection.default
 
         expect(foo).toNot(beNil())
         expect(bar).toNot(beNil())
