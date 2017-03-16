@@ -27,19 +27,19 @@ extension NSView
         return nil
     }
 
-    @discardableResult public func add(subview: NSView) {
+    public func add(subview: NSView) {
         self.addSubview(subview)
     }
 
-    @discardableResult public func add(subviews: [NSView]) {
+    public func add(subviews: [NSView]) {
         for view in subviews { self.addSubview(view) }
     }
 
-    @discardableResult public func remove(subview: NSView) {
+    public func remove(subview: NSView) {
         if subview.superview == self { subview.removeFromSuperview() }
     }
 
-    @discardableResult public func remove(subviews: [NSView]) {
+    public func remove(subviews: [NSView]) {
         for view in subviews { self.remove(subview: view) }
     }
 }

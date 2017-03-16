@@ -16,25 +16,17 @@ extension Int
 
 extension String
 {
-    public var lowerCaseFirstString: String {
-
-        // Todo: there's no need to convert to `NSString`, but it sometimes crashes with AppCode
-        // todo: in a fucking mysterious way. Try again in a few months.
-
-        if let string: NSString = self as NSString?, string.length > 0 {
-            return string.substring(to: 1).lowercased() + string.substring(from: 1)
+    public func lowercasedFirst() -> String {
+        if !self.characters.isEmpty {
+            return self.substring(to: self.index(self.startIndex, offsetBy: 1)).lowercased() + self.substring(from: self.index(self.startIndex, offsetBy: 1))
         } else {
             return self
         }
     }
 
-    public var upperCaseFirstString: String {
-
-        // Todo: there's no need to convert to `NSString`, but it sometimes crashes with AppCode
-        // todo: in a fucking mysterious way. Try again in a few months.
-
-        if let string: NSString = self as NSString?, string.length > 0 {
-            return string.substring(to: 1).uppercased() + string.substring(from: 1)
+    public func uppercasedFirst() -> String {
+        if !self.characters.isEmpty {
+            return self.substring(to: self.index(self.startIndex, offsetBy: 1)).uppercased() + self.substring(from: self.index(self.startIndex, offsetBy: 1))
         } else {
             return self
         }
