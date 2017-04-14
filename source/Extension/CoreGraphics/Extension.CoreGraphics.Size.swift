@@ -1,12 +1,12 @@
-import Foundation
+import CoreGraphics
 
-extension NSSize
+extension CGSize
 {
     public init(length: CGFloat) {
         self.init(width: length, height: length)
     }
 
-    public func aspectFill(_ bounds: CGRect) -> CGRect {
+    public func fill(aspect bounds: CGRect) -> CGRect {
         var bounds: CGRect = bounds
         let widthRatio: CGFloat = bounds.width / self.width
         let heightRatio: CGFloat = bounds.height / self.height
@@ -22,7 +22,7 @@ extension NSSize
         return bounds
     }
 
-    public func aspectFit(_ bounds: CGRect) -> CGRect {
+    public func fit(aspect bounds: CGRect) -> CGRect {
         var bounds: CGRect = bounds
         let widthRatio: CGFloat = bounds.width / self.width
         let heightRatio: CGFloat = bounds.height / self.height
@@ -39,34 +39,34 @@ extension NSSize
     }
 }
 
-public func +(lhs: NSSize, rhs: NSSize) -> NSSize {
-    return NSSize(width: lhs.width + rhs.width, height: lhs.height + rhs.height)
+public func +(lhs: CGSize, rhs: CGSize) -> CGSize {
+    return CGSize(width: lhs.width + rhs.width, height: lhs.height + rhs.height)
 }
 
-public func +(lhs: NSSize, rhs: NSPoint) -> NSSize {
-    return NSSize(width: lhs.width + rhs.x, height: lhs.height + rhs.y)
+public func +(lhs: CGSize, rhs: CGPoint) -> CGSize {
+    return CGSize(width: lhs.width + rhs.x, height: lhs.height + rhs.y)
 }
 
-public func -(lhs: NSSize, rhs: NSSize) -> NSSize {
-    return NSSize(width: lhs.width - rhs.width, height: lhs.height - rhs.height)
+public func -(lhs: CGSize, rhs: CGSize) -> CGSize {
+    return CGSize(width: lhs.width - rhs.width, height: lhs.height - rhs.height)
 }
 
-public func -(lhs: NSSize, rhs: NSPoint) -> NSSize {
-    return NSSize(width: lhs.width - rhs.x, height: lhs.height - rhs.y)
+public func -(lhs: CGSize, rhs: CGPoint) -> CGSize {
+    return CGSize(width: lhs.width - rhs.x, height: lhs.height - rhs.y)
 }
 
-public func *(lhs: NSSize, rhs: CGFloat) -> NSSize {
-    return NSSize(width: lhs.width * rhs, height: lhs.height * rhs)
+public func *(lhs: CGSize, rhs: CGFloat) -> CGSize {
+    return CGSize(width: lhs.width * rhs, height: lhs.height * rhs)
 }
 
-public func /(lhs: NSSize, rhs: CGFloat) -> NSSize {
-    return NSSize(width: lhs.width / rhs, height: lhs.height / rhs)
+public func /(lhs: CGSize, rhs: CGFloat) -> CGSize {
+    return CGSize(width: lhs.width / rhs, height: lhs.height / rhs)
 }
 
-public func round(_ size: NSSize) -> NSSize {
-    return NSSize(width: round(size.width), height: round(size.height))
+public func round(_ size: CGSize) -> CGSize {
+    return CGSize(width: round(size.width), height: round(size.height))
 }
 
-public func ceil(_ size: NSSize) -> NSSize {
-    return NSSize(width: ceil(size.width), height: ceil(size.height))
+public func ceil(_ size: CGSize) -> CGSize {
+    return CGSize(width: ceil(size.width), height: ceil(size.height))
 }
