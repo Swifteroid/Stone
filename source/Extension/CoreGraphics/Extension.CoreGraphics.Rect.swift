@@ -7,11 +7,38 @@ extension CGRect
     public var bottomLeft: CGPoint { return CGPoint(x: self.minX, y: self.minY) }
     public var bottomRight: CGPoint { return CGPoint(x: self.maxX, y: self.minY) }
 
-    /*
-    Centers current rectangle inside the given rectangle.
-    */
-    public func center(in rectangle: CGRect) -> CGPoint {
-        return CGPoint(x: rectangle.origin.x + (rectangle.width - self.width) / 2, y: rectangle.origin.y + (rectangle.height - self.height) / 2)
+    // MARK: align
+
+    public func align(top rectangle: CGRect) -> CGRect {
+        return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.maxY - self.height), size: self.size)
+    }
+
+    public func align(bottom rectangle: CGRect) -> CGRect {
+        return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.minY), size: self.size)
+    }
+
+    public func align(left rectangle: CGRect) -> CGRect {
+        return CGRect(origin: CGPoint(x: rectangle.minX, y: self.origin.y), size: self.size)
+    }
+
+    public func align(right rectangle: CGRect) -> CGRect {
+        return CGRect(origin: CGPoint(x: rectangle.maxX - self.width, y: self.origin.y), size: self.size)
+    }
+
+    public func align(center rectangle: CGRect) -> CGRect {
+        return self.center(in: rectangle)
+    }
+
+    public func center(in rectangle: CGRect) -> CGRect {
+        return CGRect(origin: CGPoint(x: rectangle.origin.x + (rectangle.width - self.width) / 2, y: rectangle.origin.y + (rectangle.height - self.height) / 2), size: self.size)
+    }
+
+    public func center(horizontally rectangle: CGRect) -> CGRect {
+        return CGRect(origin: CGPoint(x: rectangle.origin.x + (rectangle.width - self.width) / 2, y: self.origin.y), size: self.size)
+    }
+
+    public func center(vertically rectangle: CGRect) -> CGRect {
+        return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.origin.y + (rectangle.height - self.height) / 2), size: self.size)
     }
 
     /*
