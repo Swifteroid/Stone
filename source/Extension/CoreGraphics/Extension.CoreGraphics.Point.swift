@@ -2,17 +2,31 @@ import CoreGraphics
 
 extension CGPoint
 {
-    public typealias SELF = CGPoint
+    public mutating func translate(x: CGFloat, y: CGFloat) -> CGPoint {
+        self.x += x
+        self.y += y
+        return self
+    }
 
-    public func translate(x: CGFloat, y: CGFloat) -> SELF {
+    public mutating func translate(x: CGFloat) -> CGPoint {
+        self.x += x
+        return self
+    }
+
+    public mutating func translate(y: CGFloat) -> CGPoint {
+        self.y += y
+        return self
+    }
+
+    public func translating(x: CGFloat, y: CGFloat) -> CGPoint {
         return CGPoint(x: self.x + x, y: self.y + y)
     }
 
-    public func translate(x: CGFloat) -> SELF {
+    public func translating(x: CGFloat) -> CGPoint {
         return CGPoint(x: self.x + x, y: self.y)
     }
 
-    public func translate(y: CGFloat) -> SELF {
+    public func translating(y: CGFloat) -> CGPoint {
         return CGPoint(x: self.x, y: self.y + y)
     }
 }
