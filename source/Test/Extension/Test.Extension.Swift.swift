@@ -24,7 +24,7 @@ open class SwiftExtensionTestCase: TestCase
         expect(removed as? [Int]).to(equal([2, 2, 2, 3, 3, 3]))
 
         array = [0, 1, 2, 2, 2, 3, 3, 3, 4, 5]
-        removed = array.removeFirst({ $0 == 2 })
+        removed = array.removeFirst(where: { $0 == 2 })
         expect(array).to(equal([0, 1, 2, 2, 3, 3, 3, 4, 5]))
         expect(removed as? Int).to(equal(2))
     }

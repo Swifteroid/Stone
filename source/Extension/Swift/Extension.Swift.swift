@@ -96,10 +96,14 @@ extension Array where Element: Equatable
         self = array
         return removed
     }
+}
 
-    @discardableResult public mutating func removeFirst(_ filter: (Element) -> Bool) -> Element? {
-        for (i, element) in self.enumerated() {
-            if filter(element) {
+extension Array
+{
+    @discardableResult public mutating func removeFirst(where predicate: (Element) -> Bool) -> Element? {
+        for i in 0 ..< self.count {
+            let element: Element = self[i]
+            if predicate(element) {
                 self.remove(at: i)
                 return element
             }
