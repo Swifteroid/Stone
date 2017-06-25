@@ -14,6 +14,7 @@ open class CGRectExtensionTestCase: TestCase
         expect(bar.align(right: foo)).to(equal(CGRect(x: 190, y: 0, width: 10, height: 10)))
         expect(bar.align(center: foo)).to(equal(CGRect(x: 145, y: 145, width: 10, height: 10)))
 
+        expect(bar.center(at: CGPoint(x: 100, y: 100))).to(equal(CGRect(x: 95, y: 95, width: 10, height: 10)))
         expect(bar.center(in: foo)).to(equal(CGRect(x: 145, y: 145, width: 10, height: 10)))
         expect(bar.center(horizontally: foo)).to(equal(CGRect(x: 145, y: 0, width: 10, height: 10)))
         expect(bar.center(vertically: foo)).to(equal(CGRect(x: 0, y: 145, width: 10, height: 10)))

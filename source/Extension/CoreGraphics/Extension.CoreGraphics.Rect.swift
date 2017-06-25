@@ -30,6 +30,10 @@ extension CGRect
         return self.center(in: rectangle)
     }
 
+    public func center(at point: CGPoint) -> CGRect {
+        return CGRect(origin: CGPoint(x: point.x - self.width / 2, y: point.y - self.height / 2), size: self.size)
+    }
+
     public func center(in rectangle: CGRect) -> CGRect {
         return CGRect(origin: CGPoint(x: rectangle.origin.x + (rectangle.width - self.width) / 2, y: rectangle.origin.y + (rectangle.height - self.height) / 2), size: self.size)
     }
