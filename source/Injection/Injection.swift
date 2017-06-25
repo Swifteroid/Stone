@@ -1,9 +1,8 @@
 import Foundation
 
-/*
-Must use `@objc` tag and inherit from NSObject to be usable from Objective C inside the bootstrap.
-Todo: add subscript support when swift 4 is out to support generics and throwing.
-*/
+/// Must use `@objc` tag and inherit from NSObject to be usable from Objective C inside the bootstrap.
+/// Todo: add subscript support when swift 4 is out to support generics and throwing.
+
 @objc open class Injection: NSObject
 {
     fileprivate static var defaults: [String: Injection] = [:]
@@ -34,9 +33,8 @@ Todo: add subscript support when swift 4 is out to support generics and throwing
 
     // MARK: -
 
-    /*
-    This is needed for objc compatibility.
-    */
+    /// This is needed for objc compatibility.
+
     @objc open func get(name: NSString) -> NSObject? {
         if let dependency: Dependency = self.dependencies[name as String] {
             return dependency.resolve() as? NSObject

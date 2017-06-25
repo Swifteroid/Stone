@@ -6,15 +6,12 @@ extension Timer
     private typealias TimerHandler = (Timer) -> ()
     private typealias TimerHandlerOptional = (Timer?) -> ()
 
-    /*
-    Creates and schedules a one-time `NSTimer` instance.
+    /// Creates and schedules a one-time `NSTimer` instance.
+    /// 
+    /// - parameters delay: The delay before execution.
+    /// - parameters handler: A closure to execute after `delay`.
+    /// - returns: The newly-created `NSTimer` instance.
 
-    - Parameters:
-        - delay: The delay before execution.
-        - handler: A closure to execute after `delay`.
-
-    - Returns: The newly-created `NSTimer` instance.
-    */
     @discardableResult public static func schedule(delay: TimeInterval, handler: Any) -> Timer {
         var timerHandler: TimerHandlerOptional!
 
@@ -38,17 +35,15 @@ extension Timer
         }
     }
 
-    /*
-    Creates and schedules a repeating `NSTimer` instance.
+    /// Creates and schedules a repeating `NSTimer` instance.
+    ///
+    /// - parameters interval: The interval (in seconds) between each execution of `handler`. Note that
+    ///   individual calls may be delayed; subsequent calls to `handler` will be based on the time the 
+    ///   timer was created.
+    /// - parameters handler: A closure to execute at each `interval`.
+    /// 
+    /// - Returns: The newly-created `NSTimer` instance.
 
-    - Parameters:
-        - interval: The interval (in seconds) between each execution of
-          `handler`. Note that individual calls may be delayed; subsequent calls
-          to `handler` will be based on the time the timer was created.
-        - handler: A closure to execute at each `interval`.
-
-    - Returns: The newly-created `NSTimer` instance.
-    */
     @discardableResult public static func schedule(interval: TimeInterval, handler: Any) -> Timer {
         var timerHandler: TimerHandlerOptional!
 

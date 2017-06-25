@@ -2,9 +2,9 @@ import Foundation
 
 extension DateFormatter
 {
-    /*
-    Initialises formatter with a date format.
-    */
+
+    /// Initialises formatter with a date format.
+
     public convenience init(dateFormat: String) {
         self.init()
         self.dateFormat = dateFormat

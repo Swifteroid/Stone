@@ -3,7 +3,7 @@ import Foundation
 // http://nshipster.com/associated-objects/
 // https://medium.com/@ttikitu/swift-extensions-can-add-stored-properties-92db66bce6cd
 
-public func getAssociatedObject<T>(owner: Any, key: UnsafePointer<UInt8>, initialiser: () -> T) -> T {
+public func associatedObject<T>(owner: Any, key: UnsafePointer<UInt8>, initialiser: () -> T) -> T {
     if let association = objc_getAssociatedObject(owner, key) as? T {
         return association
     }
@@ -12,6 +12,6 @@ public func getAssociatedObject<T>(owner: Any, key: UnsafePointer<UInt8>, initia
     return association
 }
 
-public func setAssociatedObject<T>(owner: Any, key: UnsafePointer<UInt8>, value: T) {
+public func associatedObject<T>(owner: Any, set value: T, key: UnsafePointer<UInt8>) {
     objc_setAssociatedObject(owner, key, value, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
 }

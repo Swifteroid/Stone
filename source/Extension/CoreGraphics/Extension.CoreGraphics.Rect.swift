@@ -42,9 +42,8 @@ extension CGRect
         return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.origin.y + (rectangle.height - self.height) / 2), size: self.size)
     }
 
-    /*
-    Insets rectangle by a given distance.
-    */
+    /// Insets rectangle by a given distance.
+
     public func inset(by distance: CGFloat) -> CGRect {
         return self.insetBy(dx: distance, dy: distance)
     }
