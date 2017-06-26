@@ -31,6 +31,10 @@ extension NSView
         self.addSubview(subview)
     }
 
+    @nonobjc public func add(subview: NSView, positioned place: NSWindowOrderingMode, relativeTo view: NSView? = nil) {
+        self.addSubview(subview, positioned: place, relativeTo: view)
+    }
+
     public func add(subviews: [NSView]) {
         for view in subviews { self.addSubview(view) }
     }
