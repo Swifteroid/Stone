@@ -52,6 +52,22 @@ extension CGRect
         return self.insetBy(dx: distance, dy: distance)
     }
 
+    // MARK: -
+
+    public func translating(x: CGFloat, y: CGFloat) -> CGRect {
+        return CGRect(origin: self.origin.translating(x: x, y: y), size: self.size)
+    }
+
+    public func translating(x: CGFloat) -> CGRect {
+        return CGRect(origin: self.origin.translating(x: x), size: self.size)
+    }
+
+    public func translating(y: CGFloat) -> CGRect {
+        return CGRect(origin: self.origin.translating(y: y), size: self.size)
+    }
+
+    // MARK: -
+
     public init(point point1: CGPoint, point point2: CGPoint) {
         self.init(x: min(point1.x, point2.x), y: min(point1.y, point2.y), width: abs(point2.x - point1.x), height: abs(point2.y - point1.y))
     }
