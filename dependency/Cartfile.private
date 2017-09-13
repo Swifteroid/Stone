@@ -1,1 +1,2 @@
-github "quick/nimble" ~> 5.0
+github "quick/nimble" ~> 7.0
+github "vadymmarkov/fakery" ~> 2.0

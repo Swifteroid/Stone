@@ -2,9 +2,9 @@ import Foundation
 import Nimble
 import Stone
 
-open class CGRectExtensionTestCase: TestCase
+internal class CGRectExtensionTestCase: TestCase
 {
-    open func testAlign() {
+    internal func testAlign() {
         let foo: CGRect = CGRect(x: 100, y: 100, width: 100, height: 100)
         let bar: CGRect = CGRect(x: 0, y: 0, width: 10, height: 10)
 

@@ -1,1 +1,2 @@
-github "quick/nimble" "v5.1.1"
+github "quick/nimble" "v7.0.1"
+github "vadymmarkov/fakery" "2.0.0"

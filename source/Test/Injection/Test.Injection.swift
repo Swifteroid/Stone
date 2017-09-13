@@ -1,9 +1,9 @@
 import Nimble
 import Stone
 
-open class InjectionTestCase: TestCase
+internal class InjectionTestCase: TestCase
 {
-    open func testDependency() {
+    internal func testDependency() {
         let injection: Injection = Injection.default
 
         injection.add(name: "foo", dependency: Injection.Dependency(definition: { "Foo" }))
@@ -31,7 +31,7 @@ open class InjectionTestCase: TestCase
         expect(qux).to(equal(try! injection.get(name: "baz") as NSNumber))
     }
 
-    open func testInstance() {
+    internal func testInstance() {
         let foo: Injection = FooInjection.default
         let bar: Injection = BarInjection.default
 
@@ -51,7 +51,7 @@ private class BarInjection: Injection
 
 private enum Name: String, CustomStringConvertible
 {
-    public var description: String {
+    fileprivate var description: String {
         return self.rawValue
     }
 

@@ -1,5 +1,5 @@
 import XCTest
 
-open class TestCase: XCTestCase
+internal class TestCase: XCTestCase
 {
 }

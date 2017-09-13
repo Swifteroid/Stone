@@ -2,9 +2,9 @@ import Foundation
 import Nimble
 import Stone
 
-open class SwiftExtensionTestCase: TestCase
+internal class SwiftExtensionTestCase: TestCase
 {
-    open func testArrayRemoveElement() {
+    internal func testArrayRemoveElement() {
         var array: [Int]
         var removed: Any?
 
