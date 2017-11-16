@@ -28,4 +28,9 @@ internal class SwiftExtensionTestCase: TestCase
         expect(array).to(equal([0, 1, 2, 2, 3, 3, 3, 4, 5]))
         expect(removed as? Int).to(equal(2))
     }
+
+    internal func testStringExtension() {
+        expect("foo".uppercasedFirst()).to(equal("Foo"))
+        expect("Foo".lowercasedFirst()).to(equal("foo"))
+    }
 }

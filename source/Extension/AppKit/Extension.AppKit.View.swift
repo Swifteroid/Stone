@@ -16,7 +16,7 @@ extension NSView
 
 extension NSView
 {
-    public func subview(withIdentifier identifier: String) -> NSView? {
+    public func subview(withIdentifier identifier: NSUserInterfaceItemIdentifier) -> NSView? {
         for subview in self.subviews {
             if subview.identifier == identifier {
                 return subview
@@ -31,7 +31,7 @@ extension NSView
         self.addSubview(subview)
     }
 
-    @nonobjc public func add(subview: NSView, positioned place: NSWindowOrderingMode, relativeTo view: NSView? = nil) {
+    @nonobjc public func add(subview: NSView, positioned place: NSWindow.OrderingMode, relativeTo view: NSView? = nil) {
         self.addSubview(subview, positioned: place, relativeTo: view)
     }
 
@@ -91,30 +91,30 @@ extension NSView
 
     // MARK: -
 
-    @nonobjc public func constraint(by attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
+    @nonobjc public func constraint(by attribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
         return self.constraints(by: attribute).first
     }
 
-    @nonobjc public func constraints(by attribute: NSLayoutAttribute) -> [NSLayoutConstraint] {
+    @nonobjc public func constraints(by attribute: NSLayoutConstraint.Attribute) -> [NSLayoutConstraint] {
         return self.filter(constraints: self.constraints(), item: self, attribute: attribute)
     }
 
     // MARK: -
 
-    @nonobjc public func constraint(with view: NSView, by attribute: NSLayoutAttribute) -> NSLayoutConstraint? {
+    @nonobjc public func constraint(with view: NSView, by attribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
         return self.constraints(with: view, by: attribute).first
     }
 
     /// Returns constraints between the current view and the specified view, optional attribute parameter relates
     /// to the current view.
 
-    @nonobjc public func constraints(with view: NSView, by attribute: NSLayoutAttribute) -> [NSLayoutConstraint] {
+    @nonobjc public func constraints(with view: NSView, by attribute: NSLayoutConstraint.Attribute) -> [NSLayoutConstraint] {
         return self.filter(constraints: self.constraints(with: view), item: view, attribute: attribute)
     }
 
     // MARK: -
 
-    private func filter(constraints: [NSLayoutConstraint], item: AnyObject?, attribute: NSLayoutAttribute) -> [NSLayoutConstraint] {
+    private func filter(constraints: [NSLayoutConstraint], item: AnyObject?, attribute: NSLayoutConstraint.Attribute) -> [NSLayoutConstraint] {
         var product: [NSLayoutConstraint] = []
 
         for constraint in constraints {

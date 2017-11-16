@@ -452,6 +452,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/dependency/Carthage/Build/Mac";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swifteroid.stone;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -461,6 +462,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/dependency/Carthage/Build/Mac";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swifteroid.stone;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

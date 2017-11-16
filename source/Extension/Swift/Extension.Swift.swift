@@ -17,16 +17,16 @@ extension Int
 extension String
 {
     public func lowercasedFirst() -> String {
-        if !self.characters.isEmpty {
-            return self.substring(to: self.index(self.startIndex, offsetBy: 1)).lowercased() + self.substring(from: self.index(self.startIndex, offsetBy: 1))
+        if !self.isEmpty {
+            return self[...self.startIndex].lowercased() + self[self.index(after: self.startIndex)...]
         } else {
             return self
         }
     }
 
     public func uppercasedFirst() -> String {
-        if !self.characters.isEmpty {
-            return self.substring(to: self.index(self.startIndex, offsetBy: 1)).uppercased() + self.substring(from: self.index(self.startIndex, offsetBy: 1))
+        if !self.isEmpty {
+            return self[...self.startIndex].uppercased() + self[self.index(after: self.startIndex)...]
         } else {
             return self
         }
