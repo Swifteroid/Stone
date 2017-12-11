@@ -3,6 +3,10 @@ import CoreGraphics
 extension CGRect
 {
     public var center: CGPoint { return CGPoint(x: self.midX, y: self.midY) }
+    public var centerLeft: CGPoint { return CGPoint(x: self.minX, y: self.midY) }
+    public var centerRight: CGPoint { return CGPoint(x: self.maxX, y: self.midY) }
+    public var centerTop: CGPoint { return CGPoint(x: self.midX, y: self.maxY) }
+    public var centerBottom: CGPoint { return CGPoint(x: self.midX, y: self.minY) }
     public var topLeft: CGPoint { return CGPoint(x: self.minX, y: self.maxY) }
     public var topRight: CGPoint { return CGPoint(x: self.maxX, y: self.maxY) }
     public var bottomLeft: CGPoint { return CGPoint(x: self.minX, y: self.minY) }
