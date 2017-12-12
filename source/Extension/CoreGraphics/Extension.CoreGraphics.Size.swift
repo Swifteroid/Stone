@@ -6,7 +6,14 @@ extension CGSize
         self.init(width: length, height: length)
     }
 
-    public func fill(aspect bounds: CGRect) -> CGRect {
+    public init(with point: CGPoint) {
+        self.init(width: point.x, height: point.y)
+    }
+}
+
+extension CGSize
+{
+    public func filling(aspect bounds: CGRect) -> CGRect {
         var bounds: CGRect = bounds
         let widthRatio: CGFloat = bounds.width / self.width
         let heightRatio: CGFloat = bounds.height / self.height
@@ -22,7 +29,7 @@ extension CGSize
         return bounds
     }
 
-    public func fit(aspect bounds: CGRect) -> CGRect {
+    public func fitting(aspect bounds: CGRect) -> CGRect {
         var bounds: CGRect = bounds
         let widthRatio: CGFloat = bounds.width / self.width
         let heightRatio: CGFloat = bounds.height / self.height
@@ -39,34 +46,30 @@ extension CGSize
     }
 }
 
-public func +(lhs: CGSize, rhs: CGSize) -> CGSize {
-    return CGSize(width: lhs.width + rhs.width, height: lhs.height + rhs.height)
+extension CGSize
+{
+    public static func +(lhs: CGSize, rhs: CGSize) -> CGSize { return CGSize(width: lhs.width + rhs.width, height: lhs.height + rhs.height) }
+    public static func -(lhs: CGSize, rhs: CGSize) -> CGSize { return CGSize(width: lhs.width - rhs.width, height: lhs.height - rhs.height) }
+
+    public static func +(lhs: CGSize, rhs: CGPoint) -> CGSize { return CGSize(width: lhs.width + rhs.x, height: lhs.height + rhs.y) }
+    public static func -(lhs: CGSize, rhs: CGPoint) -> CGSize { return CGSize(width: lhs.width - rhs.x, height: lhs.height - rhs.y) }
+
+    public static func *(lhs: CGSize, rhs: CGFloat) -> CGSize { return CGSize(width: lhs.width * rhs, height: lhs.height * rhs) }
+    public static func /(lhs: CGSize, rhs: CGFloat) -> CGSize { return CGSize(width: lhs.width / rhs, height: lhs.height / rhs) }
 }
 
-public func +(lhs: CGSize, rhs: CGPoint) -> CGSize {
-    return CGSize(width: lhs.width + rhs.x, height: lhs.height + rhs.y)
+extension CGSize
+{
+    public static func +=(lhs: inout CGSize, rhs: CGSize) { lhs = lhs + rhs }
+    public static func -=(lhs: inout CGSize, rhs: CGSize) { lhs = lhs - rhs }
+
+    public static func +=(lhs: inout CGSize, rhs: CGPoint) { lhs = lhs + rhs }
+    public static func -=(lhs: inout CGSize, rhs: CGPoint) { lhs = lhs - rhs }
+
+    public static func *=(lhs: inout CGSize, rhs: CGFloat) { lhs = lhs * rhs }
+    public static func /=(lhs: inout CGSize, rhs: CGFloat) { lhs = lhs / rhs }
 }
 
-public func -(lhs: CGSize, rhs: CGSize) -> CGSize {
-    return CGSize(width: lhs.width - rhs.width, height: lhs.height - rhs.height)
-}
-
-public func -(lhs: CGSize, rhs: CGPoint) -> CGSize {
-    return CGSize(width: lhs.width - rhs.x, height: lhs.height - rhs.y)
-}
-
-public func *(lhs: CGSize, rhs: CGFloat) -> CGSize {
-    return CGSize(width: lhs.width * rhs, height: lhs.height * rhs)
-}
-
-public func /(lhs: CGSize, rhs: CGFloat) -> CGSize {
-    return CGSize(width: lhs.width / rhs, height: lhs.height / rhs)
-}
-
-public func round(_ size: CGSize) -> CGSize {
-    return CGSize(width: round(size.width), height: round(size.height))
-}
-
-public func ceil(_ size: CGSize) -> CGSize {
-    return CGSize(width: ceil(size.width), height: ceil(size.height))
-}
+public func floor(_ size: CGSize) -> CGSize { return CGSize(width: floor(size.width), height: floor(size.height)) }
+public func round(_ size: CGSize) -> CGSize { return CGSize(width: round(size.width), height: round(size.height)) }
+public func ceil(_ size: CGSize) -> CGSize { return CGSize(width: ceil(size.width), height: ceil(size.height)) }
