@@ -60,6 +60,19 @@ extension CGSize
 
 extension CGSize
 {
+    public static func >(lhs: CGSize, rhs: CGSize) -> Bool { return lhs.width > rhs.width && lhs.height > rhs.height }
+    public static func <(lhs: CGSize, rhs: CGSize) -> Bool { return lhs.width < rhs.width && lhs.height < rhs.height }
+    public static func >=(lhs: CGSize, rhs: CGSize) -> Bool { return lhs.width >= rhs.width && lhs.height >= rhs.height }
+    public static func <=(lhs: CGSize, rhs: CGSize) -> Bool { return lhs.width <= rhs.width && lhs.height <= rhs.height }
+
+    public static func >(lhs: CGSize, rhs: CGPoint) -> Bool { return lhs.width > rhs.x && lhs.height > rhs.y }
+    public static func <(lhs: CGSize, rhs: CGPoint) -> Bool { return lhs.width < rhs.x && lhs.height < rhs.y }
+    public static func >=(lhs: CGSize, rhs: CGPoint) -> Bool { return lhs.width >= rhs.x && lhs.height >= rhs.y }
+    public static func <=(lhs: CGSize, rhs: CGPoint) -> Bool { return lhs.width <= rhs.x && lhs.height <= rhs.y }
+}
+
+extension CGSize
+{
     public static func +=(lhs: inout CGSize, rhs: CGSize) { lhs = lhs + rhs }
     public static func -=(lhs: inout CGSize, rhs: CGSize) { lhs = lhs - rhs }
 
@@ -73,3 +86,6 @@ extension CGSize
 public func floor(_ size: CGSize) -> CGSize { return CGSize(width: floor(size.width), height: floor(size.height)) }
 public func round(_ size: CGSize) -> CGSize { return CGSize(width: round(size.width), height: round(size.height)) }
 public func ceil(_ size: CGSize) -> CGSize { return CGSize(width: ceil(size.width), height: ceil(size.height)) }
+
+public func max(_ lhs: CGSize, _ rhs: CGSize) -> CGSize { return CGSize(width: max(lhs.width, rhs.width), height: max(lhs.height, rhs.height)) }
+public func min(_ lhs: CGSize, _ rhs: CGSize) -> CGSize { return CGSize(width: min(lhs.width, rhs.width), height: min(lhs.height, rhs.height)) }

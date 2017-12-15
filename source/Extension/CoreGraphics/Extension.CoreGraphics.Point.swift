@@ -38,6 +38,22 @@ extension CGPoint
     public static func /=(lhs: inout CGPoint, rhs: CGFloat) { lhs = lhs / rhs }
 }
 
+extension CGPoint
+{
+    public static func >(lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x > rhs.x && lhs.y > rhs.y }
+    public static func <(lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x < rhs.x && lhs.y < rhs.y }
+    public static func >=(lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x >= rhs.x && lhs.y >= rhs.y }
+    public static func <=(lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x <= rhs.x && lhs.y <= rhs.y }
+
+    public static func >(lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x > rhs.width && lhs.y > rhs.height }
+    public static func <(lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x < rhs.width && lhs.y < rhs.height }
+    public static func >=(lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x >= rhs.width && lhs.y >= rhs.height }
+    public static func <=(lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x <= rhs.width && lhs.y <= rhs.height }
+}
+
 public func floor(_ point: CGPoint) -> CGPoint { return CGPoint(x: floor(point.x), y: floor(point.y)) }
 public func round(_ point: CGPoint) -> CGPoint { return CGPoint(x: round(point.x), y: round(point.y)) }
 public func ceil(_ point: CGPoint) -> CGPoint { return CGPoint(x: ceil(point.x), y: ceil(point.y)) }
+
+public func max(_ lhs: CGPoint, _ rhs: CGPoint) -> CGPoint { return CGPoint(x: max(lhs.x, rhs.x), y: max(lhs.y, rhs.y)) }
+public func min(_ lhs: CGPoint, _ rhs: CGPoint) -> CGPoint { return CGPoint(x: min(lhs.x, rhs.x), y: min(lhs.y, rhs.y)) }
