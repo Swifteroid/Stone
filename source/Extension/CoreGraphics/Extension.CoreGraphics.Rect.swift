@@ -10,8 +10,8 @@ extension CGRect
     }
 }
 
-/// Anchor points, setting these resizes the rectangle in the given direction, changing center points resizes
-/// rectangle in both ways on axis it sits on.
+/// Anchor points, setting these resizes the rectangle in the given direction, changing center points resizes rectangle 
+/// in both ways on axis it sits on, exception is center point itself – changing it simply adjusts origin.
 
 extension CGRect
 {
@@ -48,6 +48,13 @@ extension CGRect
             self.size.width += newValue.x - self.maxX
             self.size.height += newValue.y - self.maxY
             self.origin = newValue.translating(x: -self.width, y: -self.height)
+        }
+    }
+
+    public var center: CGPoint {
+        get { return CGPoint(x: self.midX, y: self.midY) }
+        mutating set {
+            self.origin = newValue.translating(x: -self.width / 2, y: -self.height / 2)
         }
     }
 
@@ -92,20 +99,23 @@ extension CGRect
     }
 }
 
-/// Alignment and centering.
+/// Alignment.
 
 extension CGRect
 {
-    public func aligned(left rectangle: CGRect) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.minX, y: self.origin.y), size: self.size) }
-    public func aligned(right rectangle: CGRect) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.maxX - self.width, y: self.origin.y), size: self.size) }
-    public func aligned(top rectangle: CGRect) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.maxY - self.height), size: self.size) }
-    public func aligned(bottom rectangle: CGRect) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.minY), size: self.size) }
-    public func aligned(center rectangle: CGRect) -> CGRect { return self.centered(in: rectangle) }
+    public func aligned(innerLeft rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.minX + margin, y: self.origin.y), size: self.size) }
+    public func aligned(outerLeft rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.minX - margin - self.width, y: self.origin.y), size: self.size) }
 
-    public var center: CGPoint {
-        get { return CGPoint(x: self.midX, y: self.midY) }
-        mutating set { self.origin = newValue.translating(x: -self.width / 2, y: -self.height / 2) }
-    }
+    public func aligned(innerRight rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.maxX - margin - self.width, y: self.origin.y), size: self.size) }
+    public func aligned(outerRight rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.maxX + margin, y: self.origin.y), size: self.size) }
+
+    public func aligned(innerTop rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.minY + margin), size: self.size) }
+    public func aligned(outerTop rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.minY - margin - self.height), size: self.size) }
+
+    public func aligned(innerBottom rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.maxY - margin - self.height), size: self.size) }
+    public func aligned(outerBottom rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.maxY + margin), size: self.size) }
+
+    public func aligned(center rectangle: CGRect) -> CGRect { return self.centered(in: rectangle) }
 
     public func centered(at point: CGPoint) -> CGRect { return CGRect(origin: CGPoint(x: point.x - self.width / 2, y: point.y - self.height / 2), size: self.size) }
     public func centered(in rectangle: CGRect) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.origin.x + (rectangle.width - self.width) / 2, y: rectangle.origin.y + (rectangle.height - self.height) / 2), size: self.size) }

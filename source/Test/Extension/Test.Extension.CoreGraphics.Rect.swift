@@ -8,10 +8,15 @@ internal class CGRectExtensionTestCase: TestCase
         let foo: CGRect = CGRect(x: 100, y: 100, width: 100, height: 100)
         let bar: CGRect = CGRect(x: 0, y: 0, width: 10, height: 10)
 
-        expect(bar.aligned(top: foo)).to(equal(CGRect(x: 0, y: 190, width: 10, height: 10)))
-        expect(bar.aligned(bottom: foo)).to(equal(CGRect(x: 0, y: 100, width: 10, height: 10)))
-        expect(bar.aligned(left: foo)).to(equal(CGRect(x: 100, y: 0, width: 10, height: 10)))
-        expect(bar.aligned(right: foo)).to(equal(CGRect(x: 190, y: 0, width: 10, height: 10)))
+        expect(bar.aligned(innerLeft: foo, margin: 5)).to(equal(CGRect(x: 105, y: 0, width: 10, height: 10)))
+        expect(bar.aligned(outerLeft: foo, margin: 5)).to(equal(CGRect(x: 85, y: 0, width: 10, height: 10)))
+        expect(bar.aligned(innerRight: foo, margin: 5)).to(equal(CGRect(x: 185, y: 0, width: 10, height: 10)))
+        expect(bar.aligned(outerRight: foo, margin: 5)).to(equal(CGRect(x: 205, y: 0, width: 10, height: 10)))
+        expect(bar.aligned(innerTop: foo, margin: 5)).to(equal(CGRect(x: 0, y: 105, width: 10, height: 10)))
+        expect(bar.aligned(outerTop: foo, margin: 5)).to(equal(CGRect(x: 0, y: 85, width: 10, height: 10)))
+        expect(bar.aligned(innerBottom: foo, margin: 5)).to(equal(CGRect(x: 0, y: 185, width: 10, height: 10)))
+        expect(bar.aligned(outerBottom: foo, margin: 5)).to(equal(CGRect(x: 0, y: 205, width: 10, height: 10)))
+
         expect(bar.aligned(center: foo)).to(equal(CGRect(x: 145, y: 145, width: 10, height: 10)))
 
         expect(bar.centered(at: CGPoint(x: 100, y: 100))).to(equal(CGRect(x: 95, y: 95, width: 10, height: 10)))
