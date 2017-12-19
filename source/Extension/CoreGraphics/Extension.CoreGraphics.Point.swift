@@ -57,3 +57,6 @@ public func ceil(_ point: CGPoint) -> CGPoint { return CGPoint(x: ceil(point.x),
 
 public func max(_ lhs: CGPoint, _ rhs: CGPoint) -> CGPoint { return CGPoint(x: max(lhs.x, rhs.x), y: max(lhs.y, rhs.y)) }
 public func min(_ lhs: CGPoint, _ rhs: CGPoint) -> CGPoint { return CGPoint(x: min(lhs.x, rhs.x), y: min(lhs.y, rhs.y)) }
+
+public func hypot(_ point: CGPoint) -> CGFloat { return hypot(point.x, point.y) }
+public func hypot(_ lhs: CGPoint, _ rhs: CGPoint) -> CGFloat { return hypot(rhs - lhs) }

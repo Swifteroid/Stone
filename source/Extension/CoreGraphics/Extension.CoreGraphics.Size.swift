@@ -89,3 +89,5 @@ public func ceil(_ size: CGSize) -> CGSize { return CGSize(width: ceil(size.widt
 
 public func max(_ lhs: CGSize, _ rhs: CGSize) -> CGSize { return CGSize(width: max(lhs.width, rhs.width), height: max(lhs.height, rhs.height)) }
 public func min(_ lhs: CGSize, _ rhs: CGSize) -> CGSize { return CGSize(width: min(lhs.width, rhs.width), height: min(lhs.height, rhs.height)) }
+
+public func hypot(_ size: CGSize) -> CGFloat { return hypot(size.width, size.height) }
