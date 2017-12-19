@@ -103,17 +103,17 @@ extension CGRect
 
 extension CGRect
 {
-    public func aligned(innerLeft rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.minX + margin, y: self.origin.y), size: self.size) }
-    public func aligned(outerLeft rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.minX - margin - self.width, y: self.origin.y), size: self.size) }
+    public func aligned(innerLeft rectangle: CGRect, margin: CGFloat? = nil) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.minX + (margin ?? 0), y: self.origin.y), size: self.size) }
+    public func aligned(outerLeft rectangle: CGRect, margin: CGFloat? = nil) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.minX - (margin ?? 0) - self.width, y: self.origin.y), size: self.size) }
 
-    public func aligned(innerRight rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.maxX - margin - self.width, y: self.origin.y), size: self.size) }
-    public func aligned(outerRight rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.maxX + margin, y: self.origin.y), size: self.size) }
+    public func aligned(innerRight rectangle: CGRect, margin: CGFloat? = nil) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.maxX - (margin ?? 0) - self.width, y: self.origin.y), size: self.size) }
+    public func aligned(outerRight rectangle: CGRect, margin: CGFloat? = nil) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.maxX + (margin ?? 0), y: self.origin.y), size: self.size) }
 
-    public func aligned(innerTop rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.minY + margin), size: self.size) }
-    public func aligned(outerTop rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.minY - margin - self.height), size: self.size) }
+    public func aligned(innerTop rectangle: CGRect, margin: CGFloat? = nil) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.minY + (margin ?? 0)), size: self.size) }
+    public func aligned(outerTop rectangle: CGRect, margin: CGFloat? = nil) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.minY - (margin ?? 0) - self.height), size: self.size) }
 
-    public func aligned(innerBottom rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.maxY - margin - self.height), size: self.size) }
-    public func aligned(outerBottom rectangle: CGRect, margin: CGFloat = 0) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.maxY + margin), size: self.size) }
+    public func aligned(innerBottom rectangle: CGRect, margin: CGFloat? = nil) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.maxY - (margin ?? 0) - self.height), size: self.size) }
+    public func aligned(outerBottom rectangle: CGRect, margin: CGFloat? = nil) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.maxY + (margin ?? 0)), size: self.size) }
 
     public func aligned(center rectangle: CGRect) -> CGRect { return self.centered(in: rectangle) }
 
@@ -121,6 +121,40 @@ extension CGRect
     public func centered(in rectangle: CGRect) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.origin.x + (rectangle.width - self.width) / 2, y: rectangle.origin.y + (rectangle.height - self.height) / 2), size: self.size) }
     public func centered(horizontally rectangle: CGRect) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.origin.x + (rectangle.width - self.width) / 2, y: self.origin.y), size: self.size) }
     public func centered(vertically rectangle: CGRect) -> CGRect { return CGRect(origin: CGPoint(x: self.origin.x, y: rectangle.origin.y + (rectangle.height - self.height) / 2), size: self.size) }
+}
+
+/// Containment, returns rectangle contained inside the specified one if width and height are not greater than
+/// of one specified, in which case returns `nil`.
+
+extension CGRect
+{
+    public func contained(in rectangle: CGRect) -> CGRect? {
+        return self.contained(horizontally: rectangle)?.contained(vertically: rectangle)
+    }
+
+    public func contained(horizontally rectangle: CGRect) -> CGRect? {
+        if self.width > rectangle.width {
+            return nil
+        } else if self.minX < rectangle.minX {
+            return self.aligned(innerLeft: rectangle)
+        } else if self.maxX > rectangle.maxX {
+            return self.aligned(innerRight: rectangle)
+        } else {
+            return self
+        }
+    }
+
+    public func contained(vertically rectangle: CGRect) -> CGRect? {
+        if self.height > rectangle.height {
+            return nil
+        } else if self.minY < rectangle.minY {
+            return self.aligned(innerLeft: rectangle)
+        } else if self.maxY > rectangle.maxY {
+            return self.aligned(innerRight: rectangle)
+        } else {
+            return self
+        }
+    }
 }
 
 /// Translating.
