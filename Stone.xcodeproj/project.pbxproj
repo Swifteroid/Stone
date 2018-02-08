@@ -26,6 +26,7 @@
 		17FD0C1D652F548EF3F4DECB /* Accessory.Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0113935525275D64DFF7 /* Accessory.Storyboard.swift */; };
 		17FD0C1DF64DDAABB1A83DFA /* Extension.AppKit.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0340ABCDE226C6835624 /* Extension.AppKit.View.swift */; };
 		17FD0CB340621BAE9CCA39AA /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD084B96C0D65E7AC4A5C6 /* Test.swift */; };
+		17FD0E9B028774F98E098C1D /* Test.Extension.CoreGraphics.Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD056D1B6B6E01E87E8AE7 /* Test.Extension.CoreGraphics.Point.swift */; };
 		E6073BEF1F699163004D8A0C /* Fakery.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD082637AF1875C2C52E2B /* Fakery.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E6073BF01F699167004D8A0C /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD082637AF1875C2C52E2B /* Fakery.framework */; };
 		E68DF3DA1E64975600502750 /* Stone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68DF3D01E64975600502750 /* Stone.framework */; };
@@ -72,6 +73,7 @@
 		17FD05484F0C576729BF0520 /* Extension.Foundation.FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.FileManager.swift; sourceTree = "<group>"; };
 		17FD0567CEE7F48A58CC2FC0 /* Test.Extension.Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.Swift.swift; sourceTree = "<group>"; };
 		17FD056AD41EC990F7A798B5 /* Extension.Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Swift.swift; sourceTree = "<group>"; };
+		17FD056D1B6B6E01E87E8AE7 /* Test.Extension.CoreGraphics.Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.CoreGraphics.Point.swift; sourceTree = "<group>"; };
 		17FD05C39AE0924973CA6FE7 /* Base - Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Debug.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		17FD0634CDA86E297808418C /* Fakery.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Fakery.framework.dSYM; path = Carthage/Build/Mac/Fakery.framework.dSYM; sourceTree = "<group>"; };
 		17FD06B6A05F0DFBF429E489 /* Test.Extension.CoreGraphics.Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.CoreGraphics.Rect.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				17FD0567CEE7F48A58CC2FC0 /* Test.Extension.Swift.swift */,
 				17FD06B6A05F0DFBF429E489 /* Test.Extension.CoreGraphics.Rect.swift */,
 				17FD01E5F7DA525A245F4084 /* Test.Extension.Foundation.FileManager.swift */,
+				17FD056D1B6B6E01E87E8AE7 /* Test.Extension.CoreGraphics.Point.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				17FD0B6E0DBE2BAAF40F4EB0 /* Test.Injection.swift in Sources */,
 				17FD099F2F26F1CE4081D640 /* Test.Extension.CoreGraphics.Rect.swift in Sources */,
 				17FD09A3AA181C10FE8D00D8 /* Test.Extension.Foundation.FileManager.swift in Sources */,
+				17FD0E9B028774F98E098C1D /* Test.Extension.CoreGraphics.Point.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
