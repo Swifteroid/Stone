@@ -8,10 +8,15 @@ extension CGPoint
         self.x += x
         self.y += y
     }
+    public mutating func translate(_ point: CGPoint) {
+        self.x += point.x
+        self.y += point.y
+    }
 
     public func translating(x: CGFloat) -> CGPoint { return CGPoint(x: self.x + x, y: self.y) }
     public func translating(y: CGFloat) -> CGPoint { return CGPoint(x: self.x, y: self.y + y) }
     public func translating(x: CGFloat, y: CGFloat) -> CGPoint { return CGPoint(x: self.x + x, y: self.y + y) }
+    public func translating(_ point: CGPoint) -> CGPoint { return CGPoint(x: self.x + point.x, y: self.y + point.y) }
 }
 
 extension CGPoint

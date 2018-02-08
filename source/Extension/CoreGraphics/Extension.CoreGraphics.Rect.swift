@@ -161,13 +161,15 @@ extension CGRect
 
 extension CGRect
 {
-    public mutating func translate(x: CGFloat, y: CGFloat) { self.origin.translate(x: x, y: y) }
     public mutating func translate(x: CGFloat) { self.origin.translate(x: x) }
     public mutating func translate(y: CGFloat) { self.origin.translate(y: y) }
+    public mutating func translate(x: CGFloat, y: CGFloat) { self.origin.translate(x: x, y: y) }
+    public mutating func translate(_ point: CGPoint) { self.origin.translate(point) }
 
-    public func translating(x: CGFloat, y: CGFloat) -> CGRect { return CGRect(origin: self.origin.translating(x: x, y: y), size: self.size) }
     public func translating(x: CGFloat) -> CGRect { return CGRect(origin: self.origin.translating(x: x), size: self.size) }
     public func translating(y: CGFloat) -> CGRect { return CGRect(origin: self.origin.translating(y: y), size: self.size) }
+    public func translating(x: CGFloat, y: CGFloat) -> CGRect { return CGRect(origin: self.origin.translating(x: x, y: y), size: self.size) }
+    public func translating(_ point: CGPoint) -> CGRect { return CGRect(origin: self.origin.translating(point), size: self.size) }
 }
 
 extension CGRect
