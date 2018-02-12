@@ -148,9 +148,9 @@ extension CGRect
         if self.height > rectangle.height {
             return nil
         } else if self.minY < rectangle.minY {
-            return self.aligned(innerLeft: rectangle)
+            return self.aligned(innerTop: rectangle)
         } else if self.maxY > rectangle.maxY {
-            return self.aligned(innerRight: rectangle)
+            return self.aligned(innerBottom: rectangle)
         } else {
             return self
         }

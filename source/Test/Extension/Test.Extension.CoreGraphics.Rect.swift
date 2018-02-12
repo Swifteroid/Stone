@@ -25,6 +25,18 @@ internal class CGRectExtensionTestCase: TestCase
         expect(bar.centered(vertically: foo)).to(equal(CGRect(x: 0, y: 145, width: 10, height: 10)))
     }
 
+    internal func testContain() {
+        let container: CGRect = CGRect(x: 100, y: 100, width: 100, height: 100)
+
+        expect(container.inset(by: 25).translating(x: -100).contained(in: container)).to(equal(CGRect(x: 100, y: 125, width: 50, height: 50)))
+        expect(container.inset(by: 25).translating(x: 100).contained(in: container)).to(equal(CGRect(x: 150, y: 125, width: 50, height: 50)))
+        expect(container.inset(by: 25).translating(y: -100).contained(in: container)).to(equal(CGRect(x: 125, y: 100, width: 50, height: 50)))
+        expect(container.inset(by: 25).translating(y: 100).contained(in: container)).to(equal(CGRect(x: 125, y: 150, width: 50, height: 50)))
+
+        expect(container.inset(by: 25).translating(x: -100, y: -100).contained(in: container)).to(equal(CGRect(x: 100, y: 100, width: 50, height: 50)))
+        expect(container.inset(by: 25).translating(x: 100, y: 100).contained(in: container)).to(equal(CGRect(x: 150, y: 150, width: 50, height: 50)))
+    }
+
     internal func testPoints() {
         var rect: CGRect = CGRect(x: -100, y: -100, width: 200, height: 200)
 
