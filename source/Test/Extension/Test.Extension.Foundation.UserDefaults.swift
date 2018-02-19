@@ -3,6 +3,26 @@ import Foundation
 import Nimble
 import Stone
 
+internal class DictionaryExtensionTestCase: TestCase
+{
+    internal func testKeyPath() {
+        var dict: [String: Any?] = [:]
+
+        dict[KeyPath("foo.bar")] = 1
+        expect(dict[keyPath: "foo.bar"] as? Int).to(equal(1))
+        expect(dict as NSDictionary).to(equal(["foo": ["bar": 1]]))
+
+        // Setting empty dictionary should behave as normal, but setting nil with superscript 
+        // removes value for key and clears up any empty dictionaries in hierarchy.
+
+        dict[KeyPath("foo.bar")] = [:]
+        expect(dict as NSDictionary).to(equal(["foo": ["bar": [:]]]))
+
+        dict[KeyPath("foo.bar")] = nil
+        expect(dict).to(beEmpty())
+    }
+}
+
 internal class UserDefaultsExtensionTestCase: TestCase
 {
     internal func testKeyPath() {
@@ -24,5 +44,11 @@ internal class UserDefaultsExtensionTestCase: TestCase
         userDefaults["foo.bar.baz"] = 1
         expect(userDefaults["foo.bar"] as? [String: Int]).to(equal(["baz": 1]))
         expect(userDefaults["foo.bar.baz"] as? Int).to(equal(1))
+
+        // Must remove value and cleanup empty dictionaries, because our defaults are empty
+        // persistent domain should return nil.
+
+        userDefaults["foo.bar.baz"] = nil
+        expect(userDefaults.persistentDomain(forName: suiteName)).to(beNil())
     }
 }

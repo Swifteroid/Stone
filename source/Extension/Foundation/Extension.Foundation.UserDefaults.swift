@@ -62,9 +62,18 @@ extension Dictionary where Key == String
             } else {
                 var dictionary: [Key: Any?] = self[head] as? [Key: Any?] ?? [:]
                 dictionary[tail] = newValue
-                self[head] = dictionary as? Value
+                if dictionary.isEmpty {
+                    self.removeValue(forKey: head)
+                } else {
+                    self[head] = dictionary as? Value
+                }
             }
         }
+    }
+
+    public subscript(keyPath keyPath: KeyPath) -> Any? {
+        get { return self[keyPath] }
+        set { self[keyPath] = newValue }
     }
 }
 
@@ -89,7 +98,17 @@ extension UserDefaults
             guard !tail.isEmpty else { return self.set(newValue, forKey: head) }
             var dictionary: [String: Any] = self.dictionary(forKey: head) ?? [:]
             dictionary[tail] = newValue
-            self.set(dictionary, forKey: head)
+            if dictionary.isEmpty {
+                self.removeObject(forKey: head)
+            } else {
+                self.set(dictionary, forKey: head)
+            }
         }
+    }
+
+    /// Exists for explicitness and consistency with dictionary extension.
+    public subscript(keyPath keyPath: KeyPath) -> Any? {
+        get { return self[keyPath] }
+        set { self[keyPath] = newValue }
     }
 }
