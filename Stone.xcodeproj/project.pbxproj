@@ -98,6 +98,7 @@
 		17FD0F07AC7E6A66D55A6EA5 /* Extension.CoreGraphics.Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.CoreGraphics.Size.swift; sourceTree = "<group>"; };
 		17FD0FAFBDFCEC4B522DFD4A /* macOS - Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "macOS - Framework.xcconfig"; path = "dependency/git/xenomorph/source/Target/macOS/macOS - Framework.xcconfig"; sourceTree = SOURCE_ROOT; };
 		17FD0FC589F4E355C1BEF973 /* Extension.Foundation.Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.Timer.swift; sourceTree = "<group>"; };
+		17FD0FEC66633616F62F97D5 /* Stone.podspec */ = {isa = PBXFileReference; lastKnownFileType = file.podspec; path = Stone.podspec; sourceTree = "<group>"; };
 		E68DF3D01E64975600502750 /* Stone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68DF3D91E64975600502750 /* Stone - Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stone - Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -324,6 +325,7 @@
 				17FD0FCE76617832C4DBFA09 /* dependency */,
 				17FD057FE77AFD9DA3F2BA9F /* product */,
 				17FD015FD214F0832286F36A /* source */,
+				17FD0FEC66633616F62F97D5 /* Stone.podspec */,
 			);
 			sourceTree = "<group>";
 		};
