@@ -9,6 +9,8 @@ extension CGSize
     public init(with point: CGPoint) {
         self.init(width: point.x, height: point.y)
     }
+
+    public static let infinite: CGSize = CGSize(width: CGFloat.infinity, height: CGFloat.infinity)
 }
 
 extension CGSize

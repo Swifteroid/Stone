@@ -2,12 +2,19 @@ import CoreGraphics
 
 extension CGPoint
 {
+    public static let infinite: CGPoint = CGPoint(x: CGFloat.infinity, y: CGFloat.infinity)
+}
+
+extension CGPoint
+{
     public mutating func translate(x: CGFloat) { self.x += x }
     public mutating func translate(y: CGFloat) { self.y += y }
+
     public mutating func translate(x: CGFloat, y: CGFloat) {
         self.x += x
         self.y += y
     }
+
     public mutating func translate(_ point: CGPoint) {
         self.x += point.x
         self.y += point.y
