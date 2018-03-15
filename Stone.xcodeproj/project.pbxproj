@@ -12,6 +12,7 @@
 		17FD021EF9F9BE62F16E5F78 /* Extension.Foundation.FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD05484F0C576729BF0520 /* Extension.Foundation.FileManager.swift */; };
 		17FD022A804B19C37841F2B3 /* Injection.Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD06BD11FF9136E4BDDE17 /* Injection.Dependency.swift */; };
 		17FD024CC858779AEC84A23C /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0D3BCE732F4353DA4BF9 /* Injection.swift */; };
+		17FD0256530C10C6D5E4F58E /* Extension.CoreGraphics.Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0A8C42E963AC2B69ACAA /* Extension.CoreGraphics.Image.swift */; };
 		17FD02756E33FC00FC29BF2A /* Test.Extension.CoreGraphics.Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0697E67613ABD7CC0839 /* Test.Extension.CoreGraphics.Size.swift */; };
 		17FD0385D81335D2BBF0DACE /* Test.Extension.Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0567CEE7F48A58CC2FC0 /* Test.Extension.Swift.swift */; };
 		17FD03D1FADDCE07BC4EEE5A /* Extension.CoreGraphics.Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0F07AC7E6A66D55A6EA5 /* Extension.CoreGraphics.Size.swift */; };
@@ -87,6 +88,7 @@
 		17FD082637AF1875C2C52E2B /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/Mac/Fakery.framework; sourceTree = "<group>"; };
 		17FD084B96C0D65E7AC4A5C6 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		17FD09E45FADBD687CC0F295 /* Base - Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Release.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Release.xcconfig"; sourceTree = SOURCE_ROOT; };
+		17FD0A8C42E963AC2B69ACAA /* Extension.CoreGraphics.Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.CoreGraphics.Image.swift; sourceTree = "<group>"; };
 		17FD0AAB6A5033EFC8B692CF /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = file.resolved; path = Cartfile.resolved; sourceTree = "<group>"; };
 		17FD0B3481C64C3DB4FA7077 /* Base - Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Test.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Test.xcconfig"; sourceTree = SOURCE_ROOT; };
 		17FD0B3E026C7E7E35510522 /* Extension.Foundation.EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.EdgeInsets.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				17FD050DB089FE152996353A /* Extension.CoreGraphics.Point.swift */,
 				17FD01BDB2DA79DBD1085610 /* Extension.CoreGraphics.Rect.swift */,
 				17FD0F07AC7E6A66D55A6EA5 /* Extension.CoreGraphics.Size.swift */,
+				17FD0A8C42E963AC2B69ACAA /* Extension.CoreGraphics.Image.swift */,
 			);
 			path = CoreGraphics;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				17FD09FFF3AE4F449B20EFF3 /* Extension.CoreGraphics.Rect.swift in Sources */,
 				17FD03D1FADDCE07BC4EEE5A /* Extension.CoreGraphics.Size.swift in Sources */,
 				17FD04785B0665A0E58AEEA8 /* Extension.Foundation.UserDefaults.swift in Sources */,
+				17FD0256530C10C6D5E4F58E /* Extension.CoreGraphics.Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
