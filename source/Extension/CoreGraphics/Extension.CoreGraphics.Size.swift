@@ -13,37 +13,39 @@ extension CGSize
 
 extension CGSize
 {
-    public func filling(aspect bounds: CGRect) -> CGRect {
-        var bounds: CGRect = bounds
-        let widthRatio: CGFloat = bounds.width / self.width
-        let heightRatio: CGFloat = bounds.height / self.height
+
+    /// Returns new size adjusted to proportionally fill the specified size.
+    public func filling(aspect size: CGSize) -> CGSize {
+        var size: CGSize = size
+        let widthRatio: CGFloat = size.width / self.width
+        let heightRatio: CGFloat = size.height / self.height
 
         if widthRatio > heightRatio {
-            bounds.origin.y -= (widthRatio * self.height - bounds.size.height) / 2
-            bounds.size.height = widthRatio * self.height
+            size.height = widthRatio * self.height
         } else if heightRatio > widthRatio {
-            bounds.origin.x -= (heightRatio * self.width - bounds.size.width) / 2
-            bounds.size.width = heightRatio * self.width
+            size.width = heightRatio * self.width
         }
 
-        return bounds
+        return size
     }
 
-    public func fitting(aspect bounds: CGRect) -> CGRect {
-        var bounds: CGRect = bounds
-        let widthRatio: CGFloat = bounds.width / self.width
-        let heightRatio: CGFloat = bounds.height / self.height
+    /// Returns new size adjusted to proportionally fit into the specified size.
+    public func fitting(aspect size: CGSize) -> CGSize {
+        var size: CGSize = size
+        let widthRatio: CGFloat = size.width / self.width
+        let heightRatio: CGFloat = size.height / self.height
 
         if widthRatio < heightRatio {
-            bounds.origin.y -= (widthRatio * self.height - bounds.size.height) / 2
-            bounds.size.height = widthRatio * self.height
+            size.height = widthRatio * self.height
         } else if heightRatio < widthRatio {
-            bounds.origin.x -= (heightRatio * self.width - bounds.size.width) / 2
-            bounds.size.width = heightRatio * self.width
+            size.width = heightRatio * self.width
         }
 
-        return bounds
+        return size
     }
+
+    public func filling(aspect rect: CGRect) -> CGRect { return CGRect(origin: .zero, size: self.filling(aspect: rect.size)).centered(in: rect) }
+    public func fitting(aspect rect: CGRect) -> CGRect { return CGRect(origin: .zero, size: self.fitting(aspect: rect.size)).centered(in: rect) }
 }
 
 extension CGSize
