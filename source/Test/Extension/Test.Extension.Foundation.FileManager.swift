@@ -10,8 +10,8 @@ internal class FileManagerExtensionTestCase: TestCase
         let manager: FileManager = FileManager.default
 
         if manager.fileExists(at: url) { try! manager.removeItem(at: url) }
-        expect(manager.fileExists(at: url)).to(beFalse())
+        expect(manager.fileExists(at: url)) == false
         try! manager.assureDirectory(at: url)
-        expect(manager.fileExists(at: url)).to(beTrue())
+        expect(manager.fileExists(at: url)) == true
     }
 }

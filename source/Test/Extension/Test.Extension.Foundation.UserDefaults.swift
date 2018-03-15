@@ -9,14 +9,14 @@ internal class DictionaryExtensionTestCase: TestCase
         var dict: [String: Any?] = [:]
 
         dict[KeyPath("foo.bar")] = 1
-        expect(dict[keyPath: "foo.bar"] as? Int).to(equal(1))
-        expect(dict as NSDictionary).to(equal(["foo": ["bar": 1]]))
+        expect(dict[keyPath: "foo.bar"] as? Int) == 1
+        expect(dict as NSDictionary) == ["foo": ["bar": 1]]
 
         // Setting empty dictionary should behave as normal, but setting nil with superscript 
         // removes value for key and clears up any empty dictionaries in hierarchy.
 
         dict[KeyPath("foo.bar")] = [:]
-        expect(dict as NSDictionary).to(equal(["foo": ["bar": [:]]]))
+        expect(dict as NSDictionary) == ["foo": ["bar": [:]]]
 
         dict[KeyPath("foo.bar")] = nil
         expect(dict).to(beEmpty())
@@ -35,15 +35,15 @@ internal class UserDefaultsExtensionTestCase: TestCase
         expect(userDefaults["foo.bar.baz"]).to(beNil())
 
         userDefaults["foo"] = 1
-        expect(userDefaults["foo"] as? Int).to(equal(1))
+        expect(userDefaults["foo"] as? Int) == 1
 
         userDefaults["foo.bar"] = 1
-        expect(userDefaults["foo"] as? [String: Int]).to(equal(["bar": 1]))
-        expect(userDefaults["foo.bar"] as? Int).to(equal(1))
+        expect(userDefaults["foo"] as? [String: Int]) == ["bar": 1]
+        expect(userDefaults["foo.bar"] as? Int) == 1
 
         userDefaults["foo.bar.baz"] = 1
-        expect(userDefaults["foo.bar"] as? [String: Int]).to(equal(["baz": 1]))
-        expect(userDefaults["foo.bar.baz"] as? Int).to(equal(1))
+        expect(userDefaults["foo.bar"] as? [String: Int]) == ["baz": 1]
+        expect(userDefaults["foo.bar.baz"] as? Int) == 1
 
         // Must remove value and cleanup empty dictionaries, because our defaults are empty
         // persistent domain should return nil.

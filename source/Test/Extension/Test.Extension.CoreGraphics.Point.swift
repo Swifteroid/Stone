@@ -5,6 +5,6 @@ import Stone
 internal class CGPointExtensionTestCase: TestCase
 {
     internal func test() {
-        expect(-CGPoint(x: 1, y: 2)).to(equal(CGPoint(x: -1, y: -2)))
+        expect(-CGPoint(x: 1, y: 2)) == CGPoint(x: -1, y: -2)
     }
 }

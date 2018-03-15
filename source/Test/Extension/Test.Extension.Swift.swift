@@ -10,27 +10,27 @@ internal class SwiftExtensionTestCase: TestCase
 
         array = [0, 1, 2, 2, 2, 3, 3, 3, 4, 5]
         removed = array.remove(element: 2, first: true)
-        expect(array).to(equal([0, 1, 2, 2, 3, 3, 3, 4, 5]))
-        expect(removed as? [Int]).to(equal([2]))
+        expect(array) == [0, 1, 2, 2, 3, 3, 3, 4, 5]
+        expect(removed as? [Int]) == [2]
 
         array = [0, 1, 2, 2, 2, 3, 3, 3, 4, 5]
         removed = array.remove(element: 2)
-        expect(array).to(equal([0, 1, 3, 3, 3, 4, 5]))
-        expect(removed as? [Int]).to(equal([2, 2, 2]))
+        expect(array) == [0, 1, 3, 3, 3, 4, 5]
+        expect(removed as? [Int]) == [2, 2, 2]
 
         array = [0, 1, 2, 2, 2, 3, 3, 3, 4, 5]
         removed = array.remove(elements: [2, 3])
-        expect(array).to(equal([0, 1, 4, 5]))
-        expect(removed as? [Int]).to(equal([2, 2, 2, 3, 3, 3]))
+        expect(array) == [0, 1, 4, 5]
+        expect(removed as? [Int]) == [2, 2, 2, 3, 3, 3]
 
         array = [0, 1, 2, 2, 2, 3, 3, 3, 4, 5]
         removed = array.removeFirst(where: { $0 == 2 })
-        expect(array).to(equal([0, 1, 2, 2, 3, 3, 3, 4, 5]))
-        expect(removed as? Int).to(equal(2))
+        expect(array) == [0, 1, 2, 2, 3, 3, 3, 4, 5]
+        expect(removed as? Int) == 2
     }
 
     internal func testStringExtension() {
-        expect("foo".uppercasedFirst()).to(equal("Foo"))
-        expect("Foo".lowercasedFirst()).to(equal("foo"))
+        expect("foo".uppercasedFirst()) == "Foo"
+        expect("Foo".lowercasedFirst()) == "foo"
     }
 }

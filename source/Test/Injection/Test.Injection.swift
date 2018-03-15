@@ -17,18 +17,18 @@ internal class InjectionTestCase: TestCase
         let qux: NSNumber = try! injection.get(name: Name.qux)
 
         expect(foo).toNot(beNil())
-        expect(foo is String).to(beTrue())
+        expect(foo is String) == true
 
         expect(bar).toNot(beNil())
-        expect(bar).to(beIdenticalTo(try! injection.get(name: "bar") as String))
+        expect(bar) === (try! injection.get(name: "bar") as String)
 
         expect(baz).toNot(beNil())
-        expect(baz).to(equal(try! injection.get(name: "baz") as Int))
-        expect(baz).to(equal(try! injection.get(name: "qux") as Int))
+        expect(baz) == (try! injection.get(name: "baz") as Int)
+        expect(baz) == (try! injection.get(name: "qux") as Int)
 
         expect(qux).toNot(beNil())
-        expect(qux).to(equal(try! injection.get(name: "qux") as NSNumber))
-        expect(qux).to(equal(try! injection.get(name: "baz") as NSNumber))
+        expect(qux) == (try! injection.get(name: "qux") as NSNumber)
+        expect(qux) == (try! injection.get(name: "baz") as NSNumber)
     }
 
     internal func testInstance() {
@@ -37,7 +37,7 @@ internal class InjectionTestCase: TestCase
 
         expect(foo).toNot(beNil())
         expect(bar).toNot(beNil())
-        expect(foo).toNot(equal(bar))
+        expect(foo) != bar
     }
 }
 
