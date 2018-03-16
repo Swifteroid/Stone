@@ -46,6 +46,12 @@ extension CGSize
         return size
     }
 
+    public func filling(width: CGFloat) -> CGSize { return self.filling(aspect: CGSize(width: width, height: 0)) }
+    public func filling(height: CGFloat) -> CGSize { return self.filling(aspect: CGSize(width: 0, height: height)) }
+
+    public func fitting(width: CGFloat) -> CGSize { return self.fitting(aspect: CGSize(width: width, height: CGFloat.infinity)) }
+    public func fitting(height: CGFloat) -> CGSize { return self.fitting(aspect: CGSize(width: CGFloat.infinity, height: height)) }
+
     public func filling(aspect rect: CGRect) -> CGRect { return CGRect(origin: .zero, size: self.filling(aspect: rect.size)).centered(in: rect) }
     public func fitting(aspect rect: CGRect) -> CGRect { return CGRect(origin: .zero, size: self.fitting(aspect: rect.size)).centered(in: rect) }
 }
