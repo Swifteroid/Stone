@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'Stone'
-  spec.version = '0.1.0'
+  spec.version = '0.1.3'
   spec.summary = 'Swift extension and utility collection for happy everyday coding 😌'
   spec.license = { :type => 'MIT' }
   spec.homepage = 'https://github.com/swifteroid/stone'
