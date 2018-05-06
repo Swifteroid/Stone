@@ -76,4 +76,12 @@ internal class CGRectExtensionTestCase: TestCase
         rect.centerTop += CGPoint(x: 25, y: 25)
         expect(rect) == CGRect(x: -150, y: -150, width: 300, height: 350)
     }
+
+    internal func testFlip() {
+        expect(CGRect(x: 0, y: 0, width: 30, height: 40).flip(horizontally: CGRect(x: 0, y: 0, width: 300, height: 400))) == CGRect(x: 270, y: 0, width: 30, height: 40)
+        expect(CGRect(x: 110, y: 220, width: 30, height: 40).flip(horizontally: CGRect(x: 100, y: 200, width: 300, height: 400))) == CGRect(x: 360, y: 220, width: 30, height: 40)
+
+        expect(CGRect(x: 0, y: 0, width: 30, height: 40).flip(vertically: CGRect(x: 0, y: 0, width: 300, height: 400))) == CGRect(x: 0, y: 360, width: 30, height: 40)
+        expect(CGRect(x: 110, y: 220, width: 30, height: 40).flip(vertically: CGRect(x: 100, y: 200, width: 300, height: 400))) == CGRect(x: 110, y: 540, width: 30, height: 40)
+    }
 }

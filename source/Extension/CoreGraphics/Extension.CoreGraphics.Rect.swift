@@ -4,7 +4,6 @@ extension CGRect
 {
 
     /// Constructs new rectangle by finding the difference between two points.
-
     public init(point point1: CGPoint, point point2: CGPoint) {
         self.init(x: min(point1.x, point2.x), y: min(point1.y, point2.y), width: abs(point2.x - point1.x), height: abs(point2.y - point1.y))
     }
@@ -12,7 +11,6 @@ extension CGRect
 
 /// Anchor points, setting these resizes the rectangle in the given direction, changing center points resizes rectangle 
 /// in both ways on axis it sits on, exception is center point itself – changing it simply adjusts origin.
-
 extension CGRect
 {
     public var topLeft: CGPoint {
@@ -100,7 +98,6 @@ extension CGRect
 }
 
 /// Alignment.
-
 extension CGRect
 {
     public func aligned(innerLeft rectangle: CGRect, margin: CGFloat? = nil) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.minX + (margin ?? 0), y: self.origin.y), size: self.size) }
@@ -125,7 +122,6 @@ extension CGRect
 
 /// Containment, returns rectangle contained inside the specified one if width and height are not greater than
 /// of one specified, in which case returns `nil`.
-
 extension CGRect
 {
     public func contained(in rectangle: CGRect) -> CGRect? {
@@ -158,7 +154,6 @@ extension CGRect
 }
 
 /// Translating.
-
 extension CGRect
 {
     public mutating func translate(x: CGFloat) { self.origin.translate(x: x) }
@@ -176,16 +171,35 @@ extension CGRect
 {
 
     /// Insets rectangle by a given distance.
-
     public func inset(by distance: CGFloat) -> CGRect {
         return self.insetBy(dx: distance, dy: distance)
     }
 
     /// Checks if current rectangle is within (bound by) the specified one and returns current rectangle
     /// with origin adjusted to bounding rectangle, i.e., in bounding rectangle coordinate space.
-
     public func bound(by bounds: CGRect) -> CGRect? {
         return bounds.intersection(self) == CGRect.null ? nil : self - bounds.origin
+    }
+
+    /// Flips current rectangle both horizontally and vertically inside the specified containment rectangle
+    /// by symmetrically translating top-left points relation into bottom-right.
+    public func flip(inside containment: CGRect) -> CGRect {
+        return self.flip(horizontally: containment).flip(vertically: containment)
+    }
+
+    /// Flips current rectangle horizontally inside the specified containment rectangle.
+    public func flip(horizontally containment: CGRect) -> CGRect {
+        // let newX = containment.origin.x + containment.width - (self.origin.x - containment.origin.x) - self.width
+        // let diff = containment.origin.x + containment.width - (self.origin.x - containment.origin.x) - self.width - self.origin.x
+        return CGRect(origin: self.origin.translating(x: (containment.origin.x - self.origin.x) * 2 + containment.width - self.width), size: self.size)
+    }
+
+    /// Flips current rectangle vertically inside the specified containment rectangle, especially useful
+    /// for achieving flipped view coordinates.
+    public func flip(vertically containment: CGRect) -> CGRect {
+        // let newY = containment.origin.y + containment.height - (self.origin.y - containment.origin.y) - self.height
+        // let diff = containment.origin.y + containment.height - (self.origin.y - containment.origin.y) - self.height - self.origin.y
+        return CGRect(origin: self.origin.translating(y: (containment.origin.y - self.origin.y) * 2 + containment.height - self.height), size: self.size)
     }
 }
 
