@@ -84,4 +84,26 @@ internal class CGRectExtensionTestCase: TestCase
         expect(CGRect(x: 0, y: 0, width: 30, height: 40).flip(vertically: CGRect(x: 0, y: 0, width: 300, height: 400))) == CGRect(x: 0, y: 360, width: 30, height: 40)
         expect(CGRect(x: 110, y: 220, width: 30, height: 40).flip(vertically: CGRect(x: 100, y: 200, width: 300, height: 400))) == CGRect(x: 110, y: 540, width: 30, height: 40)
     }
+
+    internal func testHorizontalIntersection() {
+        let rect1: CGRect = CGRect(x: 0, y: 0, width: 100, height: 10)
+        let rect2: CGRect = CGRect(x: 50, y: 30, width: 100, height: 10)
+
+        expect(rect1.intersects(rect2)) == false
+        expect(rect1.intersects(horizontally: rect2)) == true
+
+        expect(rect2.intersects(rect1)) == false
+        expect(rect2.intersects(horizontally: rect1)) == true
+    }
+
+    internal func testVerticalIntersection() {
+        let rect1: CGRect = CGRect(x: 0, y: 0, width: 10, height: 100)
+        let rect2: CGRect = CGRect(x: 30, y: 50, width: 10, height: 100)
+
+        expect(rect1.intersects(rect2)) == false
+        expect(rect1.intersects(vertically: rect2)) == true
+
+        expect(rect2.intersects(rect1)) == false
+        expect(rect2.intersects(vertically: rect1)) == true
+    }
 }

@@ -171,9 +171,9 @@ extension CGRect
 {
 
     /// Insets rectangle by a given distance.
-    public func inset(by distance: CGFloat) -> CGRect {
-        return self.insetBy(dx: distance, dy: distance)
-    }
+    public func inset(by distance: CGFloat) -> CGRect { return self.insetBy(dx: distance, dy: distance) }
+    public func inset(x distance: CGFloat) -> CGRect { return self.insetBy(dx: distance, dy: 0) }
+    public func inset(y distance: CGFloat) -> CGRect { return self.insetBy(dx: 0, dy: distance) }
 
     /// Checks if current rectangle is within (bound by) the specified one and returns current rectangle
     /// with origin adjusted to bounding rectangle, i.e., in bounding rectangle coordinate space.
@@ -200,6 +200,17 @@ extension CGRect
         // let newY = containment.origin.y + containment.height - (self.origin.y - containment.origin.y) - self.height
         // let diff = containment.origin.y + containment.height - (self.origin.y - containment.origin.y) - self.height - self.origin.y
         return CGRect(origin: self.origin.translating(y: (containment.origin.y - self.origin.y) * 2 + containment.height - self.height), size: self.size)
+    }
+}
+
+extension CGRect
+{
+    public func intersects(horizontally rect: CGRect) -> Bool {
+        return self.minX < rect.maxX && self.maxX > rect.minX || rect.minX < self.maxX && rect.maxX > self.minX
+    }
+
+    public func intersects(vertically rect: CGRect) -> Bool {
+        return self.minY < rect.maxY && self.maxY > rect.minY || rect.minY < self.maxY && rect.maxY > self.minY
     }
 }
 
