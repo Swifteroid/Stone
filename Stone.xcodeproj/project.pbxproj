@@ -11,6 +11,7 @@
 		17FD0144E3A63B90433C2492 /* Extension.CoreGraphics.Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD050DB089FE152996353A /* Extension.CoreGraphics.Point.swift */; };
 		17FD021EF9F9BE62F16E5F78 /* Extension.Foundation.FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD05484F0C576729BF0520 /* Extension.Foundation.FileManager.swift */; };
 		17FD022A804B19C37841F2B3 /* Injection.Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD06BD11FF9136E4BDDE17 /* Injection.Dependency.swift */; };
+		17FD022C8D0D297A2E4C1227 /* Test.Atomic.Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0C071FDB2BE3E0CC1428 /* Test.Atomic.Value.swift */; };
 		17FD024CC858779AEC84A23C /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0D3BCE732F4353DA4BF9 /* Injection.swift */; };
 		17FD0256530C10C6D5E4F58E /* Extension.CoreGraphics.Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0A8C42E963AC2B69ACAA /* Extension.CoreGraphics.Image.swift */; };
 		17FD02756E33FC00FC29BF2A /* Test.Extension.CoreGraphics.Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0697E67613ABD7CC0839 /* Test.Extension.CoreGraphics.Size.swift */; };
@@ -22,9 +23,11 @@
 		17FD054D651256ED7BE704D2 /* Extension.Foundation.Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0FC589F4E355C1BEF973 /* Extension.Foundation.Timer.swift */; };
 		17FD07A471366BC73886E1B8 /* Extension.Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD056AD41EC990F7A798B5 /* Extension.Swift.swift */; };
 		17FD08AF91F5F666B3821F74 /* Extension.Foundation.DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0C2F4679304870A0686A /* Extension.Foundation.DateFormatter.swift */; };
+		17FD09816A1BFC46227A2563 /* Atomic.Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0948BEF1D2330FA2441E /* Atomic.Value.swift */; };
 		17FD099F2F26F1CE4081D640 /* Test.Extension.CoreGraphics.Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD06B6A05F0DFBF429E489 /* Test.Extension.CoreGraphics.Rect.swift */; };
 		17FD09A3AA181C10FE8D00D8 /* Test.Extension.Foundation.FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD01E5F7DA525A245F4084 /* Test.Extension.Foundation.FileManager.swift */; };
 		17FD09FFF3AE4F449B20EFF3 /* Extension.CoreGraphics.Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD01BDB2DA79DBD1085610 /* Extension.CoreGraphics.Rect.swift */; };
+		17FD0AFD670C0F75DEAA485C /* Atomic.Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD05C768055BAF42691889 /* Atomic.Lock.swift */; };
 		17FD0B6E0DBE2BAAF40F4EB0 /* Test.Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0CA3901FF35D93DF2A89 /* Test.Injection.swift */; };
 		17FD0C1D652F548EF3F4DECB /* Accessory.Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0113935525275D64DFF7 /* Accessory.Storyboard.swift */; };
 		17FD0C1DF64DDAABB1A83DFA /* Extension.AppKit.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0340ABCDE226C6835624 /* Extension.AppKit.View.swift */; };
@@ -80,6 +83,7 @@
 		17FD056AD41EC990F7A798B5 /* Extension.Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Swift.swift; sourceTree = "<group>"; };
 		17FD056D1B6B6E01E87E8AE7 /* Test.Extension.CoreGraphics.Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.CoreGraphics.Point.swift; sourceTree = "<group>"; };
 		17FD05C39AE0924973CA6FE7 /* Base - Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Debug.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Debug.xcconfig"; sourceTree = SOURCE_ROOT; };
+		17FD05C768055BAF42691889 /* Atomic.Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.Lock.swift; sourceTree = "<group>"; };
 		17FD0634CDA86E297808418C /* Fakery.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Fakery.framework.dSYM; path = Carthage/Build/Mac/Fakery.framework.dSYM; sourceTree = "<group>"; };
 		17FD0697E67613ABD7CC0839 /* Test.Extension.CoreGraphics.Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.CoreGraphics.Size.swift; sourceTree = "<group>"; };
 		17FD06B6A05F0DFBF429E489 /* Test.Extension.CoreGraphics.Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.CoreGraphics.Rect.swift; sourceTree = "<group>"; };
@@ -87,12 +91,14 @@
 		17FD070B80336F7848619472 /* Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Test.xcconfig; path = dependency/git/xenomorph/source/Target/Test.xcconfig; sourceTree = SOURCE_ROOT; };
 		17FD082637AF1875C2C52E2B /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/Mac/Fakery.framework; sourceTree = "<group>"; };
 		17FD084B96C0D65E7AC4A5C6 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		17FD0948BEF1D2330FA2441E /* Atomic.Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.Value.swift; sourceTree = "<group>"; };
 		17FD09E45FADBD687CC0F295 /* Base - Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Release.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Release.xcconfig"; sourceTree = SOURCE_ROOT; };
 		17FD0A8C42E963AC2B69ACAA /* Extension.CoreGraphics.Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.CoreGraphics.Image.swift; sourceTree = "<group>"; };
 		17FD0AAB6A5033EFC8B692CF /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = file.resolved; path = Cartfile.resolved; sourceTree = "<group>"; };
 		17FD0B3481C64C3DB4FA7077 /* Base - Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Test.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Test.xcconfig"; sourceTree = SOURCE_ROOT; };
 		17FD0B3E026C7E7E35510522 /* Extension.Foundation.EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.EdgeInsets.swift; sourceTree = "<group>"; };
 		17FD0B82960814A03ACD2215 /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.private; path = Cartfile.private; sourceTree = "<group>"; };
+		17FD0C071FDB2BE3E0CC1428 /* Test.Atomic.Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Atomic.Value.swift; sourceTree = "<group>"; };
 		17FD0C2F4679304870A0686A /* Extension.Foundation.DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.DateFormatter.swift; sourceTree = "<group>"; };
 		17FD0C35781BFBD36BF87853 /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = framework.plist; sourceTree = "<group>"; };
 		17FD0C3A25C4011493E46C42 /* Nimble.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Nimble.framework.dSYM; path = Carthage/Build/Mac/Nimble.framework.dSYM; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 				17FD02220E9D21F2B8CCF1F6 /* Test */,
 				17FD075A71B7842F9D1F4B3F /* Injection */,
 				17FD035B763CD88766934179 /* Accessory */,
+				17FD022B41FE675B3D7B0BB1 /* Atomic */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -158,6 +165,7 @@
 				17FD0E7295028AFA17A5C71F /* Extension */,
 				17FD084B96C0D65E7AC4A5C6 /* Test.swift */,
 				17FD04B3750583967736762B /* Injection */,
+				17FD0BF7A120684151A41754 /* Atomic */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -168,6 +176,15 @@
 				17FD056AD41EC990F7A798B5 /* Extension.Swift.swift */,
 			);
 			path = Swift;
+			sourceTree = "<group>";
+		};
+		17FD022B41FE675B3D7B0BB1 /* Atomic */ = {
+			isa = PBXGroup;
+			children = (
+				17FD05C768055BAF42691889 /* Atomic.Lock.swift */,
+				17FD0948BEF1D2330FA2441E /* Atomic.Value.swift */,
+			);
+			path = Atomic;
 			sourceTree = "<group>";
 		};
 		17FD02DB0448AA27A902DF37 /* framework */ = {
@@ -278,6 +295,14 @@
 				17FD0FAFBDFCEC4B522DFD4A /* macOS - Framework.xcconfig */,
 			);
 			name = macOS;
+			sourceTree = "<group>";
+		};
+		17FD0BF7A120684151A41754 /* Atomic */ = {
+			isa = PBXGroup;
+			children = (
+				17FD0C071FDB2BE3E0CC1428 /* Test.Atomic.Value.swift */,
+			);
+			path = Atomic;
 			sourceTree = "<group>";
 		};
 		17FD0E7295028AFA17A5C71F /* Extension */ = {
@@ -439,6 +464,8 @@
 				17FD03D1FADDCE07BC4EEE5A /* Extension.CoreGraphics.Size.swift in Sources */,
 				17FD04785B0665A0E58AEEA8 /* Extension.Foundation.UserDefaults.swift in Sources */,
 				17FD0256530C10C6D5E4F58E /* Extension.CoreGraphics.Image.swift in Sources */,
+				17FD0AFD670C0F75DEAA485C /* Atomic.Lock.swift in Sources */,
+				17FD09816A1BFC46227A2563 /* Atomic.Value.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +481,7 @@
 				17FD0E9B028774F98E098C1D /* Test.Extension.CoreGraphics.Point.swift in Sources */,
 				17FD0F97F4F001554FDE1219 /* Test.Extension.Foundation.UserDefaults.swift in Sources */,
 				17FD02756E33FC00FC29BF2A /* Test.Extension.CoreGraphics.Size.swift in Sources */,
+				17FD022C8D0D297A2E4C1227 /* Test.Atomic.Value.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
