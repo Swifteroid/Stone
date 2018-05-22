@@ -1,9 +1,10 @@
 import Nimble
+import Quick
 import Stone
 
-internal class InjectionTestCase: TestCase
+internal class InjectionSpec: Spec
 {
-    internal func testDependency() {
+    override internal func spec() {
         let injection: Injection = Injection.default
 
         injection.add(name: "foo", dependency: Injection.Dependency(definition: { "Foo" }))
@@ -29,15 +30,15 @@ internal class InjectionTestCase: TestCase
         expect(qux).toNot(beNil())
         expect(qux) == (try! injection.get(name: "qux") as NSNumber)
         expect(qux) == (try! injection.get(name: "baz") as NSNumber)
-    }
 
-    internal func testInstance() {
-        let foo: Injection = FooInjection.default
-        let bar: Injection = BarInjection.default
+        it("should use unique per-class singletons") {
+            let foo: Injection = FooInjection.default
+            let bar: Injection = BarInjection.default
 
-        expect(foo).toNot(beNil())
-        expect(bar).toNot(beNil())
-        expect(foo) != bar
+            expect(foo).toNot(beNil())
+            expect(bar).toNot(beNil())
+            expect(foo) != bar
+        }
     }
 }
 

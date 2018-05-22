@@ -1,6 +1,7 @@
 import CoreLocation // Fakery requires this, but this doesn't get linked automatically…
+import Quick
 import XCTest
 
-internal class TestCase: XCTestCase
+internal class Spec: QuickSpec
 {
 }
