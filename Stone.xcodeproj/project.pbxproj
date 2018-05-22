@@ -21,6 +21,7 @@
 		17FD04785B0665A0E58AEEA8 /* Extension.Foundation.UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD029DD1EAC898AD2D7664 /* Extension.Foundation.UserDefaults.swift */; };
 		17FD0540B4E121E5C5FF0BFB /* Extension.Foundation.EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0B3E026C7E7E35510522 /* Extension.Foundation.EdgeInsets.swift */; };
 		17FD054D651256ED7BE704D2 /* Extension.Foundation.Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0FC589F4E355C1BEF973 /* Extension.Foundation.Timer.swift */; };
+		17FD061E88D69B60DDC0DDD9 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD04F20EB10EEB807DA640 /* Identifiable.swift */; };
 		17FD07A471366BC73886E1B8 /* Extension.Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD056AD41EC990F7A798B5 /* Extension.Swift.swift */; };
 		17FD08AF91F5F666B3821F74 /* Extension.Foundation.DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0C2F4679304870A0686A /* Extension.Foundation.DateFormatter.swift */; };
 		17FD09816A1BFC46227A2563 /* Atomic.Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0948BEF1D2330FA2441E /* Atomic.Value.swift */; };
@@ -77,6 +78,7 @@
 		17FD029DD1EAC898AD2D7664 /* Extension.Foundation.UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.UserDefaults.swift; sourceTree = "<group>"; };
 		17FD0340ABCDE226C6835624 /* Extension.AppKit.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.AppKit.View.swift; sourceTree = "<group>"; };
 		17FD034484BD723E746B14B4 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = test.plist; sourceTree = "<group>"; };
+		17FD04F20EB10EEB807DA640 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		17FD050DB089FE152996353A /* Extension.CoreGraphics.Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.CoreGraphics.Point.swift; sourceTree = "<group>"; };
 		17FD05484F0C576729BF0520 /* Extension.Foundation.FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.FileManager.swift; sourceTree = "<group>"; };
 		17FD0567CEE7F48A58CC2FC0 /* Test.Extension.Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.Swift.swift; sourceTree = "<group>"; };
@@ -143,7 +145,7 @@
 				17FD02220E9D21F2B8CCF1F6 /* Test */,
 				17FD075A71B7842F9D1F4B3F /* Injection */,
 				17FD035B763CD88766934179 /* Accessory */,
-				17FD022B41FE675B3D7B0BB1 /* Atomic */,
+				17FD022B41FE675B3D7B0BB1 /* Stone */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -178,13 +180,14 @@
 			path = Swift;
 			sourceTree = "<group>";
 		};
-		17FD022B41FE675B3D7B0BB1 /* Atomic */ = {
+		17FD022B41FE675B3D7B0BB1 /* Stone */ = {
 			isa = PBXGroup;
 			children = (
 				17FD05C768055BAF42691889 /* Atomic.Lock.swift */,
 				17FD0948BEF1D2330FA2441E /* Atomic.Value.swift */,
+				17FD04F20EB10EEB807DA640 /* Identifiable.swift */,
 			);
-			path = Atomic;
+			path = Stone;
 			sourceTree = "<group>";
 		};
 		17FD02DB0448AA27A902DF37 /* framework */ = {
@@ -466,6 +469,7 @@
 				17FD0256530C10C6D5E4F58E /* Extension.CoreGraphics.Image.swift in Sources */,
 				17FD0AFD670C0F75DEAA485C /* Atomic.Lock.swift in Sources */,
 				17FD09816A1BFC46227A2563 /* Atomic.Value.swift in Sources */,
+				17FD061E88D69B60DDC0DDD9 /* Identifiable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
