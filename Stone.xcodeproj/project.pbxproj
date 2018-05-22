@@ -35,11 +35,6 @@
 		17FD0CB340621BAE9CCA39AA /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD084B96C0D65E7AC4A5C6 /* Test.swift */; };
 		17FD0E9B028774F98E098C1D /* Test.Extension.CoreGraphics.Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD056D1B6B6E01E87E8AE7 /* Test.Extension.CoreGraphics.Point.swift */; };
 		17FD0F97F4F001554FDE1219 /* Test.Extension.Foundation.UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0E266FB412C9E2314D95 /* Test.Extension.Foundation.UserDefaults.swift */; };
-		E6073BEF1F699163004D8A0C /* Fakery.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD082637AF1875C2C52E2B /* Fakery.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E6073BF01F699167004D8A0C /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD082637AF1875C2C52E2B /* Fakery.framework */; };
-		E68DF3DA1E64975600502750 /* Stone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68DF3D01E64975600502750 /* Stone.framework */; };
-		E68DF3E91E64A8F000502750 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD0201C6FC93C009A7239F /* Nimble.framework */; };
-		E68DF3EB1E64A91400502750 /* Nimble.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17FD0201C6FC93C009A7239F /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,21 +47,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		E68DF3EA1E64A90600502750 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E6073BEF1F699163004D8A0C /* Fakery.framework in Embed Frameworks */,
-				E68DF3EB1E64A91400502750 /* Nimble.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		17FD0061A16E5A1FBA8D2922 /* Extension.Foundation.Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.Bundle.swift; sourceTree = "<group>"; };
 		17FD010A5A123CB8B35548B1 /* Base - Profile.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Profile.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Profile.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -74,7 +54,6 @@
 		17FD013F36FFC9213899F2CF /* Extension.Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.swift; sourceTree = "<group>"; };
 		17FD01BDB2DA79DBD1085610 /* Extension.CoreGraphics.Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.CoreGraphics.Rect.swift; sourceTree = "<group>"; };
 		17FD01E5F7DA525A245F4084 /* Test.Extension.Foundation.FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.Foundation.FileManager.swift; sourceTree = "<group>"; };
-		17FD0201C6FC93C009A7239F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		17FD029DD1EAC898AD2D7664 /* Extension.Foundation.UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.UserDefaults.swift; sourceTree = "<group>"; };
 		17FD0340ABCDE226C6835624 /* Extension.AppKit.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.AppKit.View.swift; sourceTree = "<group>"; };
 		17FD034484BD723E746B14B4 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = test.plist; sourceTree = "<group>"; };
@@ -86,12 +65,10 @@
 		17FD056D1B6B6E01E87E8AE7 /* Test.Extension.CoreGraphics.Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.CoreGraphics.Point.swift; sourceTree = "<group>"; };
 		17FD05C39AE0924973CA6FE7 /* Base - Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Debug.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		17FD05C768055BAF42691889 /* Atomic.Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.Lock.swift; sourceTree = "<group>"; };
-		17FD0634CDA86E297808418C /* Fakery.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Fakery.framework.dSYM; path = Carthage/Build/Mac/Fakery.framework.dSYM; sourceTree = "<group>"; };
 		17FD0697E67613ABD7CC0839 /* Test.Extension.CoreGraphics.Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.CoreGraphics.Size.swift; sourceTree = "<group>"; };
 		17FD06B6A05F0DFBF429E489 /* Test.Extension.CoreGraphics.Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.CoreGraphics.Rect.swift; sourceTree = "<group>"; };
 		17FD06BD11FF9136E4BDDE17 /* Injection.Dependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injection.Dependency.swift; sourceTree = "<group>"; };
 		17FD070B80336F7848619472 /* Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Test.xcconfig; path = dependency/git/xenomorph/source/Target/Test.xcconfig; sourceTree = SOURCE_ROOT; };
-		17FD082637AF1875C2C52E2B /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = Carthage/Build/Mac/Fakery.framework; sourceTree = "<group>"; };
 		17FD084B96C0D65E7AC4A5C6 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		17FD0948BEF1D2330FA2441E /* Atomic.Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.Value.swift; sourceTree = "<group>"; };
 		17FD09E45FADBD687CC0F295 /* Base - Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Release.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Release.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -103,7 +80,6 @@
 		17FD0C071FDB2BE3E0CC1428 /* Test.Atomic.Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Atomic.Value.swift; sourceTree = "<group>"; };
 		17FD0C2F4679304870A0686A /* Extension.Foundation.DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.DateFormatter.swift; sourceTree = "<group>"; };
 		17FD0C35781BFBD36BF87853 /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = framework.plist; sourceTree = "<group>"; };
-		17FD0C3A25C4011493E46C42 /* Nimble.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Nimble.framework.dSYM; path = Carthage/Build/Mac/Nimble.framework.dSYM; sourceTree = "<group>"; };
 		17FD0CA3901FF35D93DF2A89 /* Test.Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Injection.swift; sourceTree = "<group>"; };
 		17FD0D3BCE732F4353DA4BF9 /* Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		17FD0E266FB412C9E2314D95 /* Test.Extension.Foundation.UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.Extension.Foundation.UserDefaults.swift; sourceTree = "<group>"; };
@@ -114,19 +90,6 @@
 		E68DF3D01E64975600502750 /* Stone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68DF3D91E64975600502750 /* Stone - Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stone - Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		E68DF3D61E64975600502750 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E6073BF01F699167004D8A0C /* Fakery.framework in Frameworks */,
-				E68DF3E91E64A8F000502750 /* Nimble.framework in Frameworks */,
-				E68DF3DA1E64975600502750 /* Stone.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		17FD007DF370AD936ED4135C /* accessory */ = {
@@ -190,15 +153,6 @@
 			path = Stone;
 			sourceTree = "<group>";
 		};
-		17FD02DB0448AA27A902DF37 /* framework */ = {
-			isa = PBXGroup;
-			children = (
-				17FD082637AF1875C2C52E2B /* Fakery.framework */,
-				17FD0201C6FC93C009A7239F /* Nimble.framework */,
-			);
-			name = framework;
-			sourceTree = "<group>";
-		};
 		17FD02ED86E6AC2C1494954F /* Target */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,14 +176,6 @@
 				17FD0CA3901FF35D93DF2A89 /* Test.Injection.swift */,
 			);
 			path = Injection;
-			sourceTree = "<group>";
-		};
-		17FD057FE77AFD9DA3F2BA9F /* product */ = {
-			isa = PBXGroup;
-			children = (
-				E68DF3D11E64975600502750 /* build */,
-			);
-			path = product;
 			sourceTree = "<group>";
 		};
 		17FD0589BAD656CAA9F96C62 /* info */ = {
@@ -335,21 +281,10 @@
 		17FD0FCE76617832C4DBFA09 /* dependency */ = {
 			isa = PBXGroup;
 			children = (
-				17FD0FE7BAA54D23033C14B6 /* dsym */,
-				17FD02DB0448AA27A902DF37 /* framework */,
 				17FD0B82960814A03ACD2215 /* Cartfile.private */,
 				17FD0AAB6A5033EFC8B692CF /* Cartfile.resolved */,
 			);
 			path = dependency;
-			sourceTree = "<group>";
-		};
-		17FD0FE7BAA54D23033C14B6 /* dsym */ = {
-			isa = PBXGroup;
-			children = (
-				17FD0634CDA86E297808418C /* Fakery.framework.dSYM */,
-				17FD0C3A25C4011493E46C42 /* Nimble.framework.dSYM */,
-			);
-			name = dsym;
 			sourceTree = "<group>";
 		};
 		E642F8A41E64930B00F98403 = {
@@ -357,20 +292,19 @@
 			children = (
 				17FD007DF370AD936ED4135C /* accessory */,
 				17FD0FCE76617832C4DBFA09 /* dependency */,
-				17FD057FE77AFD9DA3F2BA9F /* product */,
+				E68DF3D11E64975600502750 /* product */,
 				17FD015FD214F0832286F36A /* source */,
 				17FD0FEC66633616F62F97D5 /* Stone.podspec */,
 			);
 			sourceTree = "<group>";
 		};
-		E68DF3D11E64975600502750 /* build */ = {
+		E68DF3D11E64975600502750 /* product */ = {
 			isa = PBXGroup;
 			children = (
 				E68DF3D01E64975600502750 /* Stone.framework */,
 				E68DF3D91E64975600502750 /* Stone - Test.xctest */,
 			);
-			name = build;
-			path = ..;
+			name = product;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,8 +330,6 @@
 			buildConfigurationList = E68DF3E71E64975600502750 /* Build configuration list for PBXNativeTarget "Stone - Test" */;
 			buildPhases = (
 				E68DF3D51E64975600502750 /* Sources */,
-				E68DF3D61E64975600502750 /* Frameworks */,
-				E68DF3EA1E64A90600502750 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -436,7 +368,7 @@
 				en,
 			);
 			mainGroup = E642F8A41E64930B00F98403;
-			productRefGroup = E68DF3D11E64975600502750 /* build */;
+			productRefGroup = E68DF3D11E64975600502750 /* product */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -540,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17FD070B80336F7848619472 /* Test.xcconfig */;
 			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).test";
 			};
 			name = Debug;
@@ -548,6 +481,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17FD070B80336F7848619472 /* Test.xcconfig */;
 			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(inherited).test";
 			};
 			name = Release;
