@@ -36,10 +36,18 @@ final public class Lock
     /// Stores primitive lock reference, either `NSLock` or `os_unfair_lock_t`.
     private let primitive: Any
 
-    /// Perform locked atomic block operation with optional returned value.  
-    @discardableResult public func atomic<T>(_ block: () throws -> T) rethrows -> T {
+    /// Perform locked atomic block operation with optional returned value.
+    @discardableResult public func locked<T>(_ block: () throws -> T) rethrows -> T {
         self.lock()
         defer { self.unlock() }
+        return try block()
+    }
+
+    /// Perform un-locked non-atomic block operation with optional returned value. Opposite to `locked` counterpart 
+    /// this method unlocks the lock first and locks it back when complete.
+    @discardableResult public func unlocked<T>(_ block: () throws -> T) rethrows -> T {
+        self.unlock()
+        defer { self.lock() }
         return try block()
     }
 

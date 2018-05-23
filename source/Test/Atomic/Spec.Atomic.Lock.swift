@@ -21,13 +21,13 @@ internal class AtomicLockSpec: Spec
             var array: [Int] = []
 
             DispatchQueue.concurrentPerform(iterations: 1000, execute: { iteration in
-                lock.atomic({
+                lock.locked {
                     if array.count > 10 {
                         _ = array.popLast()
                     } else {
                         array.append(iteration)
                     }
-                })
+                }
             })
         }
     }
