@@ -112,6 +112,13 @@ extension Array
     }
 }
 
+extension Array
+{
+    @discardableResult public mutating func popFirst() -> Element? {
+        return self.isEmpty ? nil : self.removeFirst()
+    }
+}
+
 // Array.recursiveFlatMap()
 
 extension Array
