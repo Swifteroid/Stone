@@ -16,33 +16,12 @@ extension Int
 
 extension String
 {
-    public func lowercasedFirst() -> String {
-        if !self.isEmpty {
-            return self[...self.startIndex].lowercased() + self[self.index(after: self.startIndex)...]
-        } else {
-            return self
-        }
-    }
-
-    public func uppercasedFirst() -> String {
-        if !self.isEmpty {
-            return self[...self.startIndex].uppercased() + self[self.index(after: self.startIndex)...]
-        } else {
-            return self
-        }
-    }
+    public func lowercasedFirst() -> String { return self.isEmpty ? self : self[...self.startIndex].lowercased() + self[self.index(after: self.startIndex)...] }
+    public func uppercasedFirst() -> String { return self.isEmpty ? self : self[...self.startIndex].uppercased() + self[self.index(after: self.startIndex)...] }
 }
 
 extension Array
 {
-    public var empty: Bool {
-        return self.isEmpty
-    }
-
-    public var filled: Bool {
-        return !self.isEmpty
-    }
-
     public mutating func drain() -> [Element] {
         let elements: [Element] = self
         self.removeAll()
@@ -50,29 +29,14 @@ extension Array
     }
 }
 
-// MARK: dictionary
-
 extension Dictionary
 {
-    public var empty: Bool {
-        return self.isEmpty
-    }
-
-    public var filled: Bool {
-        return !self.isEmpty
+    public static func +(lhs: Dictionary, rhs: Dictionary) -> Dictionary {
+        return rhs.reduce(into: lhs, { $0[$1.key] = $1.value })
     }
 }
 
-public func +<K, V>(lhs: [K: V], rhs: [K: V]) -> [K: V] {
-    var lhs: [K: V] = lhs
-    for (key, value) in rhs {
-        lhs[key] = value
-    }
-    return lhs
-}
-
-// MARK: Array.remove()
-
+/// Array.remove()
 extension Array where Element: Equatable
 {
     @discardableResult public mutating func remove(element: Element, first: Bool = false) -> [Element] {
@@ -119,8 +83,7 @@ extension Array
     }
 }
 
-// Array.recursiveFlatMap()
-
+/// Array.recursiveFlatMap()
 extension Array
 {
     @discardableResult public func flatMap(_ transform: (Element) -> [Element], depth: Int) -> [Element] {
