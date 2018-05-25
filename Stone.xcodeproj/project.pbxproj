@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17FD00B9D8FF4EB7BC86BEC9 /* Atomic.Synchronized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0318842B3D885BD45A6F /* Atomic.Synchronized.swift */; };
 		17FD00E0D08CFC3654ABB7EA /* Extension.Foundation.Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0061A16E5A1FBA8D2922 /* Extension.Foundation.Bundle.swift */; };
 		17FD0144E3A63B90433C2492 /* Extension.CoreGraphics.Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD050DB089FE152996353A /* Extension.CoreGraphics.Point.swift */; };
 		17FD021EF9F9BE62F16E5F78 /* Extension.Foundation.FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD05484F0C576729BF0520 /* Extension.Foundation.FileManager.swift */; };
@@ -57,6 +58,7 @@
 		17FD01E5F7DA525A245F4084 /* Spec.Extension.Foundation.FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Extension.Foundation.FileManager.swift; sourceTree = "<group>"; };
 		17FD02097FF14DCE5C67E7A8 /* Spec.Atomic.Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Atomic.Value.swift; sourceTree = "<group>"; };
 		17FD029DD1EAC898AD2D7664 /* Extension.Foundation.UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.Foundation.UserDefaults.swift; sourceTree = "<group>"; };
+		17FD0318842B3D885BD45A6F /* Atomic.Synchronized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.Synchronized.swift; sourceTree = "<group>"; };
 		17FD0340ABCDE226C6835624 /* Extension.AppKit.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.AppKit.View.swift; sourceTree = "<group>"; };
 		17FD034484BD723E746B14B4 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = test.plist; sourceTree = "<group>"; };
 		17FD04F20EB10EEB807DA640 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				17FD05C768055BAF42691889 /* Atomic.Lock.swift */,
 				17FD0948BEF1D2330FA2441E /* Atomic.Value.swift */,
 				17FD04F20EB10EEB807DA640 /* Identifiable.swift */,
+				17FD0318842B3D885BD45A6F /* Atomic.Synchronized.swift */,
 			);
 			path = Stone;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				17FD0AFD670C0F75DEAA485C /* Atomic.Lock.swift in Sources */,
 				17FD09816A1BFC46227A2563 /* Atomic.Value.swift in Sources */,
 				17FD061E88D69B60DDC0DDD9 /* Identifiable.swift in Sources */,
+				17FD00B9D8FF4EB7BC86BEC9 /* Atomic.Synchronized.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
