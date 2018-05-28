@@ -96,12 +96,3 @@ extension Array
         return flatArray
     }
 }
-
-/// Returning assignment operator to provide a much-missed feature of other languages, where assigned value
-/// is returned and can be further operated upon, like `if (x =-> y) == nil { throw Error.nil }`.
-infix operator =->: AssignmentPrecedence
-
-public func =-><T>(lhs: inout T, rhs: T) -> T {
-    lhs = rhs
-    return lhs
-}

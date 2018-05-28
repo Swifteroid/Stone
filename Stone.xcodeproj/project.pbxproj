@@ -27,8 +27,10 @@
 		17FD07D77DB87CFA61ABC5D5 /* Spec.Atomic.Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD02097FF14DCE5C67E7A8 /* Spec.Atomic.Value.swift */; };
 		17FD08AF91F5F666B3821F74 /* Extension.Foundation.DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0C2F4679304870A0686A /* Extension.Foundation.DateFormatter.swift */; };
 		17FD09816A1BFC46227A2563 /* Atomic.Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0948BEF1D2330FA2441E /* Atomic.Value.swift */; };
+		17FD098D433E0F669D10C08F /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0A4D78276F085055A54B /* Operator.swift */; };
 		17FD099F2F26F1CE4081D640 /* Spec.Extension.CoreGraphics.Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD06B6A05F0DFBF429E489 /* Spec.Extension.CoreGraphics.Rect.swift */; };
 		17FD09A3AA181C10FE8D00D8 /* Spec.Extension.Foundation.FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD01E5F7DA525A245F4084 /* Spec.Extension.Foundation.FileManager.swift */; };
+		17FD09F1E3EF794D0CDF6A75 /* Spec.Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0DEBC10A65B6B2E74EBD /* Spec.Operator.swift */; };
 		17FD09FFF3AE4F449B20EFF3 /* Extension.CoreGraphics.Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD01BDB2DA79DBD1085610 /* Extension.CoreGraphics.Rect.swift */; };
 		17FD0AFD670C0F75DEAA485C /* Atomic.Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD05C768055BAF42691889 /* Atomic.Lock.swift */; };
 		17FD0B6E0DBE2BAAF40F4EB0 /* Spec.Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0CA3901FF35D93DF2A89 /* Spec.Injection.swift */; };
@@ -76,6 +78,7 @@
 		17FD084B96C0D65E7AC4A5C6 /* Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.swift; sourceTree = "<group>"; };
 		17FD0948BEF1D2330FA2441E /* Atomic.Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.Value.swift; sourceTree = "<group>"; };
 		17FD09E45FADBD687CC0F295 /* Base - Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Release.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Release.xcconfig"; sourceTree = SOURCE_ROOT; };
+		17FD0A4D78276F085055A54B /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		17FD0A8C42E963AC2B69ACAA /* Extension.CoreGraphics.Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.CoreGraphics.Image.swift; sourceTree = "<group>"; };
 		17FD0AAB6A5033EFC8B692CF /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = file.resolved; path = Cartfile.resolved; sourceTree = "<group>"; };
 		17FD0B3481C64C3DB4FA7077 /* Base - Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Test.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Test.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -86,6 +89,7 @@
 		17FD0C35781BFBD36BF87853 /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = framework.plist; sourceTree = "<group>"; };
 		17FD0CA3901FF35D93DF2A89 /* Spec.Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Injection.swift; sourceTree = "<group>"; };
 		17FD0D3BCE732F4353DA4BF9 /* Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
+		17FD0DEBC10A65B6B2E74EBD /* Spec.Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Operator.swift; sourceTree = "<group>"; };
 		17FD0E266FB412C9E2314D95 /* Spec.Extension.Foundation.UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Extension.Foundation.UserDefaults.swift; sourceTree = "<group>"; };
 		17FD0F07AC7E6A66D55A6EA5 /* Extension.CoreGraphics.Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.CoreGraphics.Size.swift; sourceTree = "<group>"; };
 		17FD0FAFBDFCEC4B522DFD4A /* macOS - Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "macOS - Framework.xcconfig"; path = "dependency/git/xenomorph/source/Target/macOS/macOS - Framework.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -103,6 +107,14 @@
 				17FD0589BAD656CAA9F96C62 /* info */,
 			);
 			path = accessory;
+			sourceTree = "<group>";
+		};
+		17FD015EB45D63DD8F7FAA6D /* Stone */ = {
+			isa = PBXGroup;
+			children = (
+				17FD0DEBC10A65B6B2E74EBD /* Spec.Operator.swift */,
+			);
+			path = Stone;
 			sourceTree = "<group>";
 		};
 		17FD015FD214F0832286F36A /* source */ = {
@@ -135,6 +147,7 @@
 				17FD084B96C0D65E7AC4A5C6 /* Spec.swift */,
 				17FD04B3750583967736762B /* Injection */,
 				17FD0BF7A120684151A41754 /* Atomic */,
+				17FD015EB45D63DD8F7FAA6D /* Stone */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -154,6 +167,7 @@
 				17FD0948BEF1D2330FA2441E /* Atomic.Value.swift */,
 				17FD04F20EB10EEB807DA640 /* Identifiable.swift */,
 				17FD0318842B3D885BD45A6F /* Atomic.Synchronized.swift */,
+				17FD0A4D78276F085055A54B /* Operator.swift */,
 			);
 			path = Stone;
 			sourceTree = "<group>";
@@ -409,6 +423,7 @@
 				17FD09816A1BFC46227A2563 /* Atomic.Value.swift in Sources */,
 				17FD061E88D69B60DDC0DDD9 /* Identifiable.swift in Sources */,
 				17FD00B9D8FF4EB7BC86BEC9 /* Atomic.Synchronized.swift in Sources */,
+				17FD098D433E0F669D10C08F /* Operator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +441,7 @@
 				17FD02756E33FC00FC29BF2A /* Spec.Extension.CoreGraphics.Size.swift in Sources */,
 				17FD022C8D0D297A2E4C1227 /* Spec.Atomic.Lock.swift in Sources */,
 				17FD07D77DB87CFA61ABC5D5 /* Spec.Atomic.Value.swift in Sources */,
+				17FD09F1E3EF794D0CDF6A75 /* Spec.Operator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
