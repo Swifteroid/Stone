@@ -64,16 +64,20 @@ extension Array where Element: Equatable
 
 extension Array
 {
-    @discardableResult public mutating func removeFirst(where predicate: (Element) -> Bool) -> Element? {
-        for i in 0 ..< self.count {
-            let element: Element = self[i]
-            if predicate(element) {
-                self.remove(at: i)
-                return element
-            }
+
+    /// Removes all elements (default) or only the first one where predicate condition is met and returns all removed elements.
+    @discardableResult public mutating func remove(where predicate: (Element) -> Bool, first: Bool = false) -> [Element] {
+        if first { return self.index(where: predicate).map({ [self.remove(at: $0)] }) ?? [] }
+
+        var elements: [Element] = []
+        for (offset, value) in self.enumerated().reversed() where predicate(value) {
+            elements.append(self.remove(at: offset))
         }
-        return nil
+        return elements
     }
+
+    @available(*, unavailable, renamed: "remove(where:first:)")
+    @discardableResult public mutating func removeFirst(where predicate: (Element) -> Bool) -> Element? { return nil }
 }
 
 extension Array
