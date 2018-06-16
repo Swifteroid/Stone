@@ -37,6 +37,7 @@
 		17FD0C1D652F548EF3F4DECB /* Accessory.Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0113935525275D64DFF7 /* Accessory.Storyboard.swift */; };
 		17FD0C1DF64DDAABB1A83DFA /* Extension.AppKit.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0340ABCDE226C6835624 /* Extension.AppKit.View.swift */; };
 		17FD0CB340621BAE9CCA39AA /* Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD084B96C0D65E7AC4A5C6 /* Spec.swift */; };
+		17FD0DD77A55CD61C7483D8C /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD061E2029A64227AB1CAF /* Weak.swift */; };
 		17FD0E9B028774F98E098C1D /* Spec.Extension.CoreGraphics.Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD056D1B6B6E01E87E8AE7 /* Spec.Extension.CoreGraphics.Point.swift */; };
 		17FD0F97F4F001554FDE1219 /* Spec.Extension.Foundation.UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0E266FB412C9E2314D95 /* Spec.Extension.Foundation.UserDefaults.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		17FD056D1B6B6E01E87E8AE7 /* Spec.Extension.CoreGraphics.Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Extension.CoreGraphics.Point.swift; sourceTree = "<group>"; };
 		17FD05C39AE0924973CA6FE7 /* Base - Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Base - Debug.xcconfig"; path = "dependency/git/xenomorph/source/Configuration/Base - Debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		17FD05C768055BAF42691889 /* Atomic.Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.Lock.swift; sourceTree = "<group>"; };
+		17FD061E2029A64227AB1CAF /* Weak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		17FD0697E67613ABD7CC0839 /* Spec.Extension.CoreGraphics.Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Extension.CoreGraphics.Size.swift; sourceTree = "<group>"; };
 		17FD06B6A05F0DFBF429E489 /* Spec.Extension.CoreGraphics.Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Extension.CoreGraphics.Rect.swift; sourceTree = "<group>"; };
 		17FD06BD11FF9136E4BDDE17 /* Injection.Dependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injection.Dependency.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				17FD04F20EB10EEB807DA640 /* Identifiable.swift */,
 				17FD0318842B3D885BD45A6F /* Atomic.Synchronized.swift */,
 				17FD0A4D78276F085055A54B /* Operator.swift */,
+				17FD061E2029A64227AB1CAF /* Weak.swift */,
 			);
 			path = Stone;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				17FD061E88D69B60DDC0DDD9 /* Identifiable.swift in Sources */,
 				17FD00B9D8FF4EB7BC86BEC9 /* Atomic.Synchronized.swift in Sources */,
 				17FD098D433E0F669D10C08F /* Operator.swift in Sources */,
+				17FD0DD77A55CD61C7483D8C /* Weak.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
