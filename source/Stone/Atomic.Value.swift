@@ -27,17 +27,21 @@ public protocol AtomicValueProtocol: class
     var atomic: Value { get set }
 
     /// Atomically retrieves value.
-    func get() -> Value
+    func get(lock: Bool) -> Value
 
     /// Atomically sets value with optional predicate block.
+    /// - parameter lock: Indicates whether the update should be locked (atomic), default is `true`. Specify `false` when 
+    ///   the value is already locked and atomicity is "manually" guaranteed.
     /// - parameter if: Custom predicate block that will check if old value should be updated.
     /// - return: `true` if new value did set, `false` otherwise.
-    @discardableResult func set(_ newValue: Value, if predicate: ((_ oldValue: Value) -> Bool)?) -> Bool
+    @discardableResult func set(_ newValue: Value, lock: Bool, if predicate: ((_ oldValue: Value) -> Bool)?) -> Bool
 
-    /// Atomically updates value.
+    /// Atomically updates the value.
+    /// - parameter lock: Indicates whether the update should be locked (atomic), default is `true`. Specify `false` when 
+    ///   the value is already locked and atomicity is "manually" guaranteed.
     /// - parameter block: Block that receives input value and updates it.
     /// - return: `true` if new value did set, `false` otherwise.
-    @discardableResult func update(_ block: (_ currentValue: inout Value) -> ()) -> Bool
+    @discardableResult func update(lock: Bool, _ block: (_ currentValue: inout Value) -> ()) -> Bool
 }
 
 public extension AtomicValueProtocol
@@ -47,18 +51,20 @@ public extension AtomicValueProtocol
         set { self.set(newValue) }
     }
 
-    public func get() -> Value {
-        return self.lock.locked { self.raw }
+    public func get(lock: Bool = true) -> Value {
+        return lock ? self.lock.locked({ self.raw }) : self.raw
     }
 
-    @discardableResult public func set(_ newValue: Value, if predicate: ((_ oldValue: Value) -> Bool)? = nil) -> Bool {
-        return self.update({ if predicate?($0) ?? true { $0 = newValue } })
+    @discardableResult public func set(_ newValue: Value, lock shouldLock: Bool = true, if predicate: ((_ oldValue: Value) -> Bool)? = nil) -> Bool {
+        return self.update(lock: shouldLock, { if predicate?($0) ?? true { $0 = newValue } })
     }
 
-    @discardableResult fileprivate func update(_ block: (_ currentValue: inout Value) -> (), _ count: UnsafeMutablePointer<UInt64>) -> Bool {
+    /// - parameter lock: Indicates whether the update should be locked (atomic), default is `true`. Specify `false` when 
+    ///   the value is already locked and atomicity is "manually" guaranteed.
+    @discardableResult fileprivate func update(lock shouldLock: Bool = true, counter: UnsafeMutablePointer<UInt64>, _ block: (_ currentValue: inout Value) -> ()) -> Bool {
         let lock: Lock = self.lock
 
-        var isLocked = lock.lock()
+        var isLocked: Bool = shouldLock && lock.lock()
         defer { lock.unlock(isLocked) }
 
         // Must use block suffixes thanks to https://bugs.swift.org/browse/SR-7795.
@@ -66,7 +72,7 @@ public extension AtomicValueProtocol
         let didSetBlock = self.didSet
         let willSetBlock = self.willSet
 
-        let oldCount: UInt64 = count.pointee
+        let oldCount: UInt64 = counter.pointee
         let oldValue: Value = self.raw
         var newValue: Value = oldValue
 
@@ -74,12 +80,14 @@ public extension AtomicValueProtocol
         if validateBlock?(newValue, oldValue) == false { return false }
 
         if let willSetBlock = willSetBlock {
-            self.lock.unlocked { willSetBlock(newValue, oldValue) }
-            if count.pointee != oldCount { return false }
+            // Todo: Keep an eye on this, this is potentially dangerous – the wording of `lock` parameter is a little wrong, it actually indicates
+            // todo: if the value already locked or not…
+            lock.unlocked { willSetBlock(newValue, oldValue) }
+            if counter.pointee != oldCount { return false }
         }
 
         self.raw = newValue
-        count.pointee += 1
+        counter.pointee += 1
         lock.unlock(&isLocked)
 
         didSetBlock?(newValue, oldValue)
@@ -117,7 +125,7 @@ final public class AtomicValue<T>
     public var willSet: ((_ newValue: T, _ oldValue: T) -> ())?
     public var didSet: ((_ newValue: T, _ oldValue: T) -> ())?
 
-    @discardableResult public func update(_ block: (_ currentValue: inout Value) -> ()) -> Bool { return self.update(block, self.updateCount) }
+    @discardableResult public func update(lock shouldLock: Bool = true, _ block: (_ currentValue: inout Value) -> ()) -> Bool { return self.update(lock: shouldLock, counter: self.updateCount, block) }
 }
 
 extension AtomicValue: AtomicValueProtocol
@@ -154,7 +162,7 @@ final public class WeakAtomicValue<T: AnyObject>
     public var willSet: ((_ newValue: T?, _ oldValue: T?) -> ())?
     public var didSet: ((_ newValue: T?, _ oldValue: T?) -> ())?
 
-    @discardableResult public func update(_ block: (_ currentValue: inout Value) -> ()) -> Bool { return self.update(block, self.updateCount) }
+    @discardableResult public func update(lock shouldLock: Bool = true, _ block: (_ currentValue: inout Value) -> ()) -> Bool { return self.update(lock: shouldLock, counter: self.updateCount, block) }
 }
 
 extension WeakAtomicValue: AtomicValueProtocol
