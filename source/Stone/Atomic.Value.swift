@@ -4,7 +4,8 @@ public protocol AtomicValueProtocol: class
 {
     associatedtype Value
 
-    /// Raw stored non-atomic value. This is not thread-safe unless manually synchronized.
+    /// Raw stored non-atomic value. This is not thread-safe unless manually synchronized. Changing this value directly 
+    /// will not invoke `willSet`/`didSet` handlers.
     var raw: Value { get set }
 
     var lock: Lock { get }
