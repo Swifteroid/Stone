@@ -38,7 +38,8 @@ extension Dictionary where Key == String
 
     /// Make sure to keep `keyPath` label when using raw strings with this subscript, otherwise it will fall
     /// back to standard subscript and not return the expected result. Note, while setting a value any intermediate
-    /// objects that are not dictionaries with string keys will be overwritten in order to set value.
+    /// objects that are not dictionaries with string keys will be overwritten in order to set value. Setting `nil` will clear
+    /// the dictionary value and not set the actual `nil` on the key, this behavior matched Swift pre 4.2.
     public subscript(keyPath: KeyPath) -> Any? {
         get {
             guard let (head, tail) = keyPath.behead() else { return nil }
@@ -58,7 +59,11 @@ extension Dictionary where Key == String
             // Set value if reached the end, otherwise go deeper.
 
             if tail.isEmpty {
-                self[head] = newValue as? Value
+                if newValue == nil {
+                    self.removeValue(forKey: head)
+                } else {
+                    self[head] = newValue as? Value
+                }
             } else {
                 var dictionary: [Key: Any?] = self[head] as? [Key: Any?] ?? [:]
                 dictionary[tail] = newValue
