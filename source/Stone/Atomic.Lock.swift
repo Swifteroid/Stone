@@ -51,17 +51,39 @@ final public class Lock
         return try block()
     }
 
+    /// Attempts to lock the lock with optional lock instruction specifying if the lock should be locked. It can be
+    /// passed in when locally storing the lock state to avoid boilerplate `if isLocked` checks.
+    /// - parameter needsLock: If `true` locks the lock, does nothing otherwise.
+    /// - returns: `true` if locked, `false` if not.
+    @discardableResult public func `try`(_ needsLock: Bool = true) -> Bool {
+        if #available(macOS 10.12, *) {
+            if needsLock { return os_unfair_lock_trylock(self.primitive as! os_unfair_lock_t) }
+        } else {
+            if needsLock { return (self.primitive as! NSLock).try() }
+        }
+        return needsLock
+    }
+
+    /// Attempts to lock the lock with updatable `inout` state argument.
+    /// - parameter isLocked: Specifies whether lock is currently locked in which case does nothing, otherwise
+    ///   locks the lock and updates the value.
+    /// - returns: `true` if locked, `false` if not.
+    @discardableResult public func `try`(_ isLocked: inout Bool) -> Bool {
+        if isLocked == false { isLocked = !self.try() }
+        return isLocked
+    }
+    
     /// Locks the lock with optional lock instruction specifying if the lock should be locked. It can be
     /// passed in when locally storing the lock state to avoid boilerplate `if isLocked` checks.
-    /// - parameter lock: If `true` locks the lock, does nothing otherwise.
+    /// - parameter needsLock: If `true` locks the lock, does nothing otherwise.
     /// - returns: `true` if locked, `false` if not.
-    @discardableResult public func lock(_ lock: Bool = true) -> Bool {
+    @discardableResult public func lock(_ needsLock: Bool = true) -> Bool {
         if #available(macOS 10.12, *) {
-            if lock { os_unfair_lock_lock(self.primitive as! os_unfair_lock_t) }
+            if needsLock { os_unfair_lock_lock(self.primitive as! os_unfair_lock_t) }
         } else {
-            if lock { (self.primitive as! NSLock).lock() }
+            if needsLock { (self.primitive as! NSLock).lock() }
         }
-        return lock
+        return needsLock
     }
 
     /// Locks the lock with updatable `inout` state argument.
@@ -75,15 +97,15 @@ final public class Lock
 
     /// Unlocks the lock with optional unlock instruction specifying if the lock should be unlocked. It can be
     /// passed in when locally storing the lock state to avoid boilerplate `if isLocked` checks.
-    /// - parameter unlock: If `true` unlocks the lock, does nothing otherwise.
-    /// - returns: `true` if locked, `false` if not.
-    @discardableResult public func unlock(_ unlock: Bool = true) -> Bool {
+    /// - parameter needsUnlock: If `true` unlocks the lock, does nothing otherwise.
+    /// - returns: `true` if unlocked, `false` if not.
+    @discardableResult public func unlock(_ needsUnlock: Bool = true) -> Bool {
         if #available(macOS 10.12, *) {
-            if unlock { os_unfair_lock_unlock(self.primitive as! os_unfair_lock_t) }
+            if needsUnlock { os_unfair_lock_unlock(self.primitive as! os_unfair_lock_t) }
         } else {
-            if unlock { (self.primitive as! NSLock).unlock() }
+            if needsUnlock { (self.primitive as! NSLock).unlock() }
         }
-        return unlock
+        return needsUnlock
     }
 
     /// Unlocks the lock with updatable `inout` state argument.
