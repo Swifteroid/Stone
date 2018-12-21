@@ -72,7 +72,7 @@ final public class Lock
         if isLocked == false { isLocked = !self.try() }
         return isLocked
     }
-    
+
     /// Locks the lock with optional lock instruction specifying if the lock should be locked. It can be
     /// passed in when locally storing the lock state to avoid boilerplate `if isLocked` checks.
     /// - parameter needsLock: If `true` locks the lock, does nothing otherwise.

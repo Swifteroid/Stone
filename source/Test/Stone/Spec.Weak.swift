@@ -15,6 +15,7 @@ internal class WeakSpec: Spec
     }
 }
 
-fileprivate class SpecClass {
-    
+fileprivate class SpecClass
+{
+
 }

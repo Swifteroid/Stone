@@ -194,6 +194,65 @@ extension CGRect
     public func translating(distance: CGFloat, angle: CGFloat) -> CGRect { return CGRect(origin: self.origin.translating(distance: distance, angle: angle), size: self.size) }
 }
 
+/// Scaling.
+extension CGRect
+{
+    /// Scales the rectangle horizontally and vertically by the given amount around the specified pivot point.
+    public mutating func scale(width ws: CGFloat, height hs: CGFloat, pivot: CGPoint? = nil) {
+        if let pivot: CGPoint = pivot { self.origin.translate((self.origin - pivot).scaling(x: ws - 1, y: hs - 1)) }
+        self.size.scale(width: ws, height: hs)
+    }
+
+    /// Scales the rectangle horizontally by the given amount around the specified pivot point.
+    public mutating func scale(width ws: CGFloat, pivot: CGPoint? = nil) {
+        if let pivot: CGPoint = pivot { self.origin.translate((self.origin - pivot).scaling(x: ws - 1)) }
+        self.size.scale(width: ws)
+    }
+
+    /// Scales the rectangle vertically by the given amount around the specified pivot point.
+    public mutating func scale(height hs: CGFloat, pivot: CGPoint? = nil) {
+        if let pivot: CGPoint = pivot { self.origin.translate((self.origin - pivot).scaling(y: hs - 1)) }
+        self.size.scale(height: hs)
+    }
+
+    /// Scales the rectangle by the given amount around the specified pivot point.
+    public mutating func scale(_ scale: CGFloat, pivot: CGPoint? = nil) { self.scale(width: scale, height: scale, pivot: pivot) }
+
+    /// Scales the rectangle by the given amount around the specified pivot point.
+    public mutating func scale(_ scale: CGPoint, pivot: CGPoint? = nil) { self.scale(width: scale.x, height: scale.y, pivot: pivot) }
+
+    /// Scales the rectangle by the given amount around the specified pivot point.
+    public mutating func scale(_ scale: CGSize, pivot: CGPoint? = nil) { self.scale(width: scale.width, height: scale.height, pivot: pivot) }
+
+
+    /// Returns the rectangle scaled horizontally and vertically by the given amount around the specified pivot point.
+    public func scaling(width ws: CGFloat, pivot: CGPoint? = nil) -> CGRect {
+        let origin: CGPoint? = pivot.map({ self.origin.translating((self.origin - $0).scaling(x: ws - 1)) })
+        return CGRect(origin: origin ?? self.origin, size: self.size.scaling(width: ws))
+    }
+
+    /// Returns the rectangle scaled horizontally by the given amount around the specified pivot point.
+    public func scaling(height hs: CGFloat, pivot: CGPoint? = nil) -> CGRect {
+        let origin: CGPoint? = pivot.map({ self.origin.translating((self.origin - $0).scaling(y: hs - 1)) })
+        return CGRect(origin: origin ?? self.origin, size: self.size.scaling(height: hs))
+    }
+
+    /// Returns the rectangle scaled vertically by the given amount around the specified pivot point.
+    public func scaling(width ws: CGFloat, height hs: CGFloat, pivot: CGPoint? = nil) -> CGRect {
+        let origin: CGPoint? = pivot.map({ self.origin.translating((self.origin - $0).scaling(x: ws - 1, y: hs - 1)) })
+        return CGRect(origin: origin ?? self.origin, size: self.size.scaling(width: ws, height: hs))
+    }
+
+    /// Returns the rectangle scaled by the given amount around the specified pivot point.
+    public func scaling(_ scale: CGFloat, pivot: CGPoint? = nil) -> CGRect { return self.scaling(width: scale, height: scale, pivot: pivot) }
+
+    /// Returns the rectangle scaled by the given amount around the specified pivot point.
+    public func scaling(_ scale: CGPoint, pivot: CGPoint? = nil) -> CGRect { return self.scaling(width: scale.x, height: scale.y, pivot: pivot) }
+
+    /// Returns the rectangle scaled by the given amount around the specified pivot point.
+    public func scaling(_ scale: CGSize, pivot: CGPoint? = nil) -> CGRect { return self.scaling(width: scale.width, height: scale.height, pivot: pivot) }
+}
+
 extension CGRect
 {
 

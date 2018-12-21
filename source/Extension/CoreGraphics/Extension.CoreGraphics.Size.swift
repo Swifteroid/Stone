@@ -13,6 +13,47 @@ extension CGSize
     public static let infinite: CGSize = CGSize(width: CGFloat.infinity, height: CGFloat.infinity)
 }
 
+/// Scaling.
+extension CGSize
+{
+    /// Scales the size horizontally and vertically by the given amount.
+    public mutating func scale(width ws: CGFloat, height hs: CGFloat) { (self.width, self.height) = (self.width * ws, self.height * hs) }
+
+    /// Scales the size horizontally by the given amount.
+    public mutating func scale(width ws: CGFloat) { self.width *= ws }
+
+    /// Scales the size vertically by the given amount.
+    public mutating func scale(height hs: CGFloat) { self.height *= hs }
+
+    /// Scales the size horizontally and vertically by the given amount.
+    public mutating func scale(_ scale: CGFloat) { self.scale(width: scale, height: scale) }
+
+    /// Scales the size horizontally and vertically by the given amount.
+    public mutating func scale(_ scale: CGPoint) { self.scale(width: scale.x, height: scale.y) }
+
+    /// Scales the size horizontally and vertically by the given amount.
+    public mutating func scale(_ scale: CGSize) { self.scale(width: scale.width, height: scale.height) }
+
+
+    /// Returns the size scaled horizontally and vertically by the given amount.
+    public func scaling(width ws: CGFloat, height hs: CGFloat) -> CGSize { return CGSize(width: self.width * ws, height: self.height * hs) }
+
+    /// Returns the size scaled horizontally by the given amount.
+    public func scaling(width ws: CGFloat) -> CGSize { return CGSize(width: self.width * ws, height: self.height) }
+
+    /// Returns the size scaled vertically by the given amount.
+    public func scaling(height hs: CGFloat) -> CGSize { return CGSize(width: self.width, height: self.height * hs) }
+
+    /// Returns the size scaled horizontally and vertically by the given amount.
+    public func scaling(_ scale: CGFloat) -> CGSize { return self.scaling(width: scale, height: scale) }
+
+    /// Returns the size scaled horizontally and vertically by the given amount.
+    public func scaling(_ scale: CGPoint) -> CGSize { return self.scaling(width: scale.x, height: scale.y) }
+
+    /// Returns the size scaled horizontally and vertically by the given amount.
+    public func scaling(_ scale: CGSize) -> CGSize { return self.scaling(width: scale.width, height: scale.height) }
+}
+
 extension CGSize
 {
 

@@ -46,6 +46,47 @@ extension CGPoint
     public func translating(distance: CGFloat, angle: CGFloat) -> CGPoint { return self.translating(x: distance * cos(angle), y: distance * sin(angle)) }
 }
 
+/// Scaling.
+extension CGPoint
+{
+    /// Scales the point horizontally and vertically by the given amount.
+    public mutating func scale(x: CGFloat, y: CGFloat) { (self.x, self.y) = (self.x * x, self.y * y) }
+
+    /// Scales the point horizontally by the given amount.
+    public mutating func scale(x: CGFloat) { self.x *= x }
+
+    /// Scales the point vertically by the given amount.
+    public mutating func scale(y: CGFloat) { self.y *= y }
+
+    /// Scales the point horizontally and vertically by the given amount.
+    public mutating func scale(_ scale: CGFloat) { self.scale(x: scale, y: scale) }
+
+    /// Scales the point horizontally and vertically by the given amount.
+    public mutating func scale(_ scale: CGPoint) { self.scale(x: scale.x, y: scale.y) }
+
+    /// Scales the point horizontally and vertically by the given amount.
+    public mutating func scale(_ scale: CGSize) { self.scale(x: scale.width, y: scale.height) }
+
+
+    /// Returns the point scaled horizontally and vertically by the given amount.
+    public func scaling(_ scale: CGSize) -> CGPoint { return self.scaling(x: scale.width, y: scale.height) }
+
+    /// Returns the point scaled horizontally by the given amount.
+    public func scaling(x: CGFloat) -> CGPoint { return CGPoint(x: self.x * x, y: self.y) }
+
+    /// Returns the point scaled vertically by the given amount.
+    public func scaling(y: CGFloat) -> CGPoint { return CGPoint(x: self.x, y: self.y * y) }
+
+    /// Returns the point scaled horizontally and vertically by the given amount.
+    public func scaling(x: CGFloat, y: CGFloat) -> CGPoint { return CGPoint(x: self.x * x, y: self.y * y) }
+
+    /// Returns the point scaled horizontally and vertically by the given amount.
+    public func scaling(_ scale: CGFloat) -> CGPoint { return self.scaling(x: scale, y: scale) }
+
+    /// Returns the point scaled horizontally and vertically by the given amount.
+    public func scaling(_ scale: CGPoint) -> CGPoint { return self.scaling(x: scale.x, y: scale.y) }
+}
+
 extension CGPoint
 {
     public static prefix func -(rhs: CGPoint) -> CGPoint { return CGPoint(x: -rhs.x, y: -rhs.y) }

@@ -108,5 +108,24 @@ internal class CGRectExtensionSpec: Spec
             expect(rect2.intersects(rect1)) == false
             expect(rect2.intersects(vertically: rect1)) == true
         }
+
+        it("can be scaled") {
+            let rect: CGRect = CGRect(x: 50, y: 50, width: 100, height: 100)
+
+            expect(rect.scaling(width: 0.5, height: 0.5)) == CGRect(x: 50, y: 50, width: 50, height: 50)
+            expect(rect.scaling(width: 2, height: 3)) == CGRect(x: 50, y: 50, width: 200, height: 300)
+
+            expect(rect.scaling(width: 0.5, height: 0.5, pivot: rect.center).center) == rect.center
+            expect(rect.scaling(width: 0.5, height: 0.5, pivot: rect.topLeft).topLeft) == rect.topLeft
+            expect(rect.scaling(width: 0.5, height: 0.5, pivot: rect.topRight).topRight) == rect.topRight
+            expect(rect.scaling(width: 0.5, height: 0.5, pivot: rect.bottomLeft).bottomLeft) == rect.bottomLeft
+            expect(rect.scaling(width: 0.5, height: 0.5, pivot: rect.bottomRight).bottomRight) == rect.bottomRight
+
+            expect(rect.scaling(width: 2, height: 2, pivot: rect.center).center) == rect.center
+            expect(rect.scaling(width: 2, height: 2, pivot: rect.topLeft).topLeft) == rect.topLeft
+            expect(rect.scaling(width: 2, height: 2, pivot: rect.topRight).topRight) == rect.topRight
+            expect(rect.scaling(width: 2, height: 2, pivot: rect.bottomLeft).bottomLeft) == rect.bottomLeft
+            expect(rect.scaling(width: 2, height: 2, pivot: rect.bottomRight).bottomRight) == rect.bottomRight
+        }
     }
 }

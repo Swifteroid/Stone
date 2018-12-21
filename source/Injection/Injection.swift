@@ -66,7 +66,7 @@ import Foundation
         return self
     }
 
-    @discardableResult open func add<Name:CustomStringConvertible>(name: Name, dependency: Dependency) -> Self {
+    @discardableResult open func add<Name: CustomStringConvertible>(name: Name, dependency: Dependency) -> Self {
         return self.add(name: name.description, dependency: dependency)
     }
 
@@ -76,7 +76,7 @@ import Foundation
         return self.add(name: name, dependency: Dependency(definition: definition))
     }
 
-    @discardableResult open func define<Name:CustomStringConvertible>(name: Name, definition: @escaping Dependency.Definition) -> Self {
+    @discardableResult open func define<Name: CustomStringConvertible>(name: Name, definition: @escaping Dependency.Definition) -> Self {
         return self.define(name: name.description, definition: definition)
     }
 }
