@@ -156,15 +156,42 @@ extension CGRect
 /// Translating.
 extension CGRect
 {
+    /// Translates the rectangle origin along x axis by the given distance.
     public mutating func translate(x: CGFloat) { self.origin.translate(x: x) }
+
+    /// Translates the rectangle origin along y axis by the given distance.
     public mutating func translate(y: CGFloat) { self.origin.translate(y: y) }
+
+    /// Translates the rectangle origin along y and y axis by the given distance.
     public mutating func translate(x: CGFloat, y: CGFloat) { self.origin.translate(x: x, y: y) }
+
+    /// Translates the rectangle origin along y and y axis by the given distance.
+    public mutating func translate(_ distance: CGFloat) { self.origin.translate(x: distance, y: distance) }
+
+    /// Translates the rectangle origin along y and y axis by the given distance.
     public mutating func translate(_ point: CGPoint) { self.origin.translate(point) }
 
+    /// Translates the rectangle origin by the given distance in direction defined by the angle in radians.
+    public mutating func translate(distance: CGFloat, angle: CGFloat) { self.origin.translate(distance: distance, angle: angle) }
+
+
+    /// Returns the rectangle with origin translated along x axis by the given distance.
     public func translating(x: CGFloat) -> CGRect { return CGRect(origin: self.origin.translating(x: x), size: self.size) }
+
+    /// Returns the rectangle with origin translated along y axis by the given distance.
     public func translating(y: CGFloat) -> CGRect { return CGRect(origin: self.origin.translating(y: y), size: self.size) }
+
+    /// Returns the rectangle with origin translated along y and y axis by the given distance.
     public func translating(x: CGFloat, y: CGFloat) -> CGRect { return CGRect(origin: self.origin.translating(x: x, y: y), size: self.size) }
+
+    /// Returns the rectangle with origin translated along y and y axis by the given distance.
+    public func translating(_ distance: CGFloat) -> CGRect { return CGRect(origin: self.origin.translating(x: distance, y: distance), size: self.size) }
+
+    /// Returns the rectangle with origin translated along y and y axis by the given distance.
     public func translating(_ point: CGPoint) -> CGRect { return CGRect(origin: self.origin.translating(point), size: self.size) }
+
+    /// Returns the rectangle with origin translated by the given distance in direction defined by the angle in radians.
+    public func translating(distance: CGFloat, angle: CGFloat) -> CGRect { return CGRect(origin: self.origin.translating(distance: distance, angle: angle), size: self.size) }
 }
 
 extension CGRect

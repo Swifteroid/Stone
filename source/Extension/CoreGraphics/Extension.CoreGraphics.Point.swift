@@ -5,25 +5,45 @@ extension CGPoint
     public static let infinite: CGPoint = CGPoint(x: CGFloat.infinity, y: CGFloat.infinity)
 }
 
+/// Translating.
 extension CGPoint
 {
+    /// Translates the point along x axis by the given distance.
     public mutating func translate(x: CGFloat) { self.x += x }
+
+    /// Translates the point along y axis by the given distance.
     public mutating func translate(y: CGFloat) { self.y += y }
 
-    public mutating func translate(x: CGFloat, y: CGFloat) {
-        self.x += x
-        self.y += y
-    }
+    /// Translates the point along y and y axis by the given distance.
+    public mutating func translate(x: CGFloat, y: CGFloat) { (self.x, self.y) = (self.x + x, self.y + y) }
 
-    public mutating func translate(_ point: CGPoint) {
-        self.x += point.x
-        self.y += point.y
-    }
+    /// Translates the point along y and y axis by the given distance.
+    public mutating func translate(_ distance: CGFloat) { self.translate(x: distance, y: distance) }
 
+    /// Translates the point along y and y axis by the given distance.
+    public mutating func translate(_ point: CGPoint) { self.translate(x: point.x, y: point.y) }
+
+    /// Translates the point by the given distance in direction defined by the angle in radians.
+    public mutating func translate(distance: CGFloat, angle: CGFloat) { self.translate(x: distance * cos(angle), y: distance * sin(angle)) }
+
+
+    /// Returns the point translated along x axis by the given distance.
     public func translating(x: CGFloat) -> CGPoint { return CGPoint(x: self.x + x, y: self.y) }
+
+    /// Returns the point translated along y axis by the given distance.
     public func translating(y: CGFloat) -> CGPoint { return CGPoint(x: self.x, y: self.y + y) }
+
+    /// Returns the point translated along y and y axis by the given distance.
     public func translating(x: CGFloat, y: CGFloat) -> CGPoint { return CGPoint(x: self.x + x, y: self.y + y) }
-    public func translating(_ point: CGPoint) -> CGPoint { return CGPoint(x: self.x + point.x, y: self.y + point.y) }
+
+    /// Returns the point translated along y and y axis by the given distance.
+    public func translating(_ distance: CGFloat) -> CGPoint { return self.translating(x: distance, y: distance) }
+
+    /// Returns the point translated along y and y axis by the given distance.
+    public func translating(_ point: CGPoint) -> CGPoint { return self.translating(x: point.x, y: point.y) }
+
+    /// Returns the point translated by the given distance in direction defined by the angle in radians.
+    public func translating(distance: CGFloat, angle: CGFloat) -> CGPoint { return self.translating(x: distance * cos(angle), y: distance * sin(angle)) }
 }
 
 extension CGPoint
