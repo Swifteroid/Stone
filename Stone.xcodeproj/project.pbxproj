@@ -11,6 +11,7 @@
 		17FD00B9D8FF4EB7BC86BEC9 /* Atomic.Synchronized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0318842B3D885BD45A6F /* Atomic.Synchronized.swift */; };
 		17FD00E0D08CFC3654ABB7EA /* Extension.NSBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0061A16E5A1FBA8D2922 /* Extension.NSBundle.swift */; };
 		17FD0144E3A63B90433C2492 /* Extension.CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD050DB089FE152996353A /* Extension.CGPoint.swift */; };
+		17FD0146FF20F21EDC4DA07C /* Spec.Extension.CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0F822EC15CEAC93A6B6F /* Spec.Extension.CGImage.swift */; };
 		17FD021EF9F9BE62F16E5F78 /* Extension.NSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD05484F0C576729BF0520 /* Extension.NSFileManager.swift */; };
 		17FD022A804B19C37841F2B3 /* Injection.Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD06BD11FF9136E4BDDE17 /* Injection.Dependency.swift */; };
 		17FD024CC858779AEC84A23C /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0D3BCE732F4353DA4BF9 /* Injection.swift */; };
@@ -41,6 +42,7 @@
 		17FD0DD77A55CD61C7483D8C /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD061E2029A64227AB1CAF /* Weak.swift */; };
 		17FD0E9B028774F98E098C1D /* Spec.Extension.CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD056D1B6B6E01E87E8AE7 /* Spec.Extension.CGPoint.swift */; };
 		17FD0F97F4F001554FDE1219 /* Spec.Extension.NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FD0E266FB412C9E2314D95 /* Spec.Extension.NSUserDefaults.swift */; };
+		E607D145221A802C00959720 /* bbb.png in Resources */ = {isa = PBXBuildFile; fileRef = 17FD0429326BC7EA16D49E0A /* bbb.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		17FD0318842B3D885BD45A6F /* Atomic.Synchronized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Atomic.Synchronized.swift; sourceTree = "<group>"; };
 		17FD0340ABCDE226C6835624 /* Extension.NSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.NSView.swift; sourceTree = "<group>"; };
 		17FD034484BD723E746B14B4 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = test.plist; sourceTree = "<group>"; };
+		17FD0429326BC7EA16D49E0A /* bbb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bbb.png; sourceTree = "<group>"; };
 		17FD04F20EB10EEB807DA640 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		17FD050DB089FE152996353A /* Extension.CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.CGPoint.swift; sourceTree = "<group>"; };
 		17FD05484F0C576729BF0520 /* Extension.NSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.NSFileManager.swift; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 		17FD0DEBC10A65B6B2E74EBD /* Spec.Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Operator.swift; sourceTree = "<group>"; };
 		17FD0E266FB412C9E2314D95 /* Spec.Extension.NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Extension.NSUserDefaults.swift; sourceTree = "<group>"; };
 		17FD0F07AC7E6A66D55A6EA5 /* Extension.CGSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.CGSize.swift; sourceTree = "<group>"; };
+		17FD0F822EC15CEAC93A6B6F /* Spec.Extension.CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Extension.CGImage.swift; sourceTree = "<group>"; };
 		17FD0FAFBDFCEC4B522DFD4A /* macOS - Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "macOS - Framework.xcconfig"; path = "dependency/git/xenomorph/source/Target/macOS/macOS - Framework.xcconfig"; sourceTree = SOURCE_ROOT; };
 		17FD0FC589F4E355C1BEF973 /* Extension.NSTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.NSTimer.swift; sourceTree = "<group>"; };
 		17FD0FEC66633616F62F97D5 /* Stone.podspec */ = {isa = PBXFileReference; lastKnownFileType = file.podspec; path = Stone.podspec; sourceTree = "<group>"; };
@@ -264,6 +268,14 @@
 			name = configuration;
 			sourceTree = "<group>";
 		};
+		17FD0AF4BF12920B1275CE5C /* test */ = {
+			isa = PBXGroup;
+			children = (
+				17FD0429326BC7EA16D49E0A /* bbb.png */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		17FD0B5A2BAFE539BA3976F2 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +293,7 @@
 				17FD056D1B6B6E01E87E8AE7 /* Spec.Extension.CGPoint.swift */,
 				17FD0E266FB412C9E2314D95 /* Spec.Extension.NSUserDefaults.swift */,
 				17FD0697E67613ABD7CC0839 /* Spec.Extension.CGSize.swift */,
+				17FD0F822EC15CEAC93A6B6F /* Spec.Extension.CGImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -312,6 +325,7 @@
 				17FD0FCE76617832C4DBFA09 /* dependency */,
 				E68DF3D11E64975600502750 /* product */,
 				17FD015FD214F0832286F36A /* source */,
+				17FD0AF4BF12920B1275CE5C /* test */,
 				17FD0FEC66633616F62F97D5 /* Stone.podspec */,
 			);
 			sourceTree = "<group>";
@@ -348,6 +362,7 @@
 			buildConfigurationList = E68DF3E71E64975600502750 /* Build configuration list for PBXNativeTarget "Stone - Test" */;
 			buildPhases = (
 				E68DF3D51E64975600502750 /* Sources */,
+				E607D144221A802700959720 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -396,6 +411,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		E607D144221A802700959720 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E607D145221A802C00959720 /* bbb.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E68DF3CB1E64975600502750 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -431,16 +457,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				17FD0CB340621BAE9CCA39AA /* Spec.swift in Sources */,
-				17FD0385D81335D2BBF0DACE /* Spec.Extension.Swift.swift in Sources */,
-				17FD0B6E0DBE2BAAF40F4EB0 /* Spec.Injection.swift in Sources */,
-				17FD099F2F26F1CE4081D640 /* Spec.Extension.CGRect.swift in Sources */,
-				17FD09A3AA181C10FE8D00D8 /* Spec.Extension.NSFileManager.swift in Sources */,
-				17FD0E9B028774F98E098C1D /* Spec.Extension.CGPoint.swift in Sources */,
-				17FD0F97F4F001554FDE1219 /* Spec.Extension.NSUserDefaults.swift in Sources */,
-				17FD02756E33FC00FC29BF2A /* Spec.Extension.CGSize.swift in Sources */,
-				17FD09F1E3EF794D0CDF6A75 /* Spec.Operator.swift in Sources */,
 				17FD0ADBFF70D4FE09D06DE6 /* Spec.Atomic.Lock.swift in Sources */,
 				17FD0057B5EB8607B00E67F0 /* Spec.Atomic.Value.swift in Sources */,
+				17FD0146FF20F21EDC4DA07C /* Spec.Extension.CGImage.swift in Sources */,
+				17FD0E9B028774F98E098C1D /* Spec.Extension.CGPoint.swift in Sources */,
+				17FD099F2F26F1CE4081D640 /* Spec.Extension.CGRect.swift in Sources */,
+				17FD02756E33FC00FC29BF2A /* Spec.Extension.CGSize.swift in Sources */,
+				17FD0F97F4F001554FDE1219 /* Spec.Extension.NSUserDefaults.swift in Sources */,
+				17FD09A3AA181C10FE8D00D8 /* Spec.Extension.NSFileManager.swift in Sources */,
+				17FD0385D81335D2BBF0DACE /* Spec.Extension.Swift.swift in Sources */,
+				17FD0B6E0DBE2BAAF40F4EB0 /* Spec.Injection.swift in Sources */,
+				17FD09F1E3EF794D0CDF6A75 /* Spec.Operator.swift in Sources */,
 				17FD0955DF58838ED9044DF5 /* Spec.Weak.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

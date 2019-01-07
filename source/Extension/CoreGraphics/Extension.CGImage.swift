@@ -5,7 +5,7 @@ extension CGImage
 
     /// Returns current image resized to specified size and quality.
     public func resize(to size: CGSize, interpolationQuality: CGInterpolationQuality? = nil) -> CGImage {
-        let context: CGContext = CGContext(data: nil, width: Int(size.width), height: Int(size.height), bitsPerComponent: self.bitsPerComponent, bytesPerRow: self.bytesPerRow, space: self.colorSpace!, bitmapInfo: self.alphaInfo.rawValue)!
+        let context: CGContext = CGContext(data: nil, width: Int(round(size.width)), height: Int(round(size.height)), bitsPerComponent: self.bitsPerComponent, bytesPerRow: 0, space: self.colorSpace ?? CGColorSpaceCreateDeviceRGB(), bitmapInfo: self.alphaInfo.rawValue)!
 
         context.interpolationQuality = interpolationQuality ?? CGInterpolationQuality.high
         context.draw(self, in: CGRect(origin: CGPoint.zero, size: size))
