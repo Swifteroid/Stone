@@ -8,7 +8,7 @@ internal class CGImageExtensionSpec: Spec
 {
     override internal func spec() {
         it("can be resized") {
-            let nsImage: NSImage = Bundle(for: type(of: self)).image(forResource: NSImage.Name("bbb.png"))!
+            let nsImage: NSImage = Bundle(for: type(of: self)).image(forResource: "bbb.png")!
             let cgImage: CGImage = nsImage.cgImage(forProposedRect: nil, context: nil, hints: nil)!
             let originalSize = cgImage.size
 

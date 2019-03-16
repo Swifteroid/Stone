@@ -385,10 +385,12 @@
 				TargetAttributes = {
 					E68DF3CF1E64975600502750 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					E68DF3D81E64975600502750 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -398,7 +400,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 			);
 			mainGroup = E642F8A41E64930B00F98403;
 			productRefGroup = E68DF3D11E64975600502750 /* product */;
@@ -489,7 +490,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/dependency/Carthage/Build/Mac";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swifteroid.stone;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -499,7 +500,7 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/dependency/Carthage/Build/Mac";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swifteroid.stone;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

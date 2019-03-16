@@ -44,7 +44,7 @@ public protocol AtomicValueProtocol: class
     @discardableResult func update(lock: Bool, _ block: (_ currentValue: inout Value) -> ()) -> Bool
 }
 
-public extension AtomicValueProtocol
+extension AtomicValueProtocol
 {
     public var atomic: Value {
         get { return self.get() }

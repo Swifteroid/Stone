@@ -67,7 +67,7 @@ extension Array
 
     /// Removes all elements (default) or only the first one where predicate condition is met and returns all removed elements.
     @discardableResult public mutating func remove(where predicate: (Element) -> Bool, first: Bool = false) -> [Element] {
-        if first { return self.index(where: predicate).map({ [self.remove(at: $0)] }) ?? [] }
+        if first { return self.firstIndex(where: predicate).map({ [self.remove(at: $0)] }) ?? [] }
 
         var elements: [Element] = []
         for (offset, value) in self.enumerated().reversed() where predicate(value) {
