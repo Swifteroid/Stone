@@ -1,27 +1,23 @@
 import Foundation
 
-extension Bool
-{
+extension Bool {
     public init(_ value: Int) {
         self = value == 1
     }
 }
 
-extension Int
-{
+extension Int {
     public init(_ value: Bool) {
         self = value ? 1 : 0
     }
 }
 
-extension String
-{
+extension String {
     public func lowercasedFirst() -> String { return self.isEmpty ? self : self[...self.startIndex].lowercased() + self[self.index(after: self.startIndex)...] }
     public func uppercasedFirst() -> String { return self.isEmpty ? self : self[...self.startIndex].uppercased() + self[self.index(after: self.startIndex)...] }
 }
 
-extension Array
-{
+extension Array {
     public mutating func drain() -> [Element] {
         let elements: [Element] = self
         self.removeAll()
@@ -29,16 +25,14 @@ extension Array
     }
 }
 
-extension Dictionary
-{
-    public static func +(lhs: Dictionary, rhs: Dictionary) -> Dictionary {
+extension Dictionary {
+    public static func + (lhs: Dictionary, rhs: Dictionary) -> Dictionary {
         return rhs.reduce(into: lhs, { $0[$1.key] = $1.value })
     }
 }
 
 /// Array.remove()
-extension Array where Element: Equatable
-{
+extension Array where Element: Equatable {
     @discardableResult public mutating func remove(element: Element, first: Bool = false) -> [Element] {
         return self.remove(elements: [element], first: first)
     }
@@ -62,8 +56,7 @@ extension Array where Element: Equatable
     }
 }
 
-extension Array
-{
+extension Array {
 
     /// Removes all elements (default) or only the first one where predicate condition is met and returns all removed elements.
     @discardableResult public mutating func remove(where predicate: (Element) -> Bool, first: Bool = false) -> [Element] {
@@ -80,16 +73,14 @@ extension Array
     @discardableResult public mutating func removeFirst(where predicate: (Element) -> Bool) -> Element? { return nil }
 }
 
-extension Array
-{
+extension Array {
     @discardableResult public mutating func popFirst() -> Element? {
         return self.isEmpty ? nil : self.removeFirst()
     }
 }
 
 /// Array.recursiveFlatMap()
-extension Array
-{
+extension Array {
     @discardableResult public func flatMap(_ transform: (Element) -> [Element], depth: Int) -> [Element] {
         var flatArray: [Element] = []
 

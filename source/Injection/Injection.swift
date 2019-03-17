@@ -3,8 +3,7 @@ import Foundation
 /// Must use `@objc` tag and inherit from NSObject to be usable from Objective C inside the bootstrap.
 /// Todo: add subscript support when swift 4 is out to support generics and throwing.
 
-@objc open class Injection: NSObject
-{
+@objc open class Injection: NSObject {
     fileprivate static var defaults: [String: Injection] = [:]
 
     private var dependencies: [String: Dependency] = [:]
@@ -83,10 +82,8 @@ import Foundation
 
 // MARK: -
 
-extension Injection
-{
-    public enum Error: Swift.Error
-    {
+extension Injection {
+    public enum Error: Swift.Error {
         case undefinedDependency(String)
         case uncastableType
     }

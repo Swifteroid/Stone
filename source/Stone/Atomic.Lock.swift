@@ -13,8 +13,7 @@ import Foundation
 ///     }
 ///
 /// Unfair lock is much faster, spin locks are deprecated and unsafe, see https://gist.github.com/steipete/36350a8a60693d440954b95ea6cbbafc.
-final public class Lock
-{
+final public class Lock {
     deinit {
         if #available(macOS 10.12, *) {
             let primitive: os_unfair_lock_t = self.primitive as! os_unfair_lock_t

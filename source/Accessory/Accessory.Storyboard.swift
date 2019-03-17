@@ -1,12 +1,10 @@
 import AppKit
 
 /// Controller that belongs to a specific storyboard and can be constructed out of it.
-public protocol StoryboardController
-{
+public protocol StoryboardController {
 }
 
-extension StoryboardController
-{
+extension StoryboardController {
 
     /// Constructs controller from the specified storyboard and optionally loads the view. In most cases it doesn't matter whether the view is loaded
     /// or not, but in rare cases it needs to be loaded immediately. Since controller gets used / view gets loaded shortly after instantiation, we can

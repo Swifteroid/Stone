@@ -3,8 +3,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class OperatorSpec: Spec
-{
+internal class OperatorSpec: Spec {
     override internal func spec() {
         context("=-> returning assignment") {
             it("must return newly set value") {

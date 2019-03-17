@@ -4,8 +4,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class DictionaryExtensionSpec: Spec
-{
+internal class DictionaryExtensionSpec: Spec {
     override internal func spec() {
         it("can be accessed using KeyPath struct") {
             var dict: [String: Any?] = [:]
@@ -26,8 +25,7 @@ internal class DictionaryExtensionSpec: Spec
     }
 }
 
-internal class UserDefaultsExtensionSpec: Spec
-{
+internal class UserDefaultsExtensionSpec: Spec {
     override internal func spec() {
         it("can be accessed using KeyPath struct") {
             let suiteName: String = Bundle(for: type(of: self)).bundleIdentifier!

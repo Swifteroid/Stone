@@ -3,8 +3,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class SwiftArrayExtensionSpec: Spec
-{
+internal class SwiftArrayExtensionSpec: Spec {
     override internal func spec() {
         it("can remove element by value") {
             var array: [Int]
@@ -43,8 +42,7 @@ internal class SwiftArrayExtensionSpec: Spec
     }
 }
 
-internal class SwiftStringExtensionSpec: Spec
-{
+internal class SwiftStringExtensionSpec: Spec {
     override internal func spec() {
         it("can be upper- and lower-cased") {
             expect("foo".uppercasedFirst()) == "Foo"

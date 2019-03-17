@@ -3,8 +3,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class WeakSpec: Spec
-{
+internal class WeakSpec: Spec {
     override internal func spec() {
         it("must return default value only when optional is none") {
             var number: Int? = 10
@@ -15,7 +14,6 @@ internal class WeakSpec: Spec
     }
 }
 
-fileprivate class SpecClass
-{
+fileprivate class SpecClass {
 
 }

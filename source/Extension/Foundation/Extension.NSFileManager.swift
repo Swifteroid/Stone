@@ -1,7 +1,6 @@
 import Foundation
 
-extension FileManager
-{
+extension FileManager {
     public func fileExists(at url: URL) -> Bool {
         return self.fileExists(atPath: url.path)
     }
@@ -21,10 +20,8 @@ extension FileManager
     }
 }
 
-extension FileManager
-{
-    enum Error: Swift.Error
-    {
+extension FileManager {
+    enum Error: Swift.Error {
         case fileAlreadyExists
     }
 }

@@ -13,13 +13,11 @@ import Foundation
 ///
 ///         private let synchronized: Synchronized = .init()
 ///     }
-public protocol Synchronized
-{
+public protocol Synchronized {
     var lock: Lock { get }
 }
 
-extension Synchronized
-{
+extension Synchronized {
     public func atomic<T>(_ block: (Self) throws -> (T)) rethrows -> T {
         return try self.lock.locked({ try block(self) })
     }

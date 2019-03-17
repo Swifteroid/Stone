@@ -2,6 +2,5 @@ import CoreLocation // Fakery requires this, but this doesn't get linked automat
 import Quick
 import XCTest
 
-internal class Spec: QuickSpec
-{
+internal class Spec: QuickSpec {
 }

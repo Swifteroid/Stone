@@ -2,8 +2,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class InjectionSpec: Spec
-{
+internal class InjectionSpec: Spec {
     override internal func spec() {
         let injection: Injection = Injection.default
 
@@ -42,16 +41,13 @@ internal class InjectionSpec: Spec
     }
 }
 
-private class FooInjection: Injection
-{
+private class FooInjection: Injection {
 }
 
-private class BarInjection: Injection
-{
+private class BarInjection: Injection {
 }
 
-private enum Name: String, CustomStringConvertible
-{
+private enum Name: String, CustomStringConvertible {
     fileprivate var description: String {
         return self.rawValue
     }

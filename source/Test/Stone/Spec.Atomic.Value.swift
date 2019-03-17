@@ -3,8 +3,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class AtomicValueSpec: Spec
-{
+internal class AtomicValueSpec: Spec {
     override internal func spec() {
         it("can set value atomically") {
             let value: AtomicValue<Int> = .init(0)
@@ -86,8 +85,7 @@ internal class AtomicValueSpec: Spec
     }
 }
 
-fileprivate struct Synchronized: Stone.Synchronized
-{
+fileprivate struct Synchronized: Stone.Synchronized {
     fileprivate init() { self.value = AtomicValue([], self.lock) }
     fileprivate let lock: Lock = .init()
     fileprivate let value: AtomicValue<[Int]>

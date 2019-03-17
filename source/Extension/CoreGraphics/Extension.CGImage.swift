@@ -1,7 +1,6 @@
 import CoreGraphics
 
-extension CGImage
-{
+extension CGImage {
 
     /// Returns current image resized to specified size and quality, the new image might have different characteristics.
     public func resize(to size: CGSize, interpolationQuality: CGInterpolationQuality? = nil) -> CGImage {
@@ -27,7 +26,6 @@ extension CGImage
     }
 }
 
-extension CGImage
-{
+extension CGImage {
     public var size: CGSize { return CGSize(width: self.width, height: self.height) }
 }

@@ -1,8 +1,7 @@
 import Foundation
 
 /// Represents string key path. All kudos to Ole Begemann – https://oleb.net/blog/2017/01/dictionary-key-paths.
-public struct KeyPath
-{
+public struct KeyPath {
     public init(_ segments: [String]) {
         self.segments = segments
     }
@@ -26,15 +25,13 @@ public struct KeyPath
     }
 }
 
-extension KeyPath: ExpressibleByStringLiteral
-{
+extension KeyPath: ExpressibleByStringLiteral {
     public init(stringLiteral value: String) { self.init(value) }
     public init(unicodeScalarLiteral value: String) { self.init(value) }
     public init(extendedGraphemeClusterLiteral value: String) { self.init(value) }
 }
 
-extension Dictionary where Key == String
-{
+extension Dictionary where Key == String {
 
     /// Make sure to keep `keyPath` label when using raw strings with this subscript, otherwise it will fall
     /// back to standard subscript and not return the expected result. Note, while setting a value any intermediate
@@ -82,8 +79,7 @@ extension Dictionary where Key == String
     }
 }
 
-extension UserDefaults
-{
+extension UserDefaults {
     public func object(forKeyPath keyPath: String) -> Any? {
         return self[KeyPath(keyPath)]
     }

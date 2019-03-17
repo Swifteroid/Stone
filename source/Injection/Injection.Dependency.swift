@@ -1,7 +1,5 @@
-extension Injection
-{
-    open class Dependency
-    {
+extension Injection {
+    open class Dependency {
         public typealias Definition = () -> Any
 
         private let definition: Definition

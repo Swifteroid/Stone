@@ -4,8 +4,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class FileManagerExtensionSpec: Spec
-{
+internal class FileManagerExtensionSpec: Spec {
     override internal func spec() {
         it("can assure directory exists") {
             let url: URL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(Faker().lorem.word())

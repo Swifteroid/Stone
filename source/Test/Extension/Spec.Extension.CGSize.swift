@@ -3,8 +3,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class CGSizeExtensionSpec: Spec
-{
+internal class CGSizeExtensionSpec: Spec {
     override internal func spec() {
         it("can be fitted into given aspect") {
             let size: CGSize = CGSize(width: 100, height: 50)

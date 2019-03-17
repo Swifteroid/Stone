@@ -3,8 +3,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class CGRectExtensionSpec: Spec
-{
+internal class CGRectExtensionSpec: Spec {
     override internal func spec() {
         it("can align") {
             let large: CGRect = CGRect(x: 100, y: 100, width: 100, height: 100)

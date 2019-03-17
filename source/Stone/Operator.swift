@@ -4,7 +4,7 @@ import Foundation
 /// is returned and can be further operated upon, like `if (x =-> y) == nil { throw Error.nil }`.
 infix operator =->: AssignmentPrecedence
 
-public func =-><T>(oldValue: inout T, newValue: T) -> T {
+public func =-> <T>(oldValue: inout T, newValue: T) -> T {
     oldValue = newValue
     return oldValue
 }
@@ -12,7 +12,7 @@ public func =-><T>(oldValue: inout T, newValue: T) -> T {
 /// A custom optional string coalescing operator. All kudos to Ole Bogemann – https://oleb.net/blog/2016/12/optionals-string-interpolation.
 infix operator ???: NilCoalescingPrecedence
 
-public func ???<T>(optional: T?, defaultValue: @autoclosure () -> String) -> String {
+public func ??? <T>(optional: T?, defaultValue: @autoclosure () -> String) -> String {
     switch optional {
         case .some(let value): return "\(value)"
         case .none: return defaultValue()

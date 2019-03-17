@@ -1,7 +1,6 @@
 import AppKit
 
-extension NSView
-{
+extension NSView {
     public var visible: Bool {
         get {
             return !self.isHidden
@@ -14,8 +13,7 @@ extension NSView
 
 // MARK: -
 
-extension NSView
-{
+extension NSView {
     public func subview(withIdentifier identifier: NSUserInterfaceItemIdentifier) -> NSView? {
         for subview in self.subviews {
             if subview.identifier == identifier {
@@ -50,8 +48,7 @@ extension NSView
 
 // MARK: constraint
 
-extension NSView
-{
+extension NSView {
 
     /// Returns active constraints of this view or between this view and the specified view. 
 
@@ -69,7 +66,7 @@ extension NSView
             // @formatter:off
             if
             constraint.firstItem === self && (view == nil || constraint.secondItem === view) ||
-            constraint.secondItem === self && (view == nil || constraint.firstItem === view) 
+            constraint.secondItem === self && (view == nil || constraint.firstItem === view)
             {
                 constraints.append(constraint)
             }
@@ -121,7 +118,7 @@ extension NSView
             // @formatter:off
             if
             constraint.firstItem === item && constraint.firstAttribute == attribute ||
-            constraint.secondItem === item && constraint.secondAttribute == attribute 
+            constraint.secondItem === item && constraint.secondAttribute == attribute
             {
                 product.append(constraint)
             }

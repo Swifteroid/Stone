@@ -94,6 +94,7 @@
 		17FD0B82960814A03ACD2215 /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.private; path = Cartfile.private; sourceTree = "<group>"; };
 		17FD0C2F4679304870A0686A /* Extension.NSDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.NSDateFormatter.swift; sourceTree = "<group>"; };
 		17FD0C35781BFBD36BF87853 /* framework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = framework.plist; sourceTree = "<group>"; };
+		17FD0C72E649A119FBCDDC9B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = file.yml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		17FD0CA3901FF35D93DF2A89 /* Spec.Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Injection.swift; sourceTree = "<group>"; };
 		17FD0D3BCE732F4353DA4BF9 /* Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		17FD0DEBC10A65B6B2E74EBD /* Spec.Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spec.Operator.swift; sourceTree = "<group>"; };
@@ -327,6 +328,7 @@
 				17FD015FD214F0832286F36A /* source */,
 				17FD0AF4BF12920B1275CE5C /* test */,
 				17FD0FEC66633616F62F97D5 /* Stone.podspec */,
+				17FD0C72E649A119FBCDDC9B /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};

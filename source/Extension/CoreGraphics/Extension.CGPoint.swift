@@ -1,13 +1,11 @@
 import CoreGraphics
 
-extension CGPoint
-{
+extension CGPoint {
     public static let infinite: CGPoint = CGPoint(x: CGFloat.infinity, y: CGFloat.infinity)
 }
 
 /// Translating.
-extension CGPoint
-{
+extension CGPoint {
     /// Translates the point along x axis by the given distance.
     public mutating func translate(x: CGFloat) { self.x += x }
 
@@ -47,8 +45,7 @@ extension CGPoint
 }
 
 /// Scaling.
-extension CGPoint
-{
+extension CGPoint {
     /// Scales the point horizontally and vertically by the given amount.
     public mutating func scale(x: CGFloat, y: CGFloat) { (self.x, self.y) = (self.x * x, self.y * y) }
 
@@ -87,43 +84,40 @@ extension CGPoint
     public func scaling(_ scale: CGPoint) -> CGPoint { return self.scaling(x: scale.x, y: scale.y) }
 }
 
-extension CGPoint
-{
-    public static prefix func -(rhs: CGPoint) -> CGPoint { return CGPoint(x: -rhs.x, y: -rhs.y) }
+extension CGPoint {
+    public static prefix func - (rhs: CGPoint) -> CGPoint { return CGPoint(x: -rhs.x, y: -rhs.y) }
 
-    public static func +(lhs: CGPoint, rhs: CGPoint) -> CGPoint { return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y) }
-    public static func -(lhs: CGPoint, rhs: CGPoint) -> CGPoint { return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y) }
+    public static func + (lhs: CGPoint, rhs: CGPoint) -> CGPoint { return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y) }
+    public static func - (lhs: CGPoint, rhs: CGPoint) -> CGPoint { return CGPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y) }
 
-    public static func +(lhs: CGPoint, rhs: CGSize) -> CGPoint { return CGPoint(x: lhs.x + rhs.width, y: lhs.y + rhs.height) }
-    public static func -(lhs: CGPoint, rhs: CGSize) -> CGPoint { return CGPoint(x: lhs.x - rhs.width, y: lhs.y - rhs.height) }
+    public static func + (lhs: CGPoint, rhs: CGSize) -> CGPoint { return CGPoint(x: lhs.x + rhs.width, y: lhs.y + rhs.height) }
+    public static func - (lhs: CGPoint, rhs: CGSize) -> CGPoint { return CGPoint(x: lhs.x - rhs.width, y: lhs.y - rhs.height) }
 
-    public static func *(lhs: CGPoint, rhs: CGFloat) -> CGPoint { return CGPoint(x: lhs.x * rhs, y: lhs.y * rhs) }
-    public static func /(lhs: CGPoint, rhs: CGFloat) -> CGPoint { return CGPoint(x: lhs.x / rhs, y: lhs.y / rhs) }
+    public static func * (lhs: CGPoint, rhs: CGFloat) -> CGPoint { return CGPoint(x: lhs.x * rhs, y: lhs.y * rhs) }
+    public static func / (lhs: CGPoint, rhs: CGFloat) -> CGPoint { return CGPoint(x: lhs.x / rhs, y: lhs.y / rhs) }
 }
 
-extension CGPoint
-{
-    public static func +=(lhs: inout CGPoint, rhs: CGPoint) { lhs = lhs + rhs }
-    public static func -=(lhs: inout CGPoint, rhs: CGPoint) { lhs = lhs - rhs }
+extension CGPoint {
+    public static func += (lhs: inout CGPoint, rhs: CGPoint) { lhs = lhs + rhs }
+    public static func -= (lhs: inout CGPoint, rhs: CGPoint) { lhs = lhs - rhs }
 
-    public static func +=(lhs: inout CGPoint, rhs: CGSize) { lhs = lhs + rhs }
-    public static func -=(lhs: inout CGPoint, rhs: CGSize) { lhs = lhs - rhs }
+    public static func += (lhs: inout CGPoint, rhs: CGSize) { lhs = lhs + rhs }
+    public static func -= (lhs: inout CGPoint, rhs: CGSize) { lhs = lhs - rhs }
 
-    public static func *=(lhs: inout CGPoint, rhs: CGFloat) { lhs = lhs * rhs }
-    public static func /=(lhs: inout CGPoint, rhs: CGFloat) { lhs = lhs / rhs }
+    public static func *= (lhs: inout CGPoint, rhs: CGFloat) { lhs = lhs * rhs }
+    public static func /= (lhs: inout CGPoint, rhs: CGFloat) { lhs = lhs / rhs }
 }
 
-extension CGPoint
-{
-    public static func >(lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x > rhs.x && lhs.y > rhs.y }
-    public static func <(lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x < rhs.x && lhs.y < rhs.y }
-    public static func >=(lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x >= rhs.x && lhs.y >= rhs.y }
-    public static func <=(lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x <= rhs.x && lhs.y <= rhs.y }
+extension CGPoint {
+    public static func > (lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x > rhs.x && lhs.y > rhs.y }
+    public static func < (lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x < rhs.x && lhs.y < rhs.y }
+    public static func >= (lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x >= rhs.x && lhs.y >= rhs.y }
+    public static func <= (lhs: CGPoint, rhs: CGPoint) -> Bool { return lhs.x <= rhs.x && lhs.y <= rhs.y }
 
-    public static func >(lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x > rhs.width && lhs.y > rhs.height }
-    public static func <(lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x < rhs.width && lhs.y < rhs.height }
-    public static func >=(lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x >= rhs.width && lhs.y >= rhs.height }
-    public static func <=(lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x <= rhs.width && lhs.y <= rhs.height }
+    public static func > (lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x > rhs.width && lhs.y > rhs.height }
+    public static func < (lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x < rhs.width && lhs.y < rhs.height }
+    public static func >= (lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x >= rhs.width && lhs.y >= rhs.height }
+    public static func <= (lhs: CGPoint, rhs: CGSize) -> Bool { return lhs.x <= rhs.width && lhs.y <= rhs.height }
 }
 
 public func floor(_ point: CGPoint) -> CGPoint { return CGPoint(x: floor(point.x), y: floor(point.y)) }

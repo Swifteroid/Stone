@@ -4,8 +4,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class CGImageExtensionSpec: Spec
-{
+internal class CGImageExtensionSpec: Spec {
     override internal func spec() {
         it("can be resized") {
             let nsImage: NSImage = Bundle(for: type(of: self)).image(forResource: "bbb.png")!

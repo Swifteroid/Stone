@@ -1,7 +1,6 @@
 import Foundation
 
-extension DateFormatter
-{
+extension DateFormatter {
 
     /// Initialises formatter with a date format.
 

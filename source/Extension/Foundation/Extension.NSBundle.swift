@@ -2,8 +2,7 @@ import Foundation
 
 private var NSBundleObjectForInfoDictionaryKeyPathCache: UInt8 = 0
 
-extension Bundle
-{
+extension Bundle {
 
     /// Was a huge surprise to discovered that even this kind of caching speeds things up nearly x10 times.
 

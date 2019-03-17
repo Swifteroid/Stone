@@ -1,7 +1,6 @@
 import Foundation
 
-extension Timer
-{
+extension Timer {
 
     /// Creates and schedules a `Timer` instance.
     ///
@@ -13,35 +12,33 @@ extension Timer
     ///
     /// - returns: Scheduled `Timer` instance.
 
-    @discardableResult public static func schedule(delay: TimeInterval, interval: TimeInterval, handler: @escaping (Timer) -> ()) -> Timer {
+    @discardableResult public static func schedule(delay: TimeInterval, interval: TimeInterval, handler: @escaping (Timer) -> Void) -> Timer {
         let timer: Timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, delay + CFAbsoluteTimeGetCurrent(), interval, 0, 0, { handler($0!) })
         CFRunLoopAddTimer(CFRunLoopGetCurrent(), timer, CFRunLoopMode.commonModes)
         return timer
     }
 
-    @discardableResult public static func schedule(delay: TimeInterval, interval: TimeInterval, handler: @escaping () -> ()) -> Timer {
+    @discardableResult public static func schedule(delay: TimeInterval, interval: TimeInterval, handler: @escaping () -> Void) -> Timer {
         return self.schedule(delay: delay, interval: interval, handler: { _ in handler() })
     }
 }
 
-extension Timer
-{
-    @discardableResult public static func schedule(delay: TimeInterval, handler: @escaping (Timer) -> ()) -> Timer {
+extension Timer {
+    @discardableResult public static func schedule(delay: TimeInterval, handler: @escaping (Timer) -> Void) -> Timer {
         return self.schedule(delay: delay, interval: 0, handler: handler)
     }
 
-    @discardableResult public static func schedule(delay: TimeInterval, handler: @escaping () -> ()) -> Timer {
+    @discardableResult public static func schedule(delay: TimeInterval, handler: @escaping () -> Void) -> Timer {
         return self.schedule(delay: delay, interval: 0, handler: handler)
     }
 }
 
-extension Timer
-{
-    @discardableResult public static func schedule(interval: TimeInterval, handler: @escaping (Timer) -> ()) -> Timer {
+extension Timer {
+    @discardableResult public static func schedule(interval: TimeInterval, handler: @escaping (Timer) -> Void) -> Timer {
         return self.schedule(delay: interval, interval: interval, handler: handler)
     }
 
-    @discardableResult public static func schedule(interval: TimeInterval, handler: @escaping () -> ()) -> Timer {
+    @discardableResult public static func schedule(interval: TimeInterval, handler: @escaping () -> Void) -> Timer {
         return self.schedule(delay: interval, interval: interval, handler: handler)
     }
 }

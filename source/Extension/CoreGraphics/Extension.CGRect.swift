@@ -1,7 +1,6 @@
 import CoreGraphics
 
-extension CGRect
-{
+extension CGRect {
 
     /// Constructs new rectangle by finding the difference between two points.
     public init(point point1: CGPoint, point point2: CGPoint) {
@@ -11,8 +10,7 @@ extension CGRect
 
 /// Anchor points, setting these resizes the rectangle in the given direction, changing center points resizes rectangle 
 /// in both ways on axis it sits on, exception is center point itself – changing it simply adjusts origin.
-extension CGRect
-{
+extension CGRect {
     public var topLeft: CGPoint {
         get { return CGPoint(x: self.minX, y: self.minY) }
         mutating set {
@@ -98,8 +96,7 @@ extension CGRect
 }
 
 /// Alignment.
-extension CGRect
-{
+extension CGRect {
     public func aligned(innerLeft rectangle: CGRect, margin: CGFloat? = nil) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.minX + (margin ?? 0), y: self.origin.y), size: self.size) }
     public func aligned(outerLeft rectangle: CGRect, margin: CGFloat? = nil) -> CGRect { return CGRect(origin: CGPoint(x: rectangle.minX - (margin ?? 0) - self.width, y: self.origin.y), size: self.size) }
 
@@ -122,8 +119,7 @@ extension CGRect
 
 /// Containment, returns rectangle contained inside the specified one if width and height are not greater than
 /// of one specified, in which case returns `nil`.
-extension CGRect
-{
+extension CGRect {
     public func contained(in rectangle: CGRect) -> CGRect? {
         return self.contained(horizontally: rectangle)?.contained(vertically: rectangle)
     }
@@ -154,8 +150,7 @@ extension CGRect
 }
 
 /// Translating.
-extension CGRect
-{
+extension CGRect {
     /// Translates the rectangle origin along x axis by the given distance.
     public mutating func translate(x: CGFloat) { self.origin.translate(x: x) }
 
@@ -195,8 +190,7 @@ extension CGRect
 }
 
 /// Scaling.
-extension CGRect
-{
+extension CGRect {
     /// Scales the rectangle horizontally and vertically by the given amount around the specified pivot point.
     public mutating func scale(width ws: CGFloat, height hs: CGFloat, pivot: CGPoint? = nil) {
         if let pivot: CGPoint = pivot { self.origin.translate((self.origin - pivot).scaling(x: ws - 1, y: hs - 1)) }
@@ -253,8 +247,7 @@ extension CGRect
     public func scaling(_ scale: CGSize, pivot: CGPoint? = nil) -> CGRect { return self.scaling(width: scale.width, height: scale.height, pivot: pivot) }
 }
 
-extension CGRect
-{
+extension CGRect {
 
     /// Insets rectangle by a given distance.
     public func inset(by distance: CGFloat) -> CGRect { return self.insetBy(dx: distance, dy: distance) }
@@ -289,8 +282,7 @@ extension CGRect
     }
 }
 
-extension CGRect
-{
+extension CGRect {
     public func intersects(horizontally rect: CGRect) -> Bool {
         return self.minX < rect.maxX && self.maxX > rect.minX || rect.minX < self.maxX && rect.maxX > self.minX
     }
@@ -300,37 +292,35 @@ extension CGRect
     }
 }
 
-extension CGRect
-{
+extension CGRect {
     /// Increases rectangle size by given size width and height.
-    public static func +(lhs: CGRect, rhs: CGSize) -> CGRect { return CGRect(x: lhs.origin.x, y: lhs.origin.y, width: lhs.width + rhs.width, height: lhs.height + rhs.height) }
+    public static func + (lhs: CGRect, rhs: CGSize) -> CGRect { return CGRect(x: lhs.origin.x, y: lhs.origin.y, width: lhs.width + rhs.width, height: lhs.height + rhs.height) }
 
     /// Decreases rectangle size by given size width and height.
-    public static func -(lhs: CGRect, rhs: CGSize) -> CGRect { return CGRect(x: lhs.origin.x, y: lhs.origin.y, width: lhs.width - rhs.width, height: lhs.height - rhs.height) }
+    public static func - (lhs: CGRect, rhs: CGSize) -> CGRect { return CGRect(x: lhs.origin.x, y: lhs.origin.y, width: lhs.width - rhs.width, height: lhs.height - rhs.height) }
 
     /// Increases rectangle origin x and y by given point x and y.
-    public static func +(lhs: CGRect, rhs: CGPoint) -> CGRect { return CGRect(x: lhs.origin.x + rhs.x, y: lhs.origin.y + rhs.y, width: lhs.width, height: lhs.height) }
+    public static func + (lhs: CGRect, rhs: CGPoint) -> CGRect { return CGRect(x: lhs.origin.x + rhs.x, y: lhs.origin.y + rhs.y, width: lhs.width, height: lhs.height) }
 
     /// Decreases rectangle origin x and y by given point x and y.
-    public static func -(lhs: CGRect, rhs: CGPoint) -> CGRect { return CGRect(x: lhs.origin.x - rhs.x, y: lhs.origin.y - rhs.y, width: lhs.width, height: lhs.height) }
+    public static func - (lhs: CGRect, rhs: CGPoint) -> CGRect { return CGRect(x: lhs.origin.x - rhs.x, y: lhs.origin.y - rhs.y, width: lhs.width, height: lhs.height) }
 
     /// Multiplies rectangle origin x and y and size width and height by given amount.
-    public static func *(lhs: CGRect, rhs: CGFloat) -> CGRect { return CGRect(x: lhs.origin.x * rhs, y: lhs.origin.y * rhs, width: lhs.width * rhs, height: lhs.height * rhs) }
+    public static func * (lhs: CGRect, rhs: CGFloat) -> CGRect { return CGRect(x: lhs.origin.x * rhs, y: lhs.origin.y * rhs, width: lhs.width * rhs, height: lhs.height * rhs) }
 
     /// Divides rectangle origin x and y and size width and height by given amount.
-    public static func /(lhs: CGRect, rhs: CGFloat) -> CGRect { return CGRect(x: lhs.origin.x / rhs, y: lhs.origin.y / rhs, width: lhs.width / rhs, height: lhs.height / rhs) }
+    public static func / (lhs: CGRect, rhs: CGFloat) -> CGRect { return CGRect(x: lhs.origin.x / rhs, y: lhs.origin.y / rhs, width: lhs.width / rhs, height: lhs.height / rhs) }
 }
 
-extension CGRect
-{
-    public static func +=(lhs: inout CGRect, rhs: CGSize) { lhs = lhs + rhs }
-    public static func -=(lhs: inout CGRect, rhs: CGSize) { lhs = lhs - rhs }
+extension CGRect {
+    public static func += (lhs: inout CGRect, rhs: CGSize) { lhs = lhs + rhs }
+    public static func -= (lhs: inout CGRect, rhs: CGSize) { lhs = lhs - rhs }
 
-    public static func +=(lhs: inout CGRect, rhs: CGPoint) { lhs = lhs + rhs }
-    public static func -=(lhs: inout CGRect, rhs: CGPoint) { lhs = lhs - rhs }
+    public static func += (lhs: inout CGRect, rhs: CGPoint) { lhs = lhs + rhs }
+    public static func -= (lhs: inout CGRect, rhs: CGPoint) { lhs = lhs - rhs }
 
-    public static func *=(lhs: inout CGRect, rhs: CGFloat) { lhs = lhs * rhs }
-    public static func /=(lhs: inout CGRect, rhs: CGFloat) { lhs = lhs / rhs }
+    public static func *= (lhs: inout CGRect, rhs: CGFloat) { lhs = lhs * rhs }
+    public static func /= (lhs: inout CGRect, rhs: CGFloat) { lhs = lhs / rhs }
 }
 
 /// Rounds rectangle origin x and y and size width and height.

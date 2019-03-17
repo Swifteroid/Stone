@@ -3,8 +3,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class CGPointExtensionSpec: Spec
-{
+internal class CGPointExtensionSpec: Spec {
     override internal func spec() {
         it("can translate") {
             expect(CGPoint(x: 10, y: 20).translating(x: 30)) == CGPoint(x: 40, y: 20)

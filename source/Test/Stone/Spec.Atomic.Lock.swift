@@ -3,8 +3,7 @@ import Nimble
 import Quick
 import Stone
 
-internal class AtomicLockSpec: Spec
-{
+internal class AtomicLockSpec: Spec {
     override internal func spec() {
         it("can lock and unlock") {
             let lock: Lock = Lock()
