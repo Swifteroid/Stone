@@ -40,7 +40,7 @@ public protocol AtomicValueProtocol: class {
     ///   the value is already locked and atomicity is "manually" guaranteed.
     /// - parameter block: Block that receives input value and updates it.
     /// - return: `true` if new value did set, `false` otherwise.
-    @discardableResult func update(lock: Bool, _ block: (_ currentValue: inout Value) -> Void) -> Bool
+    @discardableResult func update(lock: Bool, _ block: (_ currentValue: inout Value) throws -> Void) rethrows -> Bool
 }
 
 extension AtomicValueProtocol {
@@ -59,7 +59,7 @@ extension AtomicValueProtocol {
 
     /// - parameter lock: Indicates whether the update should be locked (atomic), default is `true`. Specify `false` when 
     ///   the value is already locked and atomicity is "manually" guaranteed.
-    @discardableResult fileprivate func update(lock shouldLock: Bool = true, counter: UnsafeMutablePointer<UInt64>, _ block: (_ currentValue: inout Value) -> Void) -> Bool {
+    @discardableResult fileprivate func update(lock shouldLock: Bool = true, counter: UnsafeMutablePointer<UInt64>, _ block: (_ currentValue: inout Value) throws -> Void) rethrows -> Bool {
         let lock: Lock = self.lock
 
         var isLocked: Bool = shouldLock && lock.lock()
@@ -74,7 +74,7 @@ extension AtomicValueProtocol {
         let oldValue: Value = self.raw
         var newValue: Value = oldValue
 
-        block(&newValue)
+        try block(&newValue)
         if validateBlock?(newValue, oldValue) == false { return false }
 
         if let willSetBlock = willSetBlock {
@@ -122,7 +122,7 @@ final public class AtomicValue<T> {
     public var willSet: ((_ newValue: T, _ oldValue: T) -> Void)?
     public var didSet: ((_ newValue: T, _ oldValue: T) -> Void)?
 
-    @discardableResult public func update(lock shouldLock: Bool = true, _ block: (_ currentValue: inout Value) -> Void) -> Bool { return self.update(lock: shouldLock, counter: self.updateCount, block) }
+    @discardableResult public func update(lock shouldLock: Bool = true, _ block: (_ currentValue: inout Value) throws -> Void) rethrows -> Bool { return try self.update(lock: shouldLock, counter: self.updateCount, block) }
 }
 
 extension AtomicValue: AtomicValueProtocol {
@@ -157,7 +157,7 @@ final public class WeakAtomicValue<T: AnyObject> {
     public var willSet: ((_ newValue: T?, _ oldValue: T?) -> Void)?
     public var didSet: ((_ newValue: T?, _ oldValue: T?) -> Void)?
 
-    @discardableResult public func update(lock shouldLock: Bool = true, _ block: (_ currentValue: inout Value) -> Void) -> Bool { return self.update(lock: shouldLock, counter: self.updateCount, block) }
+    @discardableResult public func update(lock shouldLock: Bool = true, _ block: (_ currentValue: inout Value) throws -> Void) rethrows -> Bool { return try self.update(lock: shouldLock, counter: self.updateCount, block) }
 }
 
 extension WeakAtomicValue: AtomicValueProtocol {
